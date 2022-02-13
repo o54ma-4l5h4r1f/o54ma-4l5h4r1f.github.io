@@ -23,6 +23,7 @@ html[dir="rtl"] {
     &.shift {
       left: unset;
       right: $theme-menu-width-sm;
+      min-width: calc(100% - 300px);
     }
   }
 
@@ -35,7 +36,7 @@ html[dir="rtl"] {
     .content-wrap {
       margin-left: unset;
       margin-right: $theme-menu-width;
-
+      min-width: calc(100% - 300px);
       &.shift {
         left: unset;
         right: 0;
