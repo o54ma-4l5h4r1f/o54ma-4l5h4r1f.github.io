@@ -32,6 +32,7 @@
     left: $theme-menu-width-sm;
     min-width: 100%;
   }
+  min-width: calc(100% - 300px);
 }
 
 @include breakpoint(md) {
