@@ -1,5 +1,5 @@
 .content-wrap {
   font-size: $h4-size;
   background: $theme-white;
-  min-width: calc(100% - 300px);
+  min-width: calc(100% - 300px) !important;
 }
