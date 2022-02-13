@@ -6,6 +6,6 @@
 
 @include breakpoint(xl) {
   .container {
-    background: $theme-mask-black;
+    background: rgba(255, 255, 255, 0.1); // $theme-mask-black;
   }
 }
