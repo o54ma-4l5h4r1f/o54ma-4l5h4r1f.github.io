@@ -67,11 +67,13 @@
       left: 0;
       min-width: 0;
     }
+    min-width: calc(100% - 300px);
   }
 }
 
 @include breakpoint(xl) {
   .content-wrap {
     max-width: $width-xl - $theme-menu-width;
+    min-width: calc(100% - 300px);
   }
 }
