@@ -30,10 +30,10 @@
     top: 0;
     bottom: 0;
     left: $theme-menu-width-sm;
-    // min-width: 100%;
-    min-width: calc(100% - 300px);
+    min-width: 100%;
+    //min-width: calc(100% - 300px);
   }
-  min-width: calc(100% - 300px);
+  //min-width: calc(100% - 300px);
 }
 
 @include breakpoint(md) {
@@ -66,8 +66,8 @@
     &.shift {
       position: relative;
       left: 0;
-      // min-width: 0;
-      min-width: calc(100% - 300px);
+      min-width: 0;
+      // min-width: calc(100% - 300px);
     }
     
   }
@@ -76,6 +76,6 @@
 @include breakpoint(xl) {
   .content-wrap {
     max-width: $width-xl - $theme-menu-width;
-    min-width: calc(100% - 300px);
+    // min-width: calc(100% - 300px);
   }
 }
