@@ -30,9 +30,10 @@
     top: 0;
     bottom: 0;
     left: $theme-menu-width-sm;
-    min-width: 100%;
+    // min-width: 100%;
+    min-width: calc(100% - 300px);
   }
-  min-width: calc(100% - 300px);
+  // min-width: calc(100% - 300px);
 }
 
 @include breakpoint(md) {
@@ -65,9 +66,10 @@
     &.shift {
       position: relative;
       left: 0;
-      min-width: 0;
+      // min-width: 0;
+      min-width: calc(100% - 300px);
     }
-    min-width: calc(100% - 300px);
+    
   }
 }
 

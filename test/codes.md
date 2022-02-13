@@ -4,7 +4,7 @@ sort: 3
 
 # Code Blocks
 
-`inline code`
+`Some inline code ^^`
 
 [`inline code inside link`](./)
 
