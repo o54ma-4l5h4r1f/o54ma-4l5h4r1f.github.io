@@ -142,3 +142,31 @@ Password: `null`
 
 gobuster 
 
+
+
+
+----- 
+# login pages
+
+```note
+SQL : Structured Query Language
+PII : Personally Identifiable Information
+HTTPS : Hypertext Transfer Protocol Secure
+```
+
+
+1. misconfiguration 
+2. sql injection ==> one by one ==> https://github.com/AdmiralGaust/SQL-Injection-cheat-sheet
+lastChoice. Brute force 
+
+
+
+
+
+
+```note
+, which port running mysql do we find ==> 3306 
+Which username allows us to log into MariaDB without providing a password? root 
+
+$ mysql --host=<ip> --port=<port> --user=<root> --password `none` 
+```
