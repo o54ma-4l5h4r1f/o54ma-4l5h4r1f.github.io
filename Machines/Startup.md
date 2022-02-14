@@ -101,6 +101,21 @@ smb: \James.P\> exit
 RDP : Remote Desktop Protocol
 ```
 
+PORT    STATE SERVICE VERSION
+135/tcp open  msrpc   Microsoft Windows RPC
+
+
+PORT     STATE SERVICE       VERSION
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+random port
+
+
+
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
 
 
 
@@ -108,8 +123,22 @@ SSH uses public key cryptography
 
 
 
-
+$ sudo apt install freerdp2-x11
 xfreerdp : name of the tool that we can use to initiate a desktop projection to our host using the terminal
 
 
 what is the switch used --> switch means flag --> flag means cli options of the commands -l -s -a .... 
+
+
+```bash
+$ xfreerdp /v:<IP>:3389 /cert:ignore /u:Administrator
+Password: `null`
+```
+
+
+
+-------
+# directory busting tool
+
+gobuster 
+
