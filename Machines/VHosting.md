@@ -16,6 +16,12 @@ DNS (Domain Name System or Service) is a hierarchical decentralized naming syste
  So a single web server can host multiple sites - with a different domain names - on a single IP and thus uses the host name to determine which site/content to respond with.
 </b>
 
+```
+GET index.php/ HTTP/1.1
+Host: www.example.com           <<==
+User-Agent: .....
+```
+
 With name-based virtual hosting, the server relies on the client to report the hostname as part of the HTTP headers. Using this technique, many different hosts can share the same IP address.
 
 For example, suppose that you are serving the domain www.example.com and you wish to add the virtual host other.example.com, which points at the same IP address. Then you simply add the following to httpd.conf:
@@ -52,8 +58,8 @@ It's a functionality which controls the order in which services are queried for 
 </p>
 <br>
 
-as you see apove in the configuration is based on order, So in the hosts field the order was [ `files` ==>  `dns` ] <br>
-since the `files` is before `dns` it means the system will query the `/etc/hosts` file before checking DNS for name service requests.
+as you see above the configuration is based on the order, So in the hosts field the order was [ `files` ==>  `dns` ] <br>
+since the `files` is before `dns` it means the system will lookup in the `/etc/hosts` file before checking DNS for name service requests.
 
 
 
