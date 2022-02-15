@@ -9,7 +9,7 @@ DNS (Domain Name System or Service) is a hierarchical decentralized naming syste
 ```
 
 > Why do we need sometimes to setup a local DNS server using the hosts file "/etc/hosts" for local domain resolution ?
-> otherwise the website won't be found 404 :disappointed:
+> otherwise the website won't be found 404 :pensive:
 
 <b>
  The idea is web servers see the host name that the browser is attempting to contact regardless of how the IP was resolved.
