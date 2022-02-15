@@ -19,7 +19,14 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 | -sS                   | TCP SYN port scan                                                        |
 | -v, -vv, -vvv         | Verbose mode                                                             |
 | -p <port range>       | Port scan for port (-p 22,80) / (-p 1-65536)  or scan all ports (-p-) ,  |
-| -Pn                   | Treat all hosts as online -- skip host discovery                         |
+| -Pn                   | skip host discovery                                                      |
 | -T<0-5>               | Set timing template (higher is faster)                                   |
 | -sC  --script default | Scan with the default nmap scripts  >>  /usr/share/nmap/scripts          |
 |-----------------------|--------------------------------------------------------------------------|
+
+> [https://informationsecurity.medium.com/nmap-pn-no-ping-option-analysis-d9aaa95be5b0](Why -Pn ??) 
+
+
+
+
+
