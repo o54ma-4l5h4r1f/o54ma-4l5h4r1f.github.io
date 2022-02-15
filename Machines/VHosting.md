@@ -47,6 +47,7 @@ ServerAlias example.com *.example.com
 ```
 
 
+<br>
 
 # Naming Service Switching
 
@@ -62,6 +63,7 @@ since the `files` is before `dns` it means the system will lookup in the `/etc/h
 
 
 
+<br>
 
 # Resolving Process
 
