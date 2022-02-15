@@ -11,7 +11,7 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 ```
 
 
-| Options                                                                                          |
+| Options               | Usage                                                                    |
 |-----------------------|--------------------------------------------------------------------------|
 | -A                    | OS and version detection                                                 |
 | -sV                   | determine the version of the services running                            |
