@@ -22,9 +22,9 @@ Host: www.example.com           <<==
 User-Agent: .....
 ```
 
-With name-based virtual hosting, the server relies on the client to report the hostname as part of the HTTP headers. Using this technique, many different hosts can share the same IP address.
+With `name-based virtual hosting`, the server relies on the client to report the hostname as part of the HTTP headers. Using this technique, many different hosts can share the same IP address.
 
-For example, suppose that you are serving the domain www.example.com and you wish to add the virtual host other.example.com, which points at the same IP address. Then you simply add the following to httpd.conf:
+For example, suppose that you are serving the domain `www.example.com` and you wish to add the virtual host `other.example.com`, which points at the same IP address. Then you simply add the following to `httpd.conf`:
 
 ```xml
 <VirtualHost *:80>
@@ -40,7 +40,7 @@ For example, suppose that you are serving the domain www.example.com and you wis
 </VirtualHost>
 ```
 
-Many servers want to be accessible by more than one name. This is possible with the ServerAlias directive, placed inside the <VirtualHost> section.
+Many servers want to be accessible by more than one name. This is possible with the `ServerAlias` directive, placed inside the `VirtualHost` section.
 
 ```xml
 ServerAlias example.com *.example.com
@@ -48,15 +48,13 @@ ServerAlias example.com *.example.com
 
 
 
-# Name Service Switch
+# Naming Service Switch
 
 It's a functionality which controls the order in which services are queried for name service lookups.
 
-<br>
 <p align="center"> 
   <img src='./../assets/images/7.png'> 
-</p>
-<br>
+</p>    
 
 as you see above the configuration is based on the order, So in the hosts field the order was [ `files` ==>  `dns` ] <br>
 since the `files` is before `dns` it means the system will lookup in the `/etc/hosts` file before checking DNS for name service requests.
