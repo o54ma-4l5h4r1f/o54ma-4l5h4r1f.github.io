@@ -22,3 +22,4 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 | -Pn                   | Treat all hosts as online -- skip host discovery                         |
 | -T<0-5>               | Set timing template (higher is faster)                                   |
 | -sC  --script default | Scan with the default nmap scripts  >>  /usr/share/nmap/scripts          |
+|-----------------------|--------------------------------------------------------------------------|
