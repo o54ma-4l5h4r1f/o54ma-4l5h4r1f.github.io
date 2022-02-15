@@ -32,7 +32,7 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 
 <br>
 
-## Default Ports
+### Default Ports
 
 |:--------:|:-------------:|:---------------------------:|
 |   PORT   |    SERVICE    |           VERSION           |
