@@ -433,7 +433,7 @@ id
 We observe that user robert is part of the group bugtracker. Let's try to see if there is any binary withinthat group:
 
 ```
-find / -group bugtracker 2>/dev/null
+find / -group bugtracker 2>/dev/null 
 ```
 
 
