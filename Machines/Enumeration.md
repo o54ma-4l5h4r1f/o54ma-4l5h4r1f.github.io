@@ -48,3 +48,8 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 | 1433/tcp | ms-sql-s      | Microsoft SQL Server        |
 | 3389/tcp | ms-wbt-server | Microsoft Terminal Services |
 |:--------:|:-------------:|:---------------------------:|
+
+
+```note
+Filtered Nmap ports cannot determine whether the port is open because packet filtering prevents its probes from reaching the port. The filtering could be from a dedicated firewall device, router rules, or host-based firewall software. These ports frustrate attackers because they provide so little information. Sometimes they respond with ICMP error messages such as type 3 code 13 (destination unreachable: communication administratively prohibited), but filters that simply drop probes without responding are far more common. This forces Nmap to retry several times just in case the probe was dropped due to network congestion rather than filtering. This slows down the scan dramatically.
+```
