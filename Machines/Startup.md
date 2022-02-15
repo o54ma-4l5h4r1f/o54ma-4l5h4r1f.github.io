@@ -424,9 +424,17 @@ vs
 su -l 
 ```
 
-before using linpeas.sh  ==> read /var/www/html/ files.... 
+before using linpeas.sh  ==> read /var/www/html/ files....    &&&& try sudo -l   &&&    id 
 Let's read one by one the files now. We are goingto start with db.php which seems interesting:
 
+```
+id
+```
+We observe that user robert is part of the group bugtracker. Let's try to see if there is any binary withinthat group:
+
+```
+find / -group bugtracker 2>/dev/null
+```
 
 
 https://github.com/BlackArch/webshells
