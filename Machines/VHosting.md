@@ -48,7 +48,7 @@ ServerAlias example.com *.example.com
 
 
 
-# Naming Service Switch
+# Naming Service Switching
 
 It's a functionality which controls the order in which services are queried for name service lookups.
 
