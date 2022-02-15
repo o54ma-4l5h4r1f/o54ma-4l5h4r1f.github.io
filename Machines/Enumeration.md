@@ -9,7 +9,6 @@ sort : 3
 ```warning
 nmap is so noisy tool especially with the -A option
 ```
-<br>
 
 ```bash
 $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
