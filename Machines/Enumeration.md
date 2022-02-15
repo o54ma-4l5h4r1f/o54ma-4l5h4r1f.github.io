@@ -10,7 +10,7 @@ sort : 3
 $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 ```
 
-
+|-----------------------|--------------------------------------------------------------------------|
 | Options               | Usage                                                                    |
 |-----------------------|--------------------------------------------------------------------------|
 | -A                    | OS and version detection                                                 |
@@ -27,6 +27,15 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 > [Why -Pn ??](https://informationsecurity.medium.com/nmap-pn-no-ping-option-analysis-d9aaa95be5b0) 
 
 
+## Default Ports
 
-
-
+|:-------------:|:-----------:|:------------------------------:|
+|      PORT     |   SERVICE   |             VERSION            |
+|:-------------:|:-----------:|:------------------------------:|
+| 22/tcp        | ssh         | OpenSSH 7.2p2 Ubuntu           |
+| 80/tcp        | http        | Apache  httpd 2.4.18           |
+| 21/tcp        | ftp         | vsftpd 3.0.3                   |
+| 25/tcp        | smtp        | Exim stmpd 4.92                |
+| 139/tcp       | netbios-ssn | Samba (smbd) workgroup         |
+| 445/tcp       | netbios-ssn | Samba (smbd) 4.3.11-Ubuntu     |
+|:-------------:|:-----------:|:------------------------------:|
