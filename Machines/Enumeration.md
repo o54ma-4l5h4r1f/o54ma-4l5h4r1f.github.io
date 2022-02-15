@@ -6,6 +6,11 @@ sort : 3
 
 ## Nmap 
 
+```warning
+nmap is so noisy tool especially with the -A option
+```
+<br>
+
 ```bash
 $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 ```
@@ -26,16 +31,21 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 
 > [Why -Pn ??](https://informationsecurity.medium.com/nmap-pn-no-ping-option-analysis-d9aaa95be5b0) 
 
+<br>
 
 ## Default Ports
 
-|:-------------:|:-----------:|:------------------------------:|
-|      PORT     |   SERVICE   |             VERSION            |
-|:-------------:|:-----------:|:------------------------------:|
-| 22/tcp        | ssh         | OpenSSH 7.2p2 Ubuntu           |
-| 80/tcp        | http        | Apache  httpd 2.4.18           |
-| 21/tcp        | ftp         | vsftpd 3.0.3                   |
-| 25/tcp        | smtp        | Exim stmpd 4.92                |
-| 139/tcp       | netbios-ssn | Samba (smbd) workgroup         |
-| 445/tcp       | netbios-ssn | Samba (smbd) 4.3.11-Ubuntu     |
-|:-------------:|:-----------:|:------------------------------:|
+|:--------:|:-------------:|:---------------------------:|
+|   PORT   |    SERVICE    |           VERSION           |
+|:--------:|:-------------:|:---------------------------:|
+| 21/tcp   | ftp           | vsftpd 3.0.3                |
+| 22/tcp   | ssh           | OpenSSH 7.2p2 Ubuntu        |
+| 23/tcp   | telnet        | Linux Telnetd               |
+| 25/tcp   | smtp          | Exim stmpd 4.92             |
+| 80/tcp   | http          | Apache  httpd 2.4.18        |
+| 135/tcp  | msrpc         | Microsoft Windows RPC       |
+| 139/tcp  | netbios-ssn   | ....                        |
+| 445/tcp  | netbios-ssn   | ....                        |
+| 1433/tcp | ms-sql-s      | Microsoft SQL Server        |
+| 3389/tcp | ms-wbt-server | Microsoft Terminal Services |
+|:--------:|:-------------:|:---------------------------:|
