@@ -28,7 +28,7 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 | -sC  --script default | Scan with the default nmap scripts  >>  /usr/share/nmap/scripts          |
 |-----------------------|--------------------------------------------------------------------------|
 
-> [Why -Pn ??](https://informationsecurity.medium.com/nmap-pn-no-ping-option-analysis-d9aaa95be5b0) 
+> [Why -Pn ??](https://informationsecurity.medium.com/nmap-pn-no-ping-option-analysis-d9aaa95be5b0) when our packets are blocked by a firewall?
 
 <br>
 
