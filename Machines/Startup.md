@@ -384,7 +384,7 @@ p> ./winPEASx64.exe   ==> to run the exe
 
 
 
-
+https://www.hackingarticles.in/mssql-for-pentester-command-execution-with-xp_cmdshell/
 
 https://www.hackingarticles.in/mssql-for-pentester-command-execution-with-xp_cmdshell/
 https://linuxhint.com/run-wget-powershell/
