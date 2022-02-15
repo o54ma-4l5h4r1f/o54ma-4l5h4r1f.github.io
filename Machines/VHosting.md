@@ -65,7 +65,7 @@ since the `files` is before `dns` it means the system will lookup in the `/etc/h
 
 # Resolving Process
 
-the process when sending request to a web-server : 
+<b> the process when sending request to a web-server : </b>
 
 1. Your computer check its local cache `/etc/hosts` (to see if the ip of the website is already stored) <br>
 
