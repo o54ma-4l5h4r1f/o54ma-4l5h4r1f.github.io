@@ -69,23 +69,23 @@ since the `files` is before `dns` it means the system will lookup in the `/etc/h
 
 1. Your computer check its local cache `/etc/hosts` (to see if the ip of the website is already stored) <br>
 
-2. <b> IF NOT</b>,  your computer sends a request to `recursive DNS server / DNS resolver` (Known to your home-router) <br><br>
+2. <b> IF NOT</b>,  your computer sends a request to `recursive DNS server / DNS resolver` (Known to your home-router)
     - Many ISPs have their own recursive servers
     - and some companies such as google and OpenDNS have too
-    - these serves also have caches for the most common requested domains 
+    - these serves also have caches for the most common requested domains <br><br>
 
 3.  <b>IF NOT</b>, the recursive server will pass the request to the `root name DNS server`
     - Before 2004 there were only 13 root name DNS servers in the world, But now there is many more 
-    - root server keep track of the DNS server in the Next Level Down (Top-level Domain Servers) 
+    - root server keep track of the DNS server in the Next Level Down (Top-level Domain Servers) <br><br>
 
 4.  The root server redirect the request to `Top-level Domain servers` (TLD)
     - these servers are split up into extensions i.e. .com requests redirected to a TLD that handles .com domains 
     - i.e. if you search for bbc.co.uk your requests redirected to a TLD that handles .co.uk domains, and so on
-    - TLD servers keep track of the Next Level Down (Authoritative Name Servers) 
+    - TLD servers keep track of the Next Level Down (Authoritative Name Servers) <br><br>
 
 5. the TLD server pass it down to an appropriate `Authoritative Name Server` 
     - used to store DNS records for domains directly
-    - they are the source of information that retrieve the IP addr  
+    - they are the source of information that retrieve the IP addr  <br><br>
 
 <p align="center"> 
   <img src='./../assets/images/8.png'> 
