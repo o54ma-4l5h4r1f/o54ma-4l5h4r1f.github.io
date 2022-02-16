@@ -2,7 +2,7 @@
 sort : 3
 ---
 
-# Mapping The Services
+# Mapping
 
 - Having a proxy listening and intercept all requests while testing ==> {}
 - Investigate the URL and all pages that accessible ==> {}
