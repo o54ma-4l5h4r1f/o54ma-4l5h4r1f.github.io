@@ -2,20 +2,52 @@
 sort : 3
 ---
 
-# Enumeration
+# Mapping The Services
 
-## Nmap 
+- Having a proxy listening and intercept all requests while testing ==> {}
+- Investigate the URL and all pages that accessible ==> {}
+- Find subdomains in the app ==> {}
+- Enumerate Dir and pages ==> {ffuf / fuzz / durb / gobuster}
+- Listing all input vectors that potentially talk to the back end ==> {}
+	- URL parameters 
+	- Forms inputs 
+- Understand how the app functions and the logic of the app ==> {NO Scanners}
+- 
+
+
+
+## Pinging 
+Pinging is normally the first step involved in hacking the target. Ping uses `ICMP` (Internet Control Messaging Protocol) to determine whether the target host is reachable or not, Ping sends out ICMP `Echo` packets to the target host, if the target host is alive it would respond back with ICMP Echo reply packets.
+
+### Usage
+```bash
+$ ping -c 3 $IP 
+```
+
+
+<br>
+<br>
+
+-------- 
+
+
+
+## Port Scanning
+
+After we tested our network connectivity with ping, it's time to determining which ports on the network are open and could be receiving or sending data, This will help us to determine what services may be running on the system.
 
 ```warning
 nmap is so noisy tool especially with the -A option
 ```
 
+### Usage
 ```bash
 $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 ```
 
+### Options
 |-----------------------|--------------------------------------------------------------------------|
-| Options               | Usage                                                                    |
+| Option                | Usage                                                                    |
 |-----------------------|--------------------------------------------------------------------------|
 | -A                    | OS and version detection                                                 |
 | -sV                   | determine the version of the services running                            |
@@ -53,3 +85,9 @@ $ nmap -A -sV -sS -vvv -T4 -Pn -oN nmap.log -p- $IP[/CIDR]
 ```note
 Filtered Nmap ports cannot determine whether the port is open because packet filtering prevents its probes from reaching the port. The filtering could be from a dedicated firewall device, router rules, or host-based firewall software. These ports frustrate attackers because they provide so little information. Sometimes they respond with ICMP error messages such as type 3 code 13 (destination unreachable: communication administratively prohibited), but filters that simply drop probes without responding are far more common. This forces Nmap to retry several times just in case the probe was dropped due to network congestion rather than filtering. This slows down the scan dramatically.
 ```
+
+<br>
+
+----
+
+## Directory, File, DNS and VHost busting

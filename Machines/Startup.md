@@ -3,17 +3,6 @@ sort: 1
 ---
 
 # Contemplate ! 
-# ping
-# /etc/hosts
-
-# nmap 
-Which Nmap switch can we use to enumerate machines when our packets are otherwise blocked by the Windows firewall?  ==> -Pn  ==> no Ping
-
-
-## nmap services
-
-PORT   STATE SERVICE
-23/tcp open  telnet         
 
 ```bash
 $ telnet <IP> <Port>
@@ -21,8 +10,9 @@ Login : username
 Password : passwd
 ```
 
-Account Misconfiguration Vuls:
+# Account Misconfiguration Vuls:
 root:root
+
 
 
 ```note
@@ -206,7 +196,7 @@ Password: `null`
 gobuster 
 
 
-
+# What is fuzzing? Fuzzing is a way of finding bugs using automation
 
 # login pages
 
