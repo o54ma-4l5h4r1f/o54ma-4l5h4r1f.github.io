@@ -8,13 +8,9 @@ Typically, I prefer to setup a new github repository on the browser.
 But if you already have a repo, and you want to clone it and make some editing on it, and push it back...follow these steps  
 
 ## Github CLI
-> Installation <br>
+> [Installation](https://github.com/cli/cli)
 
-https://github.com/cli/cli <br>
-> on Linux and BSD <br>
-
-https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-
+> [On Linux and BSD](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
 
 ```bash
 $ gh auth login
@@ -43,21 +39,29 @@ Press Enter to open github.com in your browser...
 ✓ Logged in as o54ma-4l5h4r1f
 ```
 
+After Authentication and making some editing
+```bash
+git add .
+git commit -m "comment"
+git push -u origin master  # master or main or any other branch
+```
 
-<br><br><br>
+
+
+<br><br>
 
 
 ## GIT LFS
 
 Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
 
-```
+```bash
 git lfs install
 ```
 
 Select the file types you'd like Git LFS to manage (or directly edit your .gitattributes)
 
-```
+```bash
 git lfs track '*.nc'
 git lfs track '*.csv'
 ...
@@ -65,13 +69,13 @@ git lfs track '*.csv'
 
 Now make sure .gitattributes is tracked
 
-```
+```bash
 git add .gitattributes
 ```
 
 And voilà! nothing more to do
 
-```
+```bash
 git add file.csv
 git commit -m "Add large file"
 git push -u origin master
@@ -80,3 +84,5 @@ git push -u origin master
 
 
 
+
+git lfs push --all origin master    # master/main ?? 
