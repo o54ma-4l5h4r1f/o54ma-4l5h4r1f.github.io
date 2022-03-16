@@ -44,43 +44,39 @@ Press Enter to open github.com in your browser...
 ```
 
 
+<br><br><br>
 
 
+## GIT LFS
 
-----
-
-
-```bash
-cd Repo
-git config --list
-```
-
-simply define your username and email regarding your github account.
-
-```bash
-git config --global user.name "<UserName>"
-
-git config --global user.email "<EmailAddress>"
-```
-o54ma-4l5h4r1f
------- 
-
-Git Large File Storage lets you store them on a remote server such as GitHub. Download and install git-lfs by placing it into your $PATH. You will then need to run the following command once per local repository:
+Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
 
 ```
 git lfs install
 ```
 
-Large files are selected by:
+Select the file types you'd like Git LFS to manage (or directly edit your .gitattributes)
 
 ```
 git lfs track '*.nc'
 git lfs track '*.csv'
+...
+```
+
+Now make sure .gitattributes is tracked
 
 ```
-This will create a file named .gitattributes, and voilà! You can perform add and commit operations as normal. Then, you will first need to a) push the files to the LFS, then b) push the pointers to GitHub. Here are the commands:
+git add .gitattributes
+```
+
+And voilà! nothing more to do
 
 ```
-git lfs push --all origin master    # master/main
+git add file.csv
+git commit -m "Add large file"
 git push -u origin master
 ```
+
+
+
+
