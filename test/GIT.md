@@ -4,26 +4,25 @@ sort : 13
 
 # Git 
 
+Typically, I prefer to setup a new github repository on the browser.
+But if you already have a repo, and you want to clone it and make some editing on it, and push it back...follow these steps  
+
 ## Basic Configuration
 
 ```bash
-git config --global user.name "<UserName>"
+cd Repo
+git config --list
 ```
 
-```bash 
-git config --global user.email "<EmailAddress>"
-```
+simply define your username and email regarding your github account.
 
 ```bash
-git config --list
+git config --global user.name "<UserName>"
 
-user.name=o54ma-4l5h4r1f
-user.email=o54ma4l5h4r1f@gmail.com
-
-remote.origin.url=https://github.com/o54ma-4l5h4r1f/repo.git
-
+git config --global user.email "<EmailAddress>"
 ```
-
+o54ma-4l5h4r1f
+------ 
 
 Git Large File Storage lets you store them on a remote server such as GitHub. Download and install git-lfs by placing it into your $PATH. You will then need to run the following command once per local repository:
 
