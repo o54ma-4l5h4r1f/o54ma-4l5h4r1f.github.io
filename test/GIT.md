@@ -7,7 +7,48 @@ sort : 13
 Typically, I prefer to setup a new github repository on the browser.
 But if you already have a repo, and you want to clone it and make some editing on it, and push it back...follow these steps  
 
-## Basic Configuration
+## Github CLI
+> Installation <br>
+
+https://github.com/cli/cli <br>
+> on Linux and BSD <br>
+
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
+
+```bash
+$ gh auth login
+
+? What account do you want to log into?
+> GitHub.com
+  GitHub Enterprise Server
+
+? You're already logged into github.com. Do you want to re-authenticate? (y/N) y
+
+? What is your preferred protocol for Git operations?
+> HTTPS
+  SSH
+
+? Authenticate Git with your GitHub credentials? No
+? How would you like to authenticate GitHub CLI?    
+> Login with a web browser
+  Paste an authentication token
+
+! First copy your one-time code: XXXX-XXXX
+Press Enter to open github.com in your browser...
+
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as o54ma-4l5h4r1f
+```
+
+
+
+
+
+----
+
 
 ```bash
 cd Repo
