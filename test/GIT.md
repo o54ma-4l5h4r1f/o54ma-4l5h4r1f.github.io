@@ -23,7 +23,7 @@ $ gh auth login
 > GitHub.com
   GitHub Enterprise Server
 
-? You're already logged into github.com. Do you want to re-authenticate? (y/N) y
+? You are already logged into github.com. Do you want to re-authenticate? (y/N) y
 
 ? What is your preferred protocol for Git operations?
 > HTTPS
