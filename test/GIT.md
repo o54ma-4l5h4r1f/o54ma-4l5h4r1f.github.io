@@ -12,6 +12,13 @@ But if you already have a repo, and you want to clone it and make some editing o
 
 > [On Linux and BSD](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
 
+
+```
+git config --global user.name "o54ma-4l5h4r1f"
+git config --global user.email "o54ma4l5h4r1f@gmail.com"
+git config --list
+```
+
 ```bash
 $ gh auth login
 
