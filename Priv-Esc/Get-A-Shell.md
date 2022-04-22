@@ -6,6 +6,15 @@ sort : 1
 
 how to get a shell ?? 
 
+## SSH 
+
+
+
+## Reverse Shell 
+
+
+
+
 
 
 # Spawn a TTY shell 
