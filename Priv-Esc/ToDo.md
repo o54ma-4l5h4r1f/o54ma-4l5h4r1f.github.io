@@ -19,7 +19,7 @@ All we need is some how to get a shell....
 
 
 
-python3 -c 'import pty; pty.spawn("/bin/bash")'
+
 
 
 
@@ -210,7 +210,7 @@ sudo -u Username /bin/nano /opt/priv   # not root ??
 
 
 
-### 4. Passwords Mining 
+### 4. Passwords Cracking-Mining 
 ```note
 Logs / Memory / History / Configuration files !! 
 ```
@@ -326,12 +326,11 @@ What if we are looking for a missing/deleted file ??
 
 ### 1. Virtual Hosts
 
-Looking at the /etc/apache2/sites-enabled/internal.conf conﬁguration ﬁle reveals that the
-internal virtual host is running as joanna on localhost port 52846 .
+Looking at the `/etc/apache2/sites-enabled/internal.conf` conﬁguration ﬁle reveals that the
+internal virtual host is running as joanna on localhost port 52846.
 
 
-Listen 127.0.0.1:52846
-
+```xml
 <VirtualHost 127.0.0.1:52846>
     ServerName internal.openadmin.htb
     DocumentRoot /var/www/internal
@@ -344,11 +343,11 @@ AssignUserID joanna joanna
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 </VirtualHost>
-
+```
 
 ##### WHat is happenning up there ?? 
 
 	1. even if you changed the /etc/hosts to "10.10.10.171 internal.openadmin.htb" , you sitill won't be able to access the virtual host !! since the bind address with this service is only the loopback ^^ 
 	2. so we can access it by port forwarding 
 		victim@openadmin $ ssh -R 1337:127.0.0.1:52846 root@10.10.14.2					ssh -R [REMOTE:]REMOTE_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER
-	3. or by curling locally from the victim machine .
+	3. or by curling locally from the victim machine.
