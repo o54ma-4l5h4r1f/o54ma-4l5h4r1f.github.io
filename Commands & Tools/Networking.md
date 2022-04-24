@@ -13,7 +13,9 @@ $ sudo nmap -A -sV -sS -v --script default -Pn [IP]
 
 $ nmap -T4 -sC -sV -Pn -p- --min-rate=1000 -oN nmap.log [IP]
 ```
+
 ---
+
 > Automator 
 
 ```bash
@@ -26,6 +28,7 @@ $ ./nmapAutomator.sh -H 10.10.10.10 -t network -s ./nmap
 ```
 
 ---
+
 > Default Ports 
 
 |        PORT       | STATE |   SERVICE   |       NMAP VERSION EXAMPLE     |
@@ -36,6 +39,7 @@ $ ./nmapAutomator.sh -H 10.10.10.10 -t network -s ./nmap
 | 80/tcp            | open  | http        | Apache  httpd 2.4.18           |
 | 139/tcp           | open  | netbios-ssn | Samba (smbd) workgroup         |
 | 445/tcp           | open  | netbios-ssn | Samba (smbd) 4.3.11-Ubuntu     |
+
 
 ---
 
