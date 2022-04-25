@@ -53,6 +53,30 @@ These ports frustrate attackers because they provide so little information. Some
 
 
 ```danger
-It's a very noisy tool  0_0 , learn proxy-chains to hide your self.  
+It's a very noisy tool, learn proxy-chains to hide your self.  
 ```
+
+<br><br> 
+
+# Nikto
+
+Nikto is a web server vulnerability scanner that can be used for reconnaissance in a manner similar to Nessus and OpenVAS. It can detect a variety of different vulnerabilities but is also not a stealthy scanner. Scanning with Nikto can be effective but is `easily detectable` by an intrusion detection or prevention system (like most active reconnaissance tools).
+
+```bash 
+$ sudo apt-get install nikto 
+
+$ nikto -update # Update scan engine plugins
+$ nikto -h <Hostname/IP address> -output <filename> 
+```
+
+
+<br><br>
+
+
+
+
+
+
+
+
 
