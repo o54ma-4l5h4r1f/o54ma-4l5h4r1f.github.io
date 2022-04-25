@@ -14,7 +14,7 @@ $ sudo nmap -A -sV -sS -v --script default -Pn [IP]
 $ nmap -T4 -sC -sV -Pn -p- --min-rate=1000 -oN nmap.log [IP]
 ```
 
----
+
 
 > Automator 
 
@@ -27,7 +27,7 @@ $ ./nmapAutomator.sh -H academy.htb -t Recon -d 1.1.1.1
 $ ./nmapAutomator.sh -H 10.10.10.10 -t network -s ./nmap
 ```
 
----
+
 
 > Default Ports 
 
@@ -41,7 +41,7 @@ $ ./nmapAutomator.sh -H 10.10.10.10 -t network -s ./nmap
 | 445/tcp           | open  | netbios-ssn | Samba (smbd) 4.3.11-Ubuntu     |
 
 
----
+
 
 > Filtered ports ??
 

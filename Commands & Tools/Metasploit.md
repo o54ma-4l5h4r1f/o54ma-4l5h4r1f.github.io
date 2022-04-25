@@ -11,11 +11,9 @@ Metasploit is primarily designed as an exploitation toolkit. It contains a varie
 ```bash
 $ sudo apt update
 $ sudo apt install metasploit-framework
-
-# 1 upgraded, 0 newly installed, 0 to remove and 1183 not upgraded. ^^ 
 ```
 
-> initialize the database! (PostgreSQL) !! 
+> initialize the database! (PostgreSQL) ?? 
 
 ```bash
 $ msfdb init
@@ -36,14 +34,14 @@ msf6 > save
 </p>
 
 
-| exploit | module holds all of the exploit code                                                                                                            |   |
-|---------|-------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| payload | Used hand in hand with exploits, contains the various bits of `shellcode` we send to have executed following exploitation                         |   |
-| aux     | commonly used in `scanning and verification` machines are exploitable, This is not the same as the actual exploitation of course                  |   |
-| post    | One of the most common activities after exploitation is `looting and pivoting`. Which module provides these capabilities                          |   |
-| encoder | Commonly utilized in `payload obfuscation`, module allows us to modify the 'appearance' of our exploit such that we may avoid signature detection |   |
-| nop     | used with `buffer overflow` and `ROP` attacks                                                                                                       |   |
-| load    | a command to load different modules                                                                                                             |   |
+| exploit | module holds all of the exploit code                                                                                                            |
+|---------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| payload | Used hand in hand with exploits, contains the various bits of `shellcode` we send to have executed following exploitation                         |
+| aux     | commonly used in `scanning and verification` machines are exploitable, This is not the same as the actual exploitation of course                  |
+| post    | One of the most common activities after exploitation is `looting and pivoting`. Which module provides these capabilities                          |
+| encoder | Commonly utilized in `payload obfuscation`, module allows us to modify the 'appearance' of our exploit such that we may avoid signature detection |
+| nop     | used with `buffer overflow` and `ROP` attacks                                                                                                       |
+| load    | a command to load different modules                                                                                                             |
 
 
 
@@ -63,7 +61,7 @@ $ searchsploit -u                         # updating !!
 # OR some of the exploit metadata are not included. To access them,
 $ searchsploit [exploitName Version] -w   # Exploit-DB Online
 
-$ searchsploit  -m  exploit-db-number.rb  # mirror/copy the exploit 
+$ searchsploit -m [exploit-db-number.ext]  # mirror/copy the exploit 
 
 
 # Examples :
