@@ -7,17 +7,27 @@ sort : 13
 Typically, I prefer to setup a new github repository on the browser.
 But if you already have a repo, and you want to clone it and make some editing on it, and push it back...follow these steps  
 
+
+```
+git clone https://github.com/o54ma-4l5h4r1f/o54ma-4l5h4r1f.github.io.git
+
+git config --global user.name "o54ma-4l5h4r1f"
+git config --global user.email "o54ma4l5h4r1f@gmail.com"
+
+git config --list
+```
+
+> if you are using VS-Code, it will make you login into your github accout and authorize it self. 
+
+
+
 ## Github CLI
 > [Installation](https://github.com/cli/cli)
 
 > [On Linux and BSD](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
 
 
-```
-git config --global user.name "o54ma-4l5h4r1f"
-git config --global user.email "o54ma4l5h4r1f@gmail.com"
-git config --list
-```
+
 
 ```bash
 $ gh auth login
