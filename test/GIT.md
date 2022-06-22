@@ -20,6 +20,19 @@ git config --list
 > if you are using VS-Code, it will make you login into your github accout and authorize it self. 
 
 
+```
+git commit -m "."
+
+git add .
+
+git push -u origin master
+  Username for 'https://github.com': o54ma-4l5h4r1f 
+  Password for 'https://o54ma-4l5h4r1f@github.com': ********
+  remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+```
+
+but instead of using accesss tokens .... 
+
 
 ## Github CLI
 > [Installation](https://github.com/cli/cli)
