@@ -1,0 +1,27 @@
+---
+sort: 3
+---
+
+# Terminologies in Python
+
+# MRO
+
+MRO stands for Method Resolution Order. It defines the order in which Python Interpreter looks for a method in a hierarchy of classes.
+
+# mutable & immutable
+
+Mutable is a fancy way of saying that the internal state of the object is changed/mutated
+
+Ex : 
+list, dict, classes
+
+immutable doesn't allow any change in the object once it has been created
+
+
+
+
+
+</br></br></br>
+
+> [For More](https://techvidvan.com/tutorials/terminologies-in-python/)
+
