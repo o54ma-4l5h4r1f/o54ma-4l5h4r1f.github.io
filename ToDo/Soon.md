@@ -88,15 +88,14 @@ Single Page Application (SPA)" that was made using Vue Js.
 
 
 # Linpeas.sh Analysis !! 
-
+```bash
 tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -      
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
 tcp        0      0 127.0.0.1:1337          0.0.0.0:*               LISTEN      1837/node /u	sr/bin/ 
 tcp        0      0 127.0.0.1:8000          0.0.0.0:*               LISTEN      -                   
 tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -                   
 tcp6       0      0 :::80                   :::*                    LISTEN      -   
-
-
+```
 
 
 this shows the running services (maybe another web server ^^)
