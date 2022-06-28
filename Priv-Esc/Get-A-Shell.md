@@ -58,7 +58,7 @@ $ cd /tmp; ssh-keygen
     Enter same passphrase again:                                          # no password 
 
 
-$ cat TmpKey.pub | xclip -selection c                                 # copy the public key
+$ cat TmpKey.pub | xclip -selection c                                     # copy the public key
 ```
 
 ```bash
