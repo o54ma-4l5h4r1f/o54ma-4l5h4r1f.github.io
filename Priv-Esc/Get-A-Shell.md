@@ -54,8 +54,8 @@ $ mkdir ".ssh"; cd .ssh ; touch authorized_keys
 $ cd /tmp; ssh-keygen  
     # Generating public/private rsa key pair.
     Enter file in which to save the key (/home/o54ma/.ssh/id_rsa): TmpKey # file name to save the key 
-    Enter passphrase (empty for no passphrase): 						  # no password 
-    Enter same passphrase again: 								          # no password 
+    Enter passphrase (empty for no passphrase):                           # no password 
+    Enter same passphrase again:                                          # no password 
 
 
 $ cat TmpKey.pub | xclip -selection c                                 # copy the public key
