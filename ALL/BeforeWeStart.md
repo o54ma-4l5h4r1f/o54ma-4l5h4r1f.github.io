@@ -106,7 +106,7 @@ Filtered Nmap ports cannot determine whether the port is open because packet fil
 ### Gobuster
 
 ```bash
-$ gobuster dir --timeout 20s -q -u http://$IP:$PORT/ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt [-x php,html,txt]
+$ gobuster dir --timeout 20s --delay 0ms --threads 10 -q -u http://$IP:$PORT/ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt [-x php,html,txt] 
 ```
 
 ### Dirbuster 

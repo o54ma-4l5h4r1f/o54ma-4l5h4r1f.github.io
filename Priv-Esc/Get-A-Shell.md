@@ -77,6 +77,14 @@ $ ssh -i TmpKey Username@Host
 ```
 
 
+```note
+why we are doing this ?? 
+
+* better interactive shell experience 
+
+* for SSH Tunneling if you don't have the password of the victim user 
+```
+
 
 ### BruteForce Attack
 
