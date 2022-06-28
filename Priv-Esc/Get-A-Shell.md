@@ -23,7 +23,10 @@ some times the shell doesn't work, why ??
     * there is also some tools that ask you to pass the payload as an argv, so make sure how they gonna receive it (inside a double or a single qoutes ??)
 ```
 
-</br></br>
+
+<br><br>
+
+
 
 ## SSH 
 
@@ -80,7 +83,7 @@ $ ssh -i TmpKey Username@Host
 not recommended ^^ :star:
 
 
-</br></br>
+<br><br>
 
 
 
