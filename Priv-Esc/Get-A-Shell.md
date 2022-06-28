@@ -9,6 +9,10 @@ sort : 1
 
 
 
+
+
+
+
 ## Reverse Shell 
 
 [the best place to generate a reverse shell](https://www.revshells.com/)
@@ -22,9 +26,9 @@ some times the shell doesn't work, why ??
 
 > quotations conflict, how to deal with it ?? 
 
-    # embrace the whole payload with double qoutes, then escape the inside ones
-    </br>
-    # there is also some tools that ask you to pass the payload as an argv, so make sure how they gonna receive it (inside a double or a single qoutes ??)
+    * embrace the whole payload with double qoutes, then escape the inside ones
+    
+    * there is also some tools that ask you to pass the payload as an argv, so make sure how they gonna receive it (inside a double or a single qoutes ??)
 ```
 
 
