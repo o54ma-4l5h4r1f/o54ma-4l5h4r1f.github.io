@@ -25,6 +25,16 @@ https://www.ceeyu.io/blog/subdomain-enumeration-tools-and-techniques
 
 * Internet Relay Chat (IRC) is a text-based chat system for instant messaging. IRC is    designed for group communication in discussion forums
 
+111/tcp   open  rpcbind
+6697/tcp  open  ircs-u
+
+
+PORT      STATE SERVICE VERSION
+6697/tcp  open  irc     UnrealIRCd
+8067/tcp  open  irc     UnrealIRCd
+40379/tcp open  status  1 (RPC #100024)
+65534/tcp open  irc     UnrealIRCd
+
 
 
 # Latest Versions 
