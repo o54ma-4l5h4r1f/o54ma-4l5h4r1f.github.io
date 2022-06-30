@@ -1,5 +1,11 @@
 @media (min-width: 1000px){
     .sidebar-wrap .sidebar {
-        width: 320px;
+        width: 300px;
+    }
+}
+
+@media (min-width: 1000px){
+    .content-wrap {
+        margin-left: 300px;
     }
 }
