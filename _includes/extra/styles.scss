@@ -1,10 +1,17 @@
-@media (min-width: 2000px){
+@media (min-width: 1000px){
     .sidebar-wrap .sidebar {
-        width: 0px;
+        width: 300px;
     }
 }
 
-@media (min-width: 2000px){
+@media (min-width: 1000px){
+    .menu-md, .addons-wrap, .sidebar-wrap {
+        left: 0;
+        width: 300px;
+    }
+}
+
+@media (min-width: 1000px){
     .content-wrap {
         margin-left: 300px;
     }
