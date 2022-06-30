@@ -12,6 +12,12 @@
 }
 
 @media (min-width: 1000px){
+    .sidebar-wrap .sidebar .header, .sidebar-wrap .sidebar .toctree {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1000px){
     .content-wrap {
         margin-left: 300px;
     }
