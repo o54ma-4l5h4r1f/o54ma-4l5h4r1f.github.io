@@ -1,9 +1,5 @@
-@media (min-width: 1100px){
-    .sidebar-wrap .sidebar .header, .sidebar-wrap .sidebar .toctree {
-        width: 300px;
-    }
-
-    .menu-md, .addons-wrap, .sidebar-wrap {
-        width: 300px;
+@media (min-width: 300px){
+    .sidebar-wrap .sidebar {
+        width: 320px;
     }
 }
