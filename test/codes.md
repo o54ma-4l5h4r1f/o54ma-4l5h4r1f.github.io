@@ -94,13 +94,10 @@ The <code>&lt;code&gt;</code> element defines inline code.
 
 
 <pre language="c"><code>
+import Text.HTML.TagSoup
 
-#include<stdio.h>
-int main(){
-
-  return 0;
-}
-
+main :: IO ()
+main = print $ parseTags tags
 </code></pre>
 
 
