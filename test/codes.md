@@ -97,6 +97,16 @@ main = print $ parseTags tags
 
 ---
 
+<div id="demo">
+
+  HII 
+
+</div>
+
+
+
+---
+
 
 <script type="text/javascript">
 // JavaScript example
@@ -104,3 +114,10 @@ main = print $ parseTags tags
 document.getElementById("demo").innerHTML = "Hello JavaScript!";
 </script>
 okay
+
+
+
+----
+
+
+
