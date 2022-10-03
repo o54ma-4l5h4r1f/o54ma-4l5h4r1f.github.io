@@ -37,7 +37,7 @@ sort: 3
 
 
 
-```js
+```js title="/src/components/HelloCodeTitle.js"
 function HighlightSomeText(highlight) {
   if (highlight) {
     // highlight-next-line
@@ -59,6 +59,7 @@ function HighlightMoreText(highlight) {
 }
 ```
 
+
 ```jsx {1,4-6,11} showLineNumbers
 import React from 'react';
 
@@ -72,6 +73,7 @@ function MyComponent(props) {
 
 export default MyComponent;
 ```
+
 
 ```jsx live
 function Clock(props) {
