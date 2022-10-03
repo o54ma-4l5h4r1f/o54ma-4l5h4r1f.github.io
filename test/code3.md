@@ -5,7 +5,7 @@ sort : 14
 # Code 3
 
 
-33333 .
+4444 .
 
 
 <link rel="stylesheet" href="../assets/css/My CSS/test.css">
@@ -20,4 +20,15 @@ sort : 14
 </div>
 
 
-<script type="text/javascript" src="../assets/js/My JS/test.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/My JS/test.js"></script> -->
+
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; 
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+} 
+</script>
