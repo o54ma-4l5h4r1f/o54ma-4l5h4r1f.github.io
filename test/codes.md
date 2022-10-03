@@ -68,7 +68,7 @@ The <code>&lt;code&gt;</code> element defines inline code.
 
 ```ruby
 
-   puts "Hello World"
+  puts "Hello World"
 
 ```
 
