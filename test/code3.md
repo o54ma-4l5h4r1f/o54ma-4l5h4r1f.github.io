@@ -8,7 +8,9 @@ sort : 14
 
 <link rel="stylesheet" href="../assets/css/My CSS/test.css">
 
-<div w3-include-html="../assets/css/My HTML/test.html"></div> 
+<div w3-include-html="../assets/html/My HTML/test.html"></div> 
 
-<script type="text/javascript" src="../assets/css/My JS/test.js"></script>
+<script type="text/javascript" src="../assets/js/My JS/test.js"></script>
+
+
 
