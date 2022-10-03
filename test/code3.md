@@ -2,6 +2,8 @@
 sort : 14
 ---
 
+# Code 3 
+.
 <style>
 .slidecontainer {
   width: 100%; /* Width of the outside container */
@@ -44,7 +46,7 @@ sort : 14
 </style>
 
 
-# Code 3 
+
 
 <h1>Custom Range Slider</h1>
 <p>Drag the slider to display the current value.</p>
