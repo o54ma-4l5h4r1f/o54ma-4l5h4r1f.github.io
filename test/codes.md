@@ -103,3 +103,25 @@ function Clock(props) {
 
 
 The <code>&lt;code&gt;</code> element defines inline code.
+
+
+
+| Name | Signature Code                 |
+|------|--------------------------------|
+| Minhas Kamal | <pre>main(m,k){<br>  for(<br>    ;<br>    m%k--?:(k=m++);<br>    k^1?:printf("%i\|",m)<br>  );<br>}</pre> |
+
+
+
+
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```ruby
+   puts "Hello World"
+```
+
+</p>
+</details>
