@@ -8,37 +8,7 @@ sort : 14
 
 <link rel="stylesheet" href="../assets/css/My CSS/test.css">
 
+<div w3-include-html="../assets/css/My HTML/test.html"></div> 
 
+<script type="text/javascript" src="../assets/css/My JS/test.js"></script>
 
-<h1>Custom Range Slider</h1>
-<p>Drag the slider to display the current value.</p>
-
-<div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  <p>Value: <span id="demo"></span></p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" src="path-to-javascript-file.js"></script>
-
-
-<script>
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; 
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-} 
-
-</script>
