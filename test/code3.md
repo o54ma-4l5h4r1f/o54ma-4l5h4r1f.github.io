@@ -12,5 +12,7 @@ sort : 14
 
 <script type="text/javascript" src="../assets/js/My JS/test.js"></script>
 
-
+<script>
+includeHTML();
+</script>
 
