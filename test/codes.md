@@ -70,3 +70,37 @@ The <code>&lt;code&gt;</code> element defines inline code.
 
 </p>
 </details>
+
+
+
+
+
+
+---
+
+
+<del>
+*foo*
+</del>
+
+
+---
+
+
+<pre language="haskell"><code>
+import Text.HTML.TagSoup
+
+main :: IO ()
+main = print $ parseTags tags
+</code></pre>
+
+
+---
+
+
+<script type="text/javascript">
+// JavaScript example
+
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script>
+okay
