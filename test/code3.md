@@ -6,7 +6,7 @@ sort : 14
 .
 
 
-<link rel="stylesheet" href="assets/css/My CSS/test.css">
+<link rel="stylesheet" href="../assets/css/My CSS/test.css">
 
 
 
@@ -18,6 +18,17 @@ sort : 14
   <p>Value: <span id="demo"></span></p>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="path-to-javascript-file.js"></script>
 
 
 <script>
