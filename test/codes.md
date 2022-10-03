@@ -60,15 +60,21 @@ The <code>&lt;code&gt;</code> element defines inline code.
 
 
 <details><summary>CLICK ME</summary>
+
 <p>
+
 
 #### We can hide anything, even code!
 
 ```ruby
+
    puts "Hello World"
+
 ```
 
+
 </p>
+
 </details>
 
 
