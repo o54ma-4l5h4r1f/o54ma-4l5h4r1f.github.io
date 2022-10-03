@@ -15,7 +15,7 @@ pre {
   color: hsl(0, 0%, 90%);
   background: hsl(0, 0%, 10%);
   padding: 10px;
-  border-top-right-radius: 6px;
+  border-top-right-radius: 6px;	
   border-top-left-radius: 6px;
   margin-bottom: 0;
 }
