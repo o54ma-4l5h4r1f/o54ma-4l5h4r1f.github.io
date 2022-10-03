@@ -97,3 +97,9 @@ function Clock(props) {
   );
 }
 ```
+
+
+
+
+
+The <code>&lt;code&gt;</code> element defines inline code.
