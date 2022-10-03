@@ -127,3 +127,14 @@ okay
 
 
 
+
+<details><summary>CLICK ME 2</summary>
+
+<pre language="haskell"><code>
+import Text.HTML.TagSoup
+
+main :: IO ()
+main = print $ parseTags tags
+</code></pre>
+
+</details>
