@@ -36,73 +36,9 @@ sort: 3
 
 
 
-
-```js title="/src/components/HelloCodeTitle.js"
-function HighlightSomeText(highlight) {
-  if (highlight) {
-    // highlight-next-line
-    return 'This text is highlighted!';
-  }
-
-  return 'Nothing highlighted';
-}
-
-function HighlightMoreText(highlight) {
-  // highlight-start
-  if (highlight) {
-    return 'This range is highlighted!';
-  }
-  // highlight-end
-
-  // code-block-error-line
-  return 'Nothing highlighted';
-}
-```
-
-
-```jsx {1,4-6,11} showLineNumbers
-import React from 'react';
-
-function MyComponent(props) {
-  if (props.isBar) {
-    return <div>Bar</div>;
-  }
-
-  return <div>Foo</div>;
-}
-
-export default MyComponent;
-```
-
-
-```jsx live
-function Clock(props) {
-  const [date, setDate] = useState(new Date());
-  useEffect(() => {
-    const timerID = setInterval(() => tick(), 1000);
-
-    return function cleanup() {
-      clearInterval(timerID);
-    };
-  });
-
-  function tick() {
-    setDate(new Date());
-  }
-
-  return (
-    <div>
-      <h2>It is {date.toLocaleTimeString()}.</h2>
-    </div>
-  );
-}
-```
-
-
-
-
-
 The <code>&lt;code&gt;</code> element defines inline code.
+
+
 
 
 
