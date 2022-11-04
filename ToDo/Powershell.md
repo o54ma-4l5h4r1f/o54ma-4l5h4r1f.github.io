@@ -71,6 +71,11 @@ C:\Windows\system32> powershell -c "...."
 > Update-Help
 ```
 
+OR
+
+```powershell
+> Command-Name -?
+```
 
 
 `Get-Command` With pattern matching :
@@ -171,6 +176,8 @@ Root              Property   System.IO.DirectoryInfo Root {get;}
 
 PS C:\Users\test> Get-ChildItem | Select-Object -Property Mode,Name
 
+PS C:\Users\test> Get-ChildItem | Select-Object -Property *
+
 # For more 
 > Get-Help Select-Object -Examples
 <#
@@ -191,6 +198,16 @@ PS C:\Users\test> Get-ChildItem | Select-Object -Property Mode,Name
 
 
 ## Sorting & Filtering Objects
+
+
+`Sort-Object`
+
+```powershell
+>  Get-ChildItem -Path C:\Test -File | Sort-Object -Property Length
+
+>  Get-Process | Sort-Object -Property CPU | Select-Object -Last 5
+```
+
 
 `Where-Object`
 
@@ -216,13 +233,6 @@ below the `$_` operator to iterate through every object passed to the Where-Obje
 
 
 
-`Sort-Object`
-
-```powershell
->  Get-ChildItem -Path C:\Test -File | Sort-Object -Property Length
-
->  Get-Process | Sort-Object -Property CPU | Select-Object -Last 5
-```
 
 
 ## Find a File 
@@ -231,26 +241,95 @@ below the `$_` operator to iterate through every object passed to the Where-Obje
 > Get-ChildItem -Path C:\ -Include *interesting-file.txt* -File -Recurse -ErrorAction SilentlyContinue
 ```
 
-
 ## Find Hashes 
 
 ```powershell
 > Get-FileHash -Algorithm MD5 "C:\file.txt"
 ```
 
-
-
-
-
-
-
-## Powershell vs bash
+## Base64 Decode
 
 ```powershell
-
-cat -> Get-Content "C:\Program Files\interesting-file.txt"
-
+certutil -decode "C:\Users\Administrator\Desktop\b64.txt" decode.txt
 ```
+
+
+
+
+## Powershell Aliases
+
+```powershell
+> Get-Alias
+
+> Get-Command *Alias*
+
+CommandType     Name                                               
+-----------     ----                                               
+Cmdlet          Export-Alias                                       
+Cmdlet          Get-Alias                                          
+Cmdlet          Import-Alias                                       
+Cmdlet          New-Alias                                          
+Cmdlet          Set-Alias                                          
+```
+
+
+
+
+
+> common aliases 
+
+```powershell
+cat :: gc :: Get-Content
+pwd :: gl :: Get-Location 
+cd  :: chdir :: sl :: Set-Location
+
+dir :: ls :: Get-ChildItem
+mkdir :: md 
+
+del :: rm :: rmdir :: erase :: rd :: ri :: Remove-Item
+copy :: cp :: cpi :: Copy-Item
+ren :: rni :: Rename-Item
+ni :: New-Item
+mv :: Move-Item
+
+echo :: Write-Output
+
+clear :: Clear-Host
+
+compare :: diff :: Compare-Object
+
+wget :: curl :: iwr :: Invoke-WebRequest
+
+ps :: Get-Process
+
+where :: Where-Object
+sort :: Sort-Object
+
+gcb :: Get-Clipboard
+```
+
+## Powershell vs Bash 
+
+```powershell
+certutil.exe -?      # --help in bash
+```
+
+
+
+> Create an alias for a cmdlet
+
+```powershell
+> Set-Alias -Name list -Value Get-ChildItem
+
+> Set-Alias -Name np -Value C:\Windows\notepad.exe
+```
+
+
+
+
+
+
+
 
 
 
@@ -259,6 +338,7 @@ cat -> Get-Content "C:\Program Files\interesting-file.txt"
 ## OTHERS
 
 ```powershell
+> (Get-Command -CommandType Cmdlet) | Measure-Object
 > (Get-Command -CommandType Cmdlet) | measure
 # 
 # Count    : 671
@@ -294,24 +374,340 @@ cat -> Get-Content "C:\Program Files\interesting-file.txt"
 
 
 
-> What is cmdlet ?? 
-
-A cmdlet -- pronounced command-let -- is a small, lightweight `command` that is used in the Windows PowerShell environment. A cmdlet typically exists as a small script that is intended to perform a single specific function such as coping files and changing directories. A cmdlet and its relevant parameters can be entered in a PowerShell command line for immediate execution or included as part of a longer PowerShell script that can be executed as desired.
 
 
 
-```note
-> ls & dir 
 
-is just an alias of a command-let
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Enumeration
+
+The first step when you have gained initial access to any machine would be to enumerate. We’ll be enumerating the following
+
+```
+* 
+* basic networking information
+* file permissions
+* registry permissions
+* scheduled and running tasks
+* insecure files
 ```
 
-so how the command-let commands look like ?? 
+### Users & Groups
+
+```powershell
+> Get-LocalUser
+<#
+Name               Enabled Description
+----               ------- -----------
+Administrator      False   Built-in account for administering the computer/domain
+DefaultAccount     False   A user account managed by the system.
+Guest              False   Built-in account for guest access to the computer/domain
+osama              True
+WDAGUtilityAccount False   A user account managed and used by the system for Windows Defender Application
+#>
+
+
+> Get-LocalUser | Select-Object -Property *
+```
+
+#### Users Security Identifier (`SID`)
+
+A security identifier is used to uniquely identify a security principal or security group. 
+
+Users refer to accounts by the account name, but the operating system internally refers to accounts and processes that run in the security context of the account by using their SIDs.
+
+SIDs are `unique` within their scope (domain or local), and they're never reused.
+
+> Security identifier architecture
+
+https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers#security-identifier-architecture
+
 
 
 ```powershell
-PS C:\Windows\system32 > Get-Alias
+> Get-LocalUser -SID  S-1-5-21-1814239583-675844868-3605079295-1001
+<#
+Name  Enabled Description
+----  ------- -----------
+osama True
+#>
 ```
+
+```powershell
+> Get-LocalGroup
+```
+
+
+#### Network information
+
+```powershell
+> Get-NetIPConfiguration
+
+> Get-NetIPConfiguration -Detailed
+
+> Get-NetIPConfiguration | Select-Object -Property *
+```
+
+```powershell
+> Get-NetTCPConnection
+
+> Get-NetTCPConnection | where -Property State -Like "*Listen*"
+
+> NETSTAT.EXE -ant
+```
+
+
+#### Applied patches 
+
+```powershell
+> Get-HotFix
+<#
+Source      Description      HotFixID   InstalledBy   InstalledOn
+------      -----------      --------   -----------   -----------
+O54MA       Update           KB5017026                9/25/2022 12:00:00 AM
+O54MA       Update           KB5019311                9/25/2022 12:00:00 AM
+O54MA       Security Update  KB5017233                9/25/2022 12:00:00 AM
+#>
+
+> Get-Hotfix -Id KB5017026
+```
+
+#### Contents of a backup file
+
+```powershell
+> Get-ChildItem -Path C:\ -Include *.bak* -File -Recurse -ErrorAction SilentlyContinue
+
+> Get-Content "C:\Program Files (x86)\Internet Explorer\passwords.bak"
+```
+
+#### Search for all files containing API_KEY
+
+```powershell
+> Get-ChildItem C:\* -Recurse | Select-String -pattern API_KEY
+```
+
+#### list all the running processes
+
+```powershell
+> Get-Process
+```
+
+#### scheduled tasks
+```powershell
+> Get-ScheduleTask -TaskName new-sched-task
+```
+
+
+#### Who is the owner of the C:\
+```powershell
+> Get-Acl c:/
+<#
+Path Owner                       Access
+---- -----                       ------
+C:\  NT SERVICE\TrustedInstaller NT AUTHORITY\Authenticated Users Allow  AppendData...
+#>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## PowerShell Scripting 
+
+###> Ex1 : 
+```port.txt
+80
+22
+23
+8080
+8888
+1337
+```
+
+```powershell
+
+$system_ports = Get-NetTCPConnection -State Listen
+
+$text_port = Get-Content -Path C:\Users\Administrator\Desktop\ports.txt
+
+foreach($port in $text_port){
+
+    if($port -in $system_ports.LocalPort){
+        echo $port
+    }
+}
+```
+
+
+###>Ex2 :
+```powershell
+$number = Get-Random -Minimum 1 -Maximum 10
+do {
+  $guess = Read-Host - "PromptWhat's your guess?"
+  if ($guess -lt $number) {
+    Write-Output 'Too low!'
+  }
+  elseif ($guess -gt $number) {
+    Write-Output 'Too high!'
+  }
+}
+until ($guess -eq $number)
+```
+
+
+
+###>Ex3 : 
+```powershell
+$date = Get-Date -Date 'November 22'
+while ($date.DayOfWeek -ne 'Thursday') {
+  $date = $date.AddDays(1)
+}
+Write-Output $date
+
+```
+
+
+###>Ex4 : 
+```powershell
+while ($i -lt 5) {
+  $i += 1
+  if ($i -eq 3) {
+    continue
+  }
+  Write-Output $i
+}
+```
+
+###>Ex5 : 
+```powershell
+$number = 1..10
+foreach ($n in $number) {
+  if ($n -ge 4) {
+    Return $n
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PowerShell & Pentesting
+
+
 
 
 
