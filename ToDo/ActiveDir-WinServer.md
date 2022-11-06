@@ -99,7 +99,15 @@ let's add it to the domain
 
 first configure the DNS server to be the ip addr of the win server machine (DC)
 
-<kbd>Windows</kbd> --> Chnage workgroup name controle panel --> change --> Computer name : NEW NAME --> Member of Domain : firstdomain.local --> OK --> Add the name of the administrator/it's password --> OK --> restart
+then change the workgroup to domain 
+
+<kbd>Start Menu</kbd> --> Chnage workgroup name controle panel
+OR
+```
+PS> SystemPropertiesAdvanced
+
+Under 'Computer Name' Tab --> change --> Computer name : NEW NAME --> Member of Domain : firstdomain.local --> OK --> Add the name of the administrator/it's password --> OK --> restart
+```
 
 now we can login with the User we created above
 
