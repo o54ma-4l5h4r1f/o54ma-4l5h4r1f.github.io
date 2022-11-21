@@ -118,7 +118,7 @@ $ id
 
 # go to the browser :: http://127.0.0.1:8888/   ===> forwarded to 127.0.0.1:8000 on the victim machine 
 
-# means locally (on the attacker machine) bind my localhost with 8888 port to the service running on 127.0.0.1:8000 thro this {ssh server} User@10.10.11.105
+# means locally (on the attacker machine) bind my localhost with 8888 port to the service running on 127.0.0.1:8000 through this {ssh server} User@10.10.11.105
 ```
 
 ==> in /etc/sshd_config  ==> GateWayPorts yes ==> default is no   ////    must be yes
