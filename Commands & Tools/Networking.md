@@ -2,7 +2,7 @@
 sort : 1
 ---
 
-# Namp 
+## Namp 
 
 > generally 
 
@@ -58,7 +58,7 @@ It's a very noisy tool, learn proxy-chains to hide your self.
 
 <br><br> 
 
-# Nikto
+## Nikto
 
 Nikto is a web server vulnerability scanner that can be used for reconnaissance in a manner similar to Nessus and OpenVAS. It can detect a variety of different vulnerabilities but is also not a stealthy scanner. Scanning with Nikto can be effective but is `easily detectable` by an intrusion detection or prevention system (like most active reconnaissance tools).
 
