@@ -4,6 +4,33 @@ sort :
 
 # Quik Lists 
 
+
+## list comprehension
+
+```python
+>>> [x ** 2 for x in range(7) if x % 2 == 0]
+# [0, 4, 16, 36]
+
+>>> a = [1, 2, 3]
+>>> b = ['a', 'b', 'c']
+>>> [[i, j] for i in a for j in b]
+# [[1, 'a'], [1, 'b'], [1, 'c'], [2, 'a'], [2, 'b'], [2, 'c'], [3, 'a'], [3, 'b'], [3, 'c']]
+
+>>> ["".join([str(i), j]) for i in a for j in b]
+# ['1a', '1b', '1c', '2a', '2b', '2c', '3a', '3b', '3c']
+
+
+>>> {x:chr(ord('A')+x) for x in range(10)}
+# {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J'}
+
+
+>>> filp_me = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J'}
+>>> {b:a for a,b in filp_me.items()}
+# {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
+```
+
+---
+
 ## string
 
 ```python
