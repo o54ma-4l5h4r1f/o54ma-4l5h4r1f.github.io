@@ -4,8 +4,6 @@ sort: 4
 
 # Multithreading
 
-in python we are not making a list of threads then create each one of them as in c++, just create.
-
 ```python
 import threading
 
