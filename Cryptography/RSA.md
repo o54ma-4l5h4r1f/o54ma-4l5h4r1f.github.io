@@ -26,7 +26,6 @@ lcm :
 
 
 <br>
-<br>
 
 
 ### mod operation
@@ -41,7 +40,6 @@ lcm :
 
 
 <br>
-<br>
 
 
 ### Euler's Phi-Function | Euler's totient Function 
@@ -55,7 +53,6 @@ lcm :
 <img  src="http://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
 
-<br>
 <br>
 <br>
 
@@ -155,7 +152,6 @@ these public and private keys came only from two prime numbers
 
 
 
-<br>
 <br>
 <br>
 
