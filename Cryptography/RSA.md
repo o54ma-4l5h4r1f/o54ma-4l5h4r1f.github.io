@@ -7,19 +7,49 @@ sort : 2
 
 ## Mathmatics
 
-$$
-\begin{aligned}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{aligned}
-$$
+composite number : 
+
+prime number : 
+
+coprime number / relativly prime number : 
+
+congruence operator :
+
+
+### mod operation
+
+$(a+b)$ $mod$ $n$ $=$ $[(a$ $mod$ $n)$ $+$ $(b$ $mod$ $n)]$ $mod$ $n;$
+
+$(a-b)$ $mod$ $n$ $=$ $[(a$ $mod$ $n)$ $-$ $(b$ $mod$ $n)]$ $mod$ $n;$
+
+$(a*b)$ $mod$ $n$ $=$ $[(a$ $mod$ $n)$ $\times$ $(b$ $mod$ $n)]$ $mod$ $n;$
+
+$(10^a)$ $mod$ $n$ $=$ $(10$ $mod$ $a)^n;$
+
+### Euler's Phi-Function | Euler's totient Function 
+
+$\varphi(1) = 0;$
+
+$\varphi(p) = p-1;$ $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime$
+
+$\varphi(m \times n) = \varphi(m) \times \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes$
+
+$\varphi(p^e) = p^e - p^{e-1};$	$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime$
+
+
+
+
+
+
+---
+
+
+## Rquirements
+
+```bash
+$ docker pull sagemath/sagemath
+
+$ docker run -it sagemath/sagemath
+# OR 
+$ docker run -p 8888:8888 sagemath/sagemath-jupyter
+```
