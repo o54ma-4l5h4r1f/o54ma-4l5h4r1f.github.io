@@ -213,7 +213,7 @@ sage: bytes.fromhex(hex(m)[2:])
 b'FLAG{Starting_easily_welcome_to_the_finals}'
 ```
 
-<iframe src="https://leetcode.com/playground/YLi9jCfP/shared" frameBorder="0" width="1000" height="250"></iframe>
+<iframe src="https://codeshare.io/Qn1nWe" frameBorder="0" width="1000" height="250"></iframe>
 
 
 
