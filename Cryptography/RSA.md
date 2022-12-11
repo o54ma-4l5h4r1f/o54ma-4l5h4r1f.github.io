@@ -200,7 +200,9 @@ c = 1609304702150675864692137421020756117295420224934762275567309122941326454731
 
 ---
 
-knowing $\varphi(n)$ and $e$ we can get $d$ easly (the private key)
+<img  src="http://latex.codecogs.com/svg.image?\text{knowing} \ \varphi(n) \ \text{and} \ e \ \text{we can get} \ d \ \text{easly (the private key)}"/>
+
+
 
 > Using sagemath-jupyter
 
