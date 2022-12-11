@@ -181,11 +181,11 @@ c = 1609304702150675864692137421020756117295420224934762275567309122941326454731
 ```
 ---
 
-<img  src="http://latex.codecogs.com/svg.image?Factors(n) = 57809^2 \ \times \ 64453^4 \ \times \ 1552903013 \ \times \ 3157061689^6 \ \times \ 13572582255211282411^3"/>
+<img width=100% src="http://latex.codecogs.com/svg.image?Factors(n) = 57809^2 \ \times \ 64453^4 \ \times \ 1552903013 \ \times \ 3157061689^6 \ \times \ 13572582255211282411^3"/>
 
-<img  src="http://latex.codecogs.com/svg.image?\varphi(n) = \varphi(57809^2) \ \times \ \varphi(64453^4) \ \times \ \varphi(1552903013) \ \times \ \varphi(3157061689^6) \ \times \ \varphi(13572582255211282411^3)"/>
+<img width=100% src="http://latex.codecogs.com/svg.image?\varphi(n) = \varphi(57809^2) \ \times \ \varphi(64453^4) \ \times \ \varphi(1552903013) \ \times \ \varphi(3157061689^6) \ \times \ \varphi(13572582255211282411^3)"/>
 
-<img  src="http://latex.codecogs.com/svg.image?\varphi(n) = (57809^2 - 57809^{2-1}) \ \times \ (64453^4 - 64453^{4-1}) \ \times \ (1552903013 - 1) \ \times \ ...."/>
+<img width=100% src="http://latex.codecogs.com/svg.image?\varphi(n) = (57809^2 - 57809^{2-1}) \ \times \ (64453^4 - 64453^{4-1}) \ \times \ (1552903013 - 1) \ \times \ ...."/>
 
 
 
@@ -225,4 +225,4 @@ b'FLAG{Starting_easily_welcome_to_the_finals}'
 
 <iframe src="https://pastebin.com/0zPBDikU" frameBorder="0" width="100%" height="250"></iframe>
 
-<script src="https://gist.github.com/o54ma-4l5h4r1f/ae845d9a45565a8603923cb43407dd99.js"></script>
+<iframe src="https://gist.github.com/o54ma-4l5h4r1f/ae845d9a45565a8603923cb43407dd99.js"></iframe>
