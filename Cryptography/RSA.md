@@ -31,13 +31,14 @@ lcm :
 
 ### mod operation
 
-$(a+b)$ $mod$ $n$ $=$ $[(a$ $mod$ $n)$ $+$ $(b$ $mod$ $n)]$ $mod$ $n;$
+<img src="http://latex.codecogs.com/svg.image?(a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n;"/>
 
-$(a-b)$ $mod$ $n$ $=$ $[(a$ $mod$ $n)$ $-$ $(b$ $mod$ $n)]$ $mod$ $n;$
+<img src="http://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
 
-$(a*b)$ $mod$ $n$ $=$ $[(a$ $mod$ $n)$ $\times$ $(b$ $mod$ $n)]$ $mod$ $n;$
+<img src="http://latex.codecogs.com/svg.image?(a\times b) \mod n = [(a \mod n)\times (b \mod n)] \mod n;"/>
 
-$(10^a)$ $mod$ $n$ $=$ $(10$ $mod$ $a)^n;$
+<img  src="http://latex.codecogs.com/svg.image?10^a \mod n = (10 \mod n)^a;"/>
+
 
 <br>
 <br>
@@ -275,4 +276,4 @@ $$
 The `+` symbol works on CodeCogs: <img src="http://latex.codecogs.com/svg.image?{}^{m&plus;n-2}\mathrm{C}_{m-1}={}^{m&plus;n-2}\mathrm{C}_{n-1}=\frac{(m&plus;n-2)!}{(m-1)!(n-1)!}" title="{}^{m+n-2}\mathrm{C}_{m-1}={}^{m+n-2}\mathrm{C}_{n-1}=\frac{(m+n-2)!}{(m-1)!(n-1)!}" />.
 
 
-The `+` symbol works on CodeCogs: <img src="http://latex.codecogs.com/svg.image?{}^{m&plus;n-2}\mathrm{C}_{m-1}={}^{m&plus;n-2}\mathrm{C}_{n-1}=\frac{(m&plus;n-2)!}{(m-1)!(n-1)!}" title="{}^{m+n-2}\mathrm{C}_{m-1}={}^{m+n-2}\mathrm{C}_{n-1}=\frac{(m+n-2)!}{(m-1)!(n-1)!}" />.
+The `+` symbol works on CodeCogs: <img src="http://latex.codecogs.com/svg.image? />.
