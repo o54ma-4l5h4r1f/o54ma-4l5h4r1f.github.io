@@ -255,9 +255,9 @@ $$
 \text{Select} e \text{such that} 1 < e < \varphi(n) \text{and} e \text{is coprime to} \varphi(n) \newline
 $$ 
 
-d \gets e^{-1} \mod \varphi(n) \newline
+$d \gets e^{-1} \mod \varphi(n) \newline$
 
-PublicKey \gets (e, \ n) \newline
+$$ PublicKey \gets (e, \ n) \newline$$ 
 
 PrivateKey \gets d \newline
 
