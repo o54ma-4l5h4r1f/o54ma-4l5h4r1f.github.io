@@ -88,7 +88,7 @@ The Keys sizes could be different {512, 1024, 2048, 4096} -- the bigger the hard
 ```
 
 
-```PublicKey 1024 bit
+```
 -----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCsw8csUzHDGkMrL22b7psQc8yn
 YVq4g7ipnxr2ehESpVJiu3WtBNqA01bDbdNL6fFHYHto+nD2Hm7JE/pJqRXt15u2
@@ -98,7 +98,7 @@ JWQGNtR87JEyFbIXfQIDAQAB
 ```
 
 
-```privateKey 1025 bit
+```
 -----BEGIN RSA PRIVATE KEY-----
 MIICWwIBAAKBgQCsw8csUzHDGkMrL22b7psQc8ynYVq4g7ipnxr2ehESpVJiu3Wt
 BNqA01bDbdNL6fFHYHto+nD2Hm7JE/pJqRXt15u2D7WQMsHRM28FZSQF4ByUabQT
