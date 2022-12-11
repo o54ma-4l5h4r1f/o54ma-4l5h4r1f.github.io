@@ -176,7 +176,7 @@ $ docker run -p 8888:8888 sagemath/sagemath-jupyter
 
 ## Security of RSA 
 
-### composite $n$
+### <img  src="http://latex.codecogs.com/svg.image?\text{composite} \ n"/>
 
 > Ex1 : 
 
