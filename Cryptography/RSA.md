@@ -262,15 +262,17 @@ $$
 
 $d \gets e^{-1} \mod \varphi(n) \newline$
 
-
+<!-- <span> -->
 $$ PublicKey \gets (e, \ n) \newline $$ 
+<!-- <span> -->
 
-
-
-PrivateKey \gets d \newline
+$PrivateKey \gets d \newline\$
 
 \text{asdfasdf}
 $$
 
-
-The `+` symbol works on CodeCogs: <img src="http://latex.codecogs.com/svg.image?{}^{m&plus;n-2}\mathrm{C}_{m-1}={}^{m&plus;n-2}\mathrm{C}_{n-1}=\frac{(m&plus;n-2)!}{(m-1)!(n-1)!}" title="{}^{m+n-2}\mathrm{C}_{m-1}={}^{m+n-2}\mathrm{C}_{n-1}=\frac{(m+n-2)!}{(m-1)!(n-1)!}" />.
+\begin{align*}
+&\langle b, \pi_u(x)-x \rangle = 0 \\
+&<=> \\
+&\langle b,\pi_u(x) \rangle - \langle b,x \rangle = 0
+\end{align*}
