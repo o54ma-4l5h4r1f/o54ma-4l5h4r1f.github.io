@@ -213,6 +213,12 @@ sage: bytes.fromhex(hex(m)[2:])
 b'FLAG{Starting_easily_welcome_to_the_finals}'
 ```
 
+<iframe src="https://leetcode.com/playground/YLi9jCfP/shared" frameBorder="0" width="1000" height="250"></iframe>
+
+
+
+
+
 
 
 $$
@@ -231,3 +237,29 @@ $$
     \end{array} \right)
 \end{aligned}
 $$
+
+$$
+\text{Select two large primes} p \text{and} q \text{such that} p \neq q \newline
+$$ 
+
+$$ 
+n \gets p \times q \newline
+$$ 
+
+$$
+\varphi(n) \gets (p-1) \times (q-1) \newline
+$$ 
+
+$$
+\text{Select} e \text{such that} 1 < e < \varphi(n) \text{and} e \text{is coprime to} \varphi(n) \newline
+$$ 
+
+d \gets e^{-1} \mod \varphi(n) \newline
+
+PublicKey \gets (e, \ n) \newline
+
+PrivateKey \gets d \newline
+
+\text{asdfasdf}
+$$
+
