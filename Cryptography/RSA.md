@@ -46,13 +46,14 @@ lcm :
 
 ### Euler's Phi-Function | Euler's totient Function 
 
-$\varphi(1) = 0;$
+<img  src="http://latex.codecogs.com/svg.image?\varphi(1) = 0;"/>
 
-$\varphi(p) = p-1;$ $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime$
+<img  src="http://latex.codecogs.com/svg.image?\varphi(p) = p-1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
-$\varphi(m \times n) = \varphi(m) \times \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes$
+<img  src="http://latex.codecogs.com/svg.image?\varphi(m \times n) = \varphi(m) \times  \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes"/>
 
-$\varphi(p^e) = p^e - p^{e-1};$	$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime$
+<img  src="http://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
+
 
 <br>
 <br>
@@ -66,19 +67,19 @@ $\varphi(p^e) = p^e - p^{e-1};$	$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is 
 
 > Key Generation
 
-Select two large primes $p$ and $q$ such that $p \neq q$ 
+<img  src="http://latex.codecogs.com/svg.image?\text{Select two large primes} \ p \ \text{and} \ q \ \text{such that} \ p \ \neq \ q"/>
 
-$n \gets p \times q$
+<img  src="http://latex.codecogs.com/svg.image?n \gets p \times q"/>
 
-$\varphi(n) \gets (p-1) \times (q-1)$
+<img  src="http://latex.codecogs.com/svg.image?\varphi(n) \gets (p-1) \times (q-1)"/>
 
-Select $e$ such that $1 < e < \varphi(n)$ and $e$ is coprime to $\varphi(n)$ 
+<img  src="http://latex.codecogs.com/svg.image?\text{Select} \ e \ \text{such that} \ 1 < e < \varphi(n) \ \text{and} \ e \ \text{is coprime to} \ \varphi(n)"/>
 
-$d \gets e^{-1} \mod \varphi(n)$
+<img  src="http://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n)"/>
 
-$PublicKey \gets (e, \ n)$
+<img  src="http://latex.codecogs.com/svg.image?PublicKey \gets (e, \ n)"/>
 
-$PrivateKey \gets d$
+<img  src="http://latex.codecogs.com/svg.image?PrivateKey \gets d"/>
 
 ---
 
@@ -119,25 +120,31 @@ these public and private keys came only from two prime numbers
 
 ---
 
-$P \gets PlainText$
+<img  src="http://latex.codecogs.com/svg.image?P \gets PlainText"/>
 
-$C \gets CipherText$
+<br>
+
+<img  src="http://latex.codecogs.com/svg.image?C \gets CipherText"/>
 
 ---
 
 
 > Enccryption
 
+<img  src="http://latex.codecogs.com/svg.image?C = P^e \mod n"/>
 
-$C = P^e \mod n$
 
 <br>
 
 > Exponential Complexity
 
-without having $d$ it's hard to find $P$ 
+<img  src="http://latex.codecogs.com/svg.image?\text{without having} \ d \ \text{it's hard to find} \ P"/>
 
-$P = \sqrt[e]{C} \mod n$
+<br>
+
+<img  src="http://latex.codecogs.com/svg.image?P = \sqrt[e]{C} \mod n"/>
+
+
 
 
 
@@ -145,7 +152,8 @@ $P = \sqrt[e]{C} \mod n$
 
 > Decryption
 
-$P = C^d \mod n$
+<img  src="http://latex.codecogs.com/svg.image?P = C^d \mod n"/>
+
 
 
 <br>
@@ -182,11 +190,18 @@ c = 1609304702150675864692137421020756117295420224934762275567309122941326454731
 ```
 ---
 
-$Factors(n) = 57809^2 \times 64453^4 \times 1552903013 \times 3157061689^6 \times 13572582255211282411^3$
+<img  src="http://latex.codecogs.com/svg.image?Factors(n) = 57809^2 \ \times \ 64453^4 \ \times \ 1552903013 \ \times \ 3157061689^6 \ \times \ 13572582255211282411^3"/>
 
-$\varphi(n) = \varphi(57809^2) \times \varphi(64453^4) \times \varphi(1552903013) \times \varphi(3157061689^6) \times \varphi(13572582255211282411^3)$
+<br>
 
-$\varphi(n) = (57809^2 - 57809^{2-1}) \times (64453^4 - 64453^{4-1}) \times (1552903013 - 1) \times ....$
+<img  src="http://latex.codecogs.com/svg.image?\varphi(n) = \varphi(57809^2) \ \times \ \varphi(64453^4) \ \times \ \varphi(1552903013) \ \times \ \varphi(3157061689^6) \ \times \ \varphi(13572582255211282411^3)"/>
+
+<br>
+
+<img  src="http://latex.codecogs.com/svg.image?\varphi(n) = (57809^2 - 57809^{2-1}) \ \times \ (64453^4 - 64453^{4-1}) \ \times \ (1552903013 - 1) \ \times \ ...."/>
+
+
+
 
 ---
 
@@ -220,60 +235,3 @@ b'FLAG{Starting_easily_welcome_to_the_finals}'
 <iframe src="https://codeshare.io/Qn1nWe" frameBorder="0" width="100%" height="250"></iframe>
 
 <iframe src="https://pastebin.com/0zPBDikU" frameBorder="0" width="100%" height="250"></iframe>
-
-
-
-
-
-
-$$
-\begin{aligned}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{aligned}
-$$
-
-$$
-\begin{eqnarray}
-\text{Select two large primes} p \text{and} q \text{such that} p \neq q \newline
-end{eqnarray}
-$$ 
-
-$$ 
-n \gets p \times q \newline
-$$ 
-
-$$
-\varphi(n) \gets (p-1) \times (q-1) \newline
-$$ 
-
-$$
-\text{Select} e \text{such that} 1 < e < \varphi(n) \text{and} e \text{is coprime to} \varphi(n) \newline
-$$ 
-
-$d \gets e^{-1} \mod \varphi(n) \newline$
-
-
-$$ PublicKey \gets (e, \ n) \newline $$ 
-
-
-$PrivateKey \gets d \newline\$
-
-\text{asdfasdf}
-$$
-
-
-The `+` symbol works on CodeCogs: <img src="http://latex.codecogs.com/svg.image?{}^{m&plus;n-2}\mathrm{C}_{m-1}={}^{m&plus;n-2}\mathrm{C}_{n-1}=\frac{(m&plus;n-2)!}{(m-1)!(n-1)!}" title="{}^{m+n-2}\mathrm{C}_{m-1}={}^{m+n-2}\mathrm{C}_{n-1}=\frac{(m+n-2)!}{(m-1)!(n-1)!}" />.
-
-
-The `+` symbol works on CodeCogs: <img src="http://latex.codecogs.com/svg.image? />.
