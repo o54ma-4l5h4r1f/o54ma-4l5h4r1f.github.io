@@ -33,15 +33,9 @@ lcm :
 
 <img src="http://latex.codecogs.com/svg.image?(a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n;"/>
 
-<br>
-
 <img src="http://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
 
-<br>
-
 <img src="http://latex.codecogs.com/svg.image?(a\times b) \mod n = [(a \mod n)\times (b \mod n)] \mod n;"/>
-
-<br>
 
 <img  src="http://latex.codecogs.com/svg.image?10^a \mod n = (10 \mod n)^a;"/>
 
@@ -54,15 +48,9 @@ lcm :
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(1) = 0;"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?\varphi(p) = p-1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?\varphi(m \times n) = \varphi(m) \times  \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes"/>
-
-<br>
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
@@ -81,27 +69,15 @@ lcm :
 
 <img  src="http://latex.codecogs.com/svg.image?\text{Select two large primes} \ p \ \text{and} \ q \ \text{such that} \ p \ \neq \ q"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?n \gets p \times q"/>
-
-<br>
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(n) \gets (p-1) \times (q-1)"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?\text{Select} \ e \ \text{such that} \ 1 < e < \varphi(n) \ \text{and} \ e \ \text{is coprime to} \ \varphi(n)"/>
-
-<br>
 
 <img  src="http://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n)"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?PublicKey \gets (e, \ n)"/>
-
-<br>
 
 <img  src="http://latex.codecogs.com/svg.image?PrivateKey \gets d"/>
 
@@ -111,6 +87,7 @@ lcm :
 The Keys sizes could be different {512, 1024, 2048, 4096} -- the bigger the harder to crack -- 
 ```
 
+
 ```PublicKey 1024 bit
 -----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCsw8csUzHDGkMrL22b7psQc8yn
@@ -119,6 +96,7 @@ D7WQMsHRM28FZSQF4ByUabQTwsZaRpPxkS9VVXgj7cJajDkK8zd32ag8J41J0o8S
 JWQGNtR87JEyFbIXfQIDAQAB
 -----END PUBLIC KEY-----
 ```
+
 
 ```privateKey 1025 bit
 -----BEGIN RSA PRIVATE KEY-----
@@ -146,8 +124,6 @@ these public and private keys came only from two prime numbers
 
 <img  src="http://latex.codecogs.com/svg.image?P \gets PlainText"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?C \gets CipherText"/>
 
 ---
@@ -158,16 +134,15 @@ these public and private keys came only from two prime numbers
 <img  src="http://latex.codecogs.com/svg.image?C = P^e \mod n"/>
 
 
+
+
 <br>
 
 > Exponential Complexity
 
 <img  src="http://latex.codecogs.com/svg.image?\text{without having} \ d \ \text{it's hard to find} \ P"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?P = \sqrt[e]{C} \mod n"/>
-
 
 
 
@@ -216,11 +191,7 @@ c = 1609304702150675864692137421020756117295420224934762275567309122941326454731
 
 <img  src="http://latex.codecogs.com/svg.image?Factors(n) = 57809^2 \ \times \ 64453^4 \ \times \ 1552903013 \ \times \ 3157061689^6 \ \times \ 13572582255211282411^3"/>
 
-<br>
-
 <img  src="http://latex.codecogs.com/svg.image?\varphi(n) = \varphi(57809^2) \ \times \ \varphi(64453^4) \ \times \ \varphi(1552903013) \ \times \ \varphi(3157061689^6) \ \times \ \varphi(13572582255211282411^3)"/>
-
-<br>
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(n) = (57809^2 - 57809^{2-1}) \ \times \ (64453^4 - 64453^{4-1}) \ \times \ (1552903013 - 1) \ \times \ ...."/>
 
