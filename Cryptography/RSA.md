@@ -33,9 +33,15 @@ lcm :
 
 <img src="http://latex.codecogs.com/svg.image?(a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n;"/>
 
+<br>
+
 <img src="http://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
 
+<br>
+
 <img src="http://latex.codecogs.com/svg.image?(a\times b) \mod n = [(a \mod n)\times (b \mod n)] \mod n;"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?10^a \mod n = (10 \mod n)^a;"/>
 
@@ -48,9 +54,15 @@ lcm :
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(1) = 0;"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?\varphi(p) = p-1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?\varphi(m \times n) = \varphi(m) \times  \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
@@ -69,15 +81,27 @@ lcm :
 
 <img  src="http://latex.codecogs.com/svg.image?\text{Select two large primes} \ p \ \text{and} \ q \ \text{such that} \ p \ \neq \ q"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?n \gets p \times q"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?\varphi(n) \gets (p-1) \times (q-1)"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?\text{Select} \ e \ \text{such that} \ 1 < e < \varphi(n) \ \text{and} \ e \ \text{is coprime to} \ \varphi(n)"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n)"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?PublicKey \gets (e, \ n)"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?PrivateKey \gets d"/>
 
