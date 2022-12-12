@@ -4,16 +4,6 @@ sort : 2
 
 # RSA 
 
-
-
-
-<br>
-<br>
-
-
-
----
-
 ## Procedure
 
 > Key Generation
@@ -126,9 +116,7 @@ $ docker run -p 8888:8888 sagemath/sagemath-jupyter
 
 ## Security of RSA 
 
-### <img  src="http://latex.codecogs.com/svg.image?\text{composite} \ n"/>
-
-> Ex1 : 
+### composite n
 
 ```python
 n = 221714271158005222817666050308401368660908569227103024781696324826668748920975811165767447795834564642795098601291978741922902819199320110937373351090463
