@@ -163,3 +163,36 @@ b'FLAG{Starting_easily_welcome_to_the_finals}'
 ```
 
 <!-- <iframe src="https://codeshare.io/Qn1nWe" frameBorder="0" width="100%" height="250"></iframe> -->
+
+
+
+<br>
+
+### e | p-1  and  e | q-1
+
+```python
+n = 57996511214023134147551927572747727074259762800050285360155793732008227782157
+e = 17
+cipher = 19441066986971115501070184268860318480501957407683654861466353590162062492971
+# from factordb.com
+p, q = 172036442175296373253148927105725488217, 337117592532677714973555912658569668821
+```
+
+```python
+sage: (p - 1) / e
+10119790716193904309008760417983852248
+
+sage: (q - 1) / e
+19830446619569277351385641921092333460
+```
+
+---
+
+<!-- https://hackmd.io/fmdfFQ2iS6yoVpbR3KCiqQ?view#cryptobaby-rsa -->
+
+---
+
+
+## References
+
+* https://mathsci.kaist.ac.kr/cms/wp-content/uploads/2017/11/NumberTheory_Sage.pdf
