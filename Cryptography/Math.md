@@ -6,19 +6,19 @@ sort : 1
 
 ## Concepts and Definitions
 
-*_gcd_* : Greatest common divisor of two numbers is the greatest common factor number that divides them
+*gcd* : Greatest common divisor of two numbers is the greatest common factor number that divides them
 
-*_lcm_* : Least common multiple of two numbers is the lowest number that can be divisible by both numbers
+*lcm* : Least common multiple of two numbers is the lowest number that can be divisible by both numbers
 
-_*composite number*_ : have more than two factors
+*composite number* : have more than two factors
 
-*_prime number_* : only divisible by 1 and it self
+*prime number* : only divisible by 1 and it self
 
-*_coprime numbers / relativly prime numbers_* : do not have any common factor other than 1 `gcd(num1, num2) = 1`
+*coprime numbers / relativly prime numbers* : do not have any common factor other than 1 `gcd(num1, num2) = 1`
 
-_*congruence operator*_ : `≡` is the symbol for congruence, which means the values A and B are in the same equivalence class. i.e. `2 ≡ 12 (mod 10)`  ==> `2 mod 10 = 12 mod 10` 
+*congruence operator* : `≡` is the symbol for congruence, which means the values A and B are in the same equivalence class. i.e. `2 ≡ 12 (mod 10)`  ==> `2 mod 10 = 12 mod 10` 
 
-*_number factorization_* : breaking down a number as the multiplication of prime numbers 
+*number factorization* : breaking down a number as the multiplication of prime numbers 
 
 
 <br>
@@ -27,7 +27,9 @@ _*congruence operator*_ : `≡` is the symbol for congruence, which means the va
 
 ## Integer Factorization
 
-![https://en.wikipedia.org/wiki/Integer_factorization](https://en.wikipedia.org/wiki/File:PrimeDecompositionExample.svg)
+By the fundamental theorem of arithmetic, every positive integer has a unique prime factorization.
+
+<img src="http://latex.codecogs.com/svg.image?n = p_1^{e_1} \times p_2^{e_2} \times ... \times p_k^{e_k}"/>
 
 
 
