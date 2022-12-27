@@ -40,7 +40,7 @@ $ ssh -i PrivateKey Username@Host
 ```
 
 
-### Connecting Via SSH is Better ? (.ssh)
+### Persiste Yourself !
 
 you already having a shell ...  
 
@@ -88,7 +88,7 @@ why we are doing this ??
 
 ### BruteForce Attack
 
-not recommended ^^ :star:
+...
 
 
 <br><br>

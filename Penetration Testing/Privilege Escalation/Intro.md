@@ -16,5 +16,5 @@ But before we get started, How To Get A Shell in the first place ?
 
 I preferred to make most of my writing in a cheat sheets format, giving you the head lines, and leaving you having a great time with goolge ^^ 
 
-<a href='https://o54ma-4l5h4r1f.github.io/Penetration Testing/Privilege Escalation/Spawning a Shell.md '> Spawning a Shell </a>
+<a href='https://o54ma-4l5h4r1f.github.io/Penetration Testing/Privilege Escalation/Spawning a Shell.md '> Get a Shell </a>
 
