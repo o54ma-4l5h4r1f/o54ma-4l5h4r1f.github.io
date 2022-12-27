@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Linux
+# Linux Priv-Esc
 {% include list.liquid all=true %}
 
 

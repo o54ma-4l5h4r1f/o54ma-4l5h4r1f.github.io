@@ -90,7 +90,7 @@ Techniques used for persistence include any access, action, or configuration cha
 
 Privilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. These techniques often overlap with Persistence techniques, as OS features that let an adversary persist can execute in an elevated context. 
 
-[How to begin ??](#)
+[How to begin ??](https://o54ma-4l5h4r1f.github.io/Penetration%20Testing/Privilege%20Escalation/)
 
 ---
 

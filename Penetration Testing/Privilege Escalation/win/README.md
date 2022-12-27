@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Windows
+# Windows Priv-Esc
 {% include list.liquid all=true %}
 
 
