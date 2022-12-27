@@ -9,7 +9,7 @@ A penetration test, is a simulated cyber attack against your computer system to 
 throughout this I will be following the `MITRE ATT&CK Framework` knowledge base of *adversary tactics* and *techniques* which are based on real-world observations, The OWASP Top 10 methodologies, And my prefered ways to start penetration testing on any server or domain.
 
 
-## 1. Planning and Reconnaissance	
+## 1. Planning and Reconnaissance
 
 By Defining the scope and goals of the test, including the systems to be addressed and the testing methods to be used. 
 
@@ -23,20 +23,18 @@ By Collecting hosts metadata about services and users, Checking informations abo
 
 > Scanning (Active vs. Passive) 
 
-An `Active` vulnerability scanner directly interact with the systems by sending a probe request or requesting a probe response. e.g.
-
-* Scanning IP Blocks (ex: [Nmap](#))
-
-* Vulnerability Scanning (ex: [Nmap](#), [Nikto](#))
-
-* Wordlist Scanning / Brute Forcing & crawling (ex: [Dirb](#), [DirBuster](#), [GoBuste](#), s3recon, GCPBucketBrute)
-	* its goal is the identification of content and infrastructure (web directories and DNS subdomains) rather than the discovery of valid credentials.
-
-	* Wordlists used in these scans may contain generic, commonly used names and file extensions or terms specific to a particular software
-
-
-
+The `Active` scanner directly interact with the systems by sending a probe request or requesting a probe response. e.g.
 On the opposite `passive` scanners watches the network’s traffic flow to collect information about its systems and endpoints, Unlike Active scanning it doesn't involve direct interaction with the target.
+
+some techniques to use :
+
+* Network & Vulnerability Scanning (ex: [Nmap](#), [Nikto](#), OpenVAS, Amass)
+
+* URIs Scanning (ex: [Dirb](#), [DirBuster](#), [GoBuste](#), [dirsearch](#))
+
+* Subdomains Scanning (Amass, SubBrute, s3recon, ...)
+
+* Crawling (Hakrawler)
 
 ---
 
@@ -46,7 +44,17 @@ Initial Access consists of techniques that use various *entry vectors* to gain t
 
 Footholds gained through initial access may allow for continued access, like valid accounts and use of external remote services, or may be limited-use due to changing passwords.
 
-> Web Exploitation 
+### Social Engineering
+
+[Soon!](#)
+
+### Exploit Public-Facing Application/services
+
+can be found through online tools that scan the internet for open ports and services. Version numbers for the exposed application may provide adversaries an ability to target specific known vulnerabilities.
+
+[Used Techniques](https://attack.mitre.org/groups/G0034/) 
+
+> Web Exploitation
 
 [How to begin ??](#)
 
@@ -66,6 +74,8 @@ Footholds gained through initial access may allow for continued access, like val
 Execution consists of techniques that result in adversary-controlled code running on a local or remote system. 
 Techniques that run malicious code are often *paired with techniques from all other tactics to achieve broader goals*, like exploring a network or stealing data. [for more](https://attack.mitre.org/tactics/TA0002/)
 
+Simple Example: uploading a php reverse shell on the webserver and execute it to gain a shell.  
+
 
 ---
 
@@ -78,8 +88,9 @@ Techniques used for persistence include any access, action, or configuration cha
 
 ## 5. Privilege Escalation
 
-Privilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. 
+Privilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. These techniques often overlap with Persistence techniques, as OS features that let an adversary persist can execute in an elevated context. 
 
+[How to begin ??](#)
 
 ---
 
