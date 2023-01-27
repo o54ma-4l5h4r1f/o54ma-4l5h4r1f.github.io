@@ -372,6 +372,8 @@ Likewise, if it has no solution, then it is called a quadratic non-residue modul
 
 ```
 So the square root of the Quadratic Residue modulo an integer equal ±x  
+
+And the square root of the None Quadratic Residue modulo an integer does not exist !! 
 ```
 
 if n is a prime number you will find out that exactly half of the integers between 1 and p−1 are squares mod p, that is, the congruence 
@@ -418,4 +420,81 @@ has a <img  src="https://latex.codecogs.com/svg.image?\frac{p-1}{2}"/> solution
 ```note
 A number that is congruent to 0 mod p is neither a residue nor a non-residue. 
 ```
+
+> Euler’s criterion
+
+A number `x` is square root of `q` under modulo `p` if 
+
+<img  src="https://latex.codecogs.com/svg.image?x^{2} \equiv q \ (mod\ p)"/>
+
+
+<br>
+
+>  Properties of quadratic (non-)residues
+
+* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \times \text{Quadratic Residue} = Quadratic Residue"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \times \text{Quadratic Non-Residue} = Quadratic Non-Residue"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Non-Residue} \times \text{Quadratic Non-Residue} = Quadratic Residue"/>
+
+an easy way to remember this : 
+
+<img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \leftarrow 1, \ \ \ \text{Quadratic Non-Residue} \leftarrow 0"/>	
+
+
+
+
+<br>
+
+> Legendre symbol
+
+The Legendre Symbol gives an efficient way to determine whether an integer is a quadratic residue modulo an odd prime p
+
+
+<img  src="https://latex.codecogs.com/svg.image?\frac{q}{p} \equiv q^{(\frac{p-1}{2})} \ (mod\ p)"/>	
+
+Legendre's Symbol obeys:
+
+<img  src="https://latex.codecogs.com/svg.image?\left\{\frac{q}{p} = 1\right\} \ \text{if} \ q \ \text{is a quadratic residue and} \ q \not\equiv 0 \ (mod\ p)"/>	
+
+<img  src="https://latex.codecogs.com/svg.image?\left\{\frac{q}{p} = -1\right\} \ \text{if} \ q \ \text{is a quadratic non-residue mod p}"/>	
+
+<img  src="https://latex.codecogs.com/svg.image?\left\{\frac{q}{p} = 0\right\} \ \text{if} \ q \equiv 0 \ (mod\ p)"/>
+
+
+Which means given any integer a, calculating `pow(q, (p-1)//2, p)` is enough to determine if q is a quadratic residue.
+
+
+> Tonelli-Shanks algorithm
+
+is a technique for solving for x in a congruence of the form:
+
+<img  src="https://latex.codecogs.com/svg.image?x^{2} \equiv q \ (mod\ p)"/>
+
+which is also the square roots modulo a prime 
+
+```python
+sage: from sage.rings.finite_rings.integer_mod import square_root_mod_prime 
+
+sage: q = ... # the Quadratic Residue
+sage: p = ... # the modulus
+
+sage: q = Mod(q, p)
+
+sage: square_root_mod_prime(q, p)
+```
+
+```note
+Tonelli-Shanks doesn't work for composite (non-prime) moduli,
+
+The main use-case for this algorithm is finding elliptic curve co-ordinates
+```
+
+
+
+
+
+
+
 
