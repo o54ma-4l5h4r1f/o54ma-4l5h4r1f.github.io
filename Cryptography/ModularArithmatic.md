@@ -174,11 +174,11 @@ The last digit of a number is equivalent to the number taken modulo 10.
 
 knwing that <img  src="http://latex.codecogs.com/svg.image?p"/> is a prime number
 
-1. <img  src="http://latex.codecogs.com/svg.image?a^{p} \equiv a \ (mod \ p)"/>
+* <img  src="http://latex.codecogs.com/svg.image?a^{p} \equiv a \ (mod \ p)"/>
 
-2. <img  src="http://latex.codecogs.com/svg.image?a^{p-1} \equiv 1 \ (mod \ p)"/>
+* <img  src="http://latex.codecogs.com/svg.image?a^{p-1} \equiv 1 \ (mod \ p)"/>
 
-3. <img  src="http://latex.codecogs.com/svg.image?a^{-1} \equiv a^{p-2} \ (mod\ p)"/>
+* <img  src="http://latex.codecogs.com/svg.image?a^{-1} \equiv a^{p-2} \ (mod\ p)"/>
 
 
 <details style="dispaly=flex;"><summary>HOW ?</summary>
@@ -187,11 +187,19 @@ knwing that <img  src="http://latex.codecogs.com/svg.image?p"/> is a prime numbe
 
 <img  src="http://latex.codecogs.com/svg.image?a^{p-1} \equiv 1 \ (mod\ p)"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?a^{p-1} \times a^{-1} \equiv a^{-1} \ (mod\ p)"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?a^{p-2} \times a \times a^{-1} \equiv a^{-1} \ (mod\ p)"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?a^{p-2} \equiv a^{-1} \ (mod\ p)"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?a^{p-2} \mod p = a^{-1}"/>
 
@@ -237,13 +245,19 @@ knwing that <img  src="http://latex.codecogs.com/svg.image?p"/> is a prime numbe
 
 <img  src="http://latex.codecogs.com/svg.image?d \equiv 3^{-1} \equiv 3^{p-2} \ (mod\ p)"/>
 
+<br>
+
 <img  src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 3^{13-2} \ (mod\ 13)"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 9 \ (mod\ 13)"/>
 
 <p>hence</p>
 
 <img  src="http://latex.codecogs.com/svg.image?3 \times 3^{-1} \equiv 1 \ (mod\ 13)"/>
+
+<br>
 
 <img  src="http://latex.codecogs.com/svg.image?3 \times 9 \equiv 1 \ (mod\ 13)"/>
 
