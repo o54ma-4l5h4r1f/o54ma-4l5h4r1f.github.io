@@ -553,10 +553,75 @@ There is a unique solution :
 
 <img  src="https://latex.codecogs.com/svg.image?\text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1})"/>
 
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?x = 872"/>
+
 </div>
 
 </details>
 
 <br>
+
+```python3
+sage: CRT_list([2,3,5], [5,11,17])
+872
+```
+
+
+
+
+
+
+
+x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
