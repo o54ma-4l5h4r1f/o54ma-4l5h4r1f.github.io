@@ -82,14 +82,23 @@ under both addition and multiplication there is an inverse element `b` for every
 ---------------------------------------------
 > Properties of Exponentiation
 
-<details><summary>CLICK ME 2</summary>
-
-<pre>
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ a^{k} \equiv b^{k} \ (mod\ N); \  \text{for any positive integer} \ k"/>
-</pre>
+
+
+
+<details><summary>EXAMPLES</summary>
+
+<img  src="http://latex.codecogs.com/svg.image?\text{What is} \ 3 ^{16} \ (mod\ 4) \ ?"/>
+
+we observe that  :
+
+<img  src="http://latex.codecogs.com/svg.image?3^{2} \equiv 9 \equiv 1 \ (mod\ 4)"/>
+
+so
+
+<img  src="http://latex.codecogs.com/svg.image?3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4)"/>
 
 </details>
-
 
 
 
