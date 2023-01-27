@@ -76,7 +76,7 @@ under both addition and multiplication there is an inverse element `b` for every
 ---------------------------------------------
 > Properties of multiplication
 
-
+<img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N);"/>
 
 
 ---------------------------------------------
@@ -91,11 +91,13 @@ under both addition and multiplication there is an inverse element `b` for every
 <img  src="http://latex.codecogs.com/svg.image?\text{What is} \ 3 ^{16} \ (mod\ 4) \ ?"/>
 
 <br>
+
 we observe that
 
 <img  src="http://latex.codecogs.com/svg.image?3^{2} \equiv 9 \equiv 1 \ (mod\ 4)"/>
 
 <br>
+
 so
 
 <img  src="http://latex.codecogs.com/svg.image?3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4)"/>
