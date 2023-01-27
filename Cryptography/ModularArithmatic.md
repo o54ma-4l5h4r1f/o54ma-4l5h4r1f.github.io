@@ -208,9 +208,33 @@ knwing that <img  src="https://latex.codecogs.com/svg.image?p"/> is a prime numb
 </details>
 
 
+
+
 ---
 
-## Bézout's_identity ??????????????
+## Euler's Phi-Function | Euler's totient Function 
+
+* <img  src="https://latex.codecogs.com/svg.image?\varphi(1) = 0;"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?\varphi(p) = p-1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?\varphi(m \times n) = \varphi(m) \times  \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
+
+<br>
+
+
+---
+
+## Euler's Theorem 
+
+* <img  src="https://latex.codecogs.com/svg.image?a^{\varphi(n)} \equiv 1 \ (mod \ n)"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?a^{k \times \varphi(n) + 1} \equiv a \ (mod \ n)"/>
+
+* <img  src="https://latex.codecogs.com/svg.image?a^{-1} \equiv a^{\varphi(n) - 1} \ (mod\ n)"/>
+
 
 
 
@@ -227,15 +251,16 @@ knwing that <img  src="https://latex.codecogs.com/svg.image?p"/> is a prime numb
 
 <img  src="https://latex.codecogs.com/svg.image?b \times b^{-1} \equiv 1 \ (mod\ n)"/>
 
+<br>
 
-<img  src="https://latex.codecogs.com/svg.image?\text{So for any element} \ g \ \text{in the field} \ F_{p} \ \text{there exists a unique integer } d \ \text{in the field such that}"/>  
+<img  src="https://latex.codecogs.com/svg.image?\text{So for any element} \ g \ \text{in the field} \ F_{p} \ (not \ F_{n}) \ \text{there exists a unique integer } d \ \text{in the field such that}"/>  
 
 <img  src="https://latex.codecogs.com/svg.image?g \times d \equiv 1 \ (mod\ p)"/>
 
 
 
 
-<details style="dispaly=flex;"><summary>EX</summary>
+<details style="dispaly=flex;"><summary>EX1</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -270,71 +295,127 @@ knwing that <img  src="https://latex.codecogs.com/svg.image?p"/> is a prime numb
 </details>
 
 
+<details style="dispaly=flex;"><summary>EX2</summary>
 
+<div style="border-style: double; padding: 4px">
 
+<img  src="https://latex.codecogs.com/svg.image?\text{What is the inverse element:} \ 3 \times d \equiv 1 \ (mod\ 10) \ ?"/>
 
+<p>Notice that n = 10, which is not a prime number </p>
+<p>But since g and n are relatively prime, we will apply the third Euler's Theorem</p>
 
->>> from Crypto.Util.number import inverse
->>> inverse(3, 13)
+<img  src="https://latex.codecogs.com/svg.image?d \equiv 3^{-1} \equiv 3^{\varphi(n)-1} \ (mod\ n)"/>
 
+<br>
 
+<img  src="https://latex.codecogs.com/svg.image?3^{-1} \equiv 3^{\varphi(10)-1} \ (mod\ 10)"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?3^{-1} \equiv 3^{3} \ (mod\ 10) \ \ \ \leftarrow \varphi(10) = \varphi(2) \times \varphi(5) = 4"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?3^{-1} \equiv 7 \ (mod\ 10)"/>
+
+<p>hence</p>
+
+<img  src="https://latex.codecogs.com/svg.image?3 \times 3^{-1} \equiv 1 \ (mod\ 10)"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?3 \times 7 \equiv 1 \ (mod\ 10)"/>
+
+<p>finally</p>
+
+<img  src="https://latex.codecogs.com/svg.image?d = 7"/>
+
+</div>
+
+</details>
+
+<br>
 
 ```python
-def modinv(a, m):
-    gcd, x, y = egcd(a, m)
+from Crypto.Util.number import inverse
+inverse(3, 13)
+
+#====================================================
+def egcd(a, b):
+    if a == 0:
+        return b, 0, 1
+    else:
+        gcd, u, v = egcd(b % a, a)
+        return gcd, v - (b // a) * u, u
+
+def modinv(a, n):
+    gcd, x, y = egcd(a, n)
     if gcd != 1:
         return None  # modular inverse does not exist
     else:
-        return x % m
+        return x % n
 
+modinv(3, 13)
 ```
 
 
 
-
-
-
-
-
-
-
-
-
-
 ---
 
-## Euler's Phi-Function | Euler's totient Function 
+## Quadratic Residue
 
-<img  src="https://latex.codecogs.com/svg.image?\varphi(1) = 0;"/>
+If q and n are coprime integers, then q is called a quadratic residue modulo n if the following congruence has a solution
 
-<img  src="https://latex.codecogs.com/svg.image?\varphi(p) = p-1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
+* <img  src="https://latex.codecogs.com/svg.image?x^{2} \equiv q \ (mod\ n), \ where \ x \in F_{n}"/>
 
-<img  src="https://latex.codecogs.com/svg.image?\varphi(m \times n) = \varphi(m) \times  \varphi(n);$ $\ \ \ \ \ \ m \ and \ n \ are \ coprimes"/>
+Likewise, if it has no solution, then it is called a quadratic non-residue modulo n. 
 
-<img  src="https://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
+```
+So the square root of the Quadratic Residue modulo an integer equal ±x  
+```
+
+if n is a prime number you will find out that exactly half of the integers between 1 and p−1 are squares mod p, that is, the congruence 
+
+* <img  src="https://latex.codecogs.com/svg.image?x^{2} \equiv q \ (mod\ p), \ where \ x \in F_{p}"/>
+
+has a <img  src="https://latex.codecogs.com/svg.image?\frac{p-1}{2}"/> solution
+
+
+
+<details style="dispaly=flex;"><summary>EX</summary>
+
+<div style="border-style: double; padding: 4px">
+
+<p>Find ALL  quadratic residues mod 5 </p>
+
+<img  src="https://latex.codecogs.com/svg.image?0^{2} \ (mod\ 5)  = 0 \ \leftarrow q"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?1^{2} \ (mod\ 5)  = 1"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?2^{2} \ (mod\ 5)  = 4"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?3^{2} \ (mod\ 5)  = 4"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?4^{2} \ (mod\ 5)  = 1"/>
+
+<p> So the quadratic residues mod 5 are 1,4 and the non-residues are 2,3 </p>
+
+</div>
+
+</details>
 
 <br>
 
 
----
-
-## Euler's Theorem 
-
-<img  src="https://latex.codecogs.com/svg.image?a^{\varphi(n)} \equiv 1 \ (mod \ n)"/>
-
-<img  src="https://latex.codecogs.com/svg.image?a^{k \times \varphi(n) + 1} \equiv a \ (mod \ n)"/>
-
-<img  src="https://latex.codecogs.com/svg.image?a^{\varphi(n) - 1} \mod n = a^{-1} \mod n"/>
-
-
-
-
-
-
-
-
-
-
-
-
+```note
+A number that is congruent to 0 mod p is neither a residue nor a non-residue. 
+```
 

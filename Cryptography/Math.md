@@ -20,7 +20,7 @@ sort : 1
 
 *dividend vs divisor vs qoutient*
 
-<img src="http://latex.codecogs.com/svg.image?\frac{24 \leftarrow dividend}{6 \leftarrow divisor} = 4 \leftarrow qoutient"/>
+<img src="http://latex.codecogs.com/svg.image?\frac{24 \leftarrow   }{6 \leftarrow divisor} = 4 \leftarrow qoutient"/>
 
 *a divides b* - without a remainder -
 
@@ -73,9 +73,6 @@ If a and b are prime, they are also coprime.
 If a is prime and b < a then a and b are coprime.
 ```
 
-
-
-
 > Euclidean Algorithm / Euclid's Algorithm
 
 is an efficient method for computing the greatest common divisor (GCD) of two integers (numbers)
@@ -88,9 +85,7 @@ def gcd(a, b):
         return gcd(b, a % b)
 ```
 
-
-
->  Extended Euclidean algorithm
+>  Extended Euclidean algorithm  -->  (Bézout's identity or Bézout's lemma)
 
 is an efficient way to find integers <img src="http://latex.codecogs.com/svg.image?u, v"/> such that
 
