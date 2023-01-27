@@ -78,6 +78,37 @@ under both addition and multiplication there is an inverse element `b` for every
 
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N);"/>
 
+ What is (8×16)(mod7)?(8×16)(mod7)?
+
+Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
+
+(8×16)≡(1×2)≡2(mod7). □(8×16)≡(1×2)≡2(mod7)
+
+
+<img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ ka \equiv kb \ (mod\ N); \  \text{for any integer} \ k"/>
+
+<img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), and \ c \equiv d \ (mod\ N)\ , then \ \ ac \equiv bd \ (mod\ N);"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---------------------------------------------
 > Properties of Exponentiation
@@ -90,15 +121,11 @@ under both addition and multiplication there is an inverse element `b` for every
 
 <img  src="http://latex.codecogs.com/svg.image?\text{What is} \ 3 ^{16} \ (mod\ 4) \ ?"/>
 
-<br>
-
-we observe that
+<p>we observe that</p>
 
 <img  src="http://latex.codecogs.com/svg.image?3^{2} \equiv 9 \equiv 1 \ (mod\ 4)"/>
 
-<br>
-
-so
+<p>so</p>
 
 <img  src="http://latex.codecogs.com/svg.image?3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4)"/>
 
