@@ -54,31 +54,31 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <img s
 ## Modular arithmetic properties
 
 
-<img src="https://latex.codecogs.com/svg.image?(a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n;"/>
+* <img src="https://latex.codecogs.com/svg.image?(a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n;"/>
 
-<img src="https://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
+* <img src="https://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
 
-<img src="https://latex.codecogs.com/svg.image?(a\times b) \mod n = [(a \mod n)\times (b \mod n)] \mod n;"/>
+* <img src="https://latex.codecogs.com/svg.image?(a\times b) \mod n = [(a \mod n)\times (b \mod n)] \mod n;"/>
 
-<img  src="https://latex.codecogs.com/svg.image?10^a \mod n = (10 \mod n)^a;"/>
+* <img  src="https://latex.codecogs.com/svg.image?10^a \mod n = (10 \mod n)^a;"/>
 
 
 ---------------------------------------------
 > Properties of addition
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a + b = c, \ then \ a \ (mod\ N) + b \ (mod\ N) \equiv c \ (mod\ N);"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a + b = c, \ then \ a \ (mod\ N) + b \ (mod\ N) \equiv c \ (mod\ N);"/>
 
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), \ then \ a + k \equiv b + k \ (mod\ N); \  \text{for any integer} \ k"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), \ then \ a + k \equiv b + k \ (mod\ N); \  \text{for any integer} \ k"/>
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N) \ and \ c \equiv d \ (mod\ N), then \ a + c \equiv b + d \ (mod\ N);"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N) \ and \ c \equiv d \ (mod\ N), then \ a + c \equiv b + d \ (mod\ N);"/>
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then -a \equiv -b \ (mod\ N);"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then -a \equiv -b \ (mod\ N);"/>
 
 ---------------------------------------------
 > Properties of multiplication
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N);"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N);"/>
 
 <details style="dispaly=flex;"><summary>EX</summary>
 
@@ -103,12 +103,12 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <img s
 
 
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ ka \equiv kb \ (mod\ N); \  \text{for any integer} \ k"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ ka \equiv kb \ (mod\ N); \  \text{for any integer} \ k"/>
 
 
 
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), and \ c \equiv d \ (mod\ N)\ , then \ \ ac \equiv bd \ (mod\ N);"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), and \ c \equiv d \ (mod\ N)\ , then \ \ ac \equiv bd \ (mod\ N);"/>
 
 
 
@@ -134,7 +134,7 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <img s
 ---------------------------------------------
 > Properties of Exponentiation
 
-<img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ a^{k} \equiv b^{k} \ (mod\ N); \  \text{for any positive integer} \ k"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ a^{k} \equiv b^{k} \ (mod\ N); \  \text{for any positive integer} \ k"/>
 
 
 
@@ -249,13 +249,13 @@ knwing that <img  src="https://latex.codecogs.com/svg.image?p"/> is a prime numb
 
 <img  src="https://latex.codecogs.com/svg.image?\text{A modular inverse of an integer} \ b \ (mod\ n) \ \text{is the integer} \ b^{-1} \text{ such that :}"/>
 
-<img  src="https://latex.codecogs.com/svg.image?b \times b^{-1} \equiv 1 \ (mod\ n)"/>
+* <img  src="https://latex.codecogs.com/svg.image?b \times b^{-1} \equiv 1 \ (mod\ n)"/>
 
 <br>
 
 <img  src="https://latex.codecogs.com/svg.image?\text{So for any element} \ g \ \text{in the field} \ F_{p} \ (not \ F_{n}) \ \text{there exists a unique integer } d \ \text{in the field such that}"/>  
 
-<img  src="https://latex.codecogs.com/svg.image?g \times d \equiv 1 \ (mod\ p)"/>
+* <img  src="https://latex.codecogs.com/svg.image?g \times d \equiv 1 \ (mod\ p)"/>
 
 
 
@@ -380,7 +380,7 @@ if n is a prime number you will find out that exactly half of the integers betwe
 
 * <img  src="https://latex.codecogs.com/svg.image?x^{2} \equiv q \ (mod\ p), \ where \ x \in F_{p}"/>
 
-has a <img  src="https://latex.codecogs.com/svg.image?\frac{p-1}{2}"/> solution
+has a <img  src="https://latex.codecogs.com/svg.image?\frac{p-1}{2}"/> solutions
 
 
 
@@ -539,6 +539,20 @@ There is a unique solution :
 
 <p> the Solution </p>
 
+<img  src="https://latex.codecogs.com/svg.image?\text{1. Find} \ N = n_{1} \times n_{2} \times ... \times n_{k}"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{2. Find} \ N_{1} = \frac{N}{n_{1}} \ , \ N_{2} = \frac{N}{n_{2}} \ , \ ... \ , \ N_{k} = \frac{N}{n_{k}}"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1})"/>
+
 </div>
 
 </details>
@@ -546,10 +560,3 @@ There is a unique solution :
 <br>
 
 
-<img  src="https://latex.codecogs.com/svg.image?\text{1. Find} \ N = n_{1} \times n_{2} \times ... \times n_{k}"/>
-
-<img  src="https://latex.codecogs.com/svg.image?\text{2. Find} \ N_{1} = \frac{N}{n_{1}} \ , \ N_{2} = \frac{N}{n_{2}} \ , \ ... \ , \ N_{k} = \frac{N}{n_{k}}"/>
-
-<img  src="https://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
-
-<img  src="https://latex.codecogs.com/svg.image?\text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1})"/>
