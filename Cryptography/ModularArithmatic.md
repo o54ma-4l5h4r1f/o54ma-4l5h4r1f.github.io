@@ -10,7 +10,7 @@ sort : 1
 
 *Modulo and Modulus* : It is basically an operator which is denoted by `mod` and in programming uses `%` symbol. 
  
-<img src="https://latex.codecogs.com/svg.image?x \mod N, \ \ a \rightarrow dividend, N \rightarrow divisor \ (Modulus)"/> 
+<img src="https://latex.codecogs.com/svg.image?x \mod N, \ \ a \rightarrow dividend, N \rightarrow divisor \ (Modulus \ | \ Moduli)"/> 
 
 *congruence operator* : `≡` is the symbol for congruence, which means the values A and B are in the same equivalence class. i.e. `2 ≡ 12 (mod 10)`  ==> `2 mod 10 = 12 mod 10` 
 
@@ -494,7 +494,60 @@ The main use-case for this algorithm is finding elliptic curve co-ordinates
 
 
 
+<br>
+
+--- 
+
+## Chinese Remainder Theorem
+
+gives a unique solution to a set of linear congruences if their moduli are coprime.
+
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv a_{1} \mod n_{1}"/>
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv a_{2} \mod n_{2}"/>	
+
+<img  src="https://latex.codecogs.com/svg.image?. \ . \ ."/>
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv a_{k} \mod n_{k}"/>
+
+There is a unique solution :
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv a \mod N, \ where \ N = n_{1} \times n_{2} \times ... \times n_{k}"/>
 
 
 
+<details style="dispaly=flex;"><summary>EX</summary>
 
+<div style="border-style: double; padding: 4px">
+
+<p>Given the following set of linear congruences: </p>
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv 2 \ (mod\ 5)"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv 3 \ (mod\ 11)"/>	
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv 5 \ (mod\ 17)"/>
+
+<p> Find the integer a such that </p>
+
+<img  src="https://latex.codecogs.com/svg.image?x \equiv a \ (mod\ 935)"/>
+
+<p> the Solution </p>
+
+</div>
+
+</details>
+
+<br>
+
+
+<img  src="https://latex.codecogs.com/svg.image?\text{1. Find} \ N = n_{1} \times n_{2} \times ... \times n_{k}"/>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{2. Find} \ N_{1} = \frac{N}{n_{1}} \ , \ N_{2} = \frac{N}{n_{2}} \ , \ ... \ , \ N_{k} = \frac{N}{n_{k}}"/>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
