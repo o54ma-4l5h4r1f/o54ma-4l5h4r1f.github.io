@@ -199,7 +199,7 @@ A modular inverse of an integer <img  src="http://latex.codecogs.com/svg.image?b
 
 <img  src="http://latex.codecogs.com/svg.image?b \times b^{-1} \equiv 1 \ (mod\ n)"/>
 
-
+So for any element <img  src="http://latex.codecogs.com/svg.image?g"/> in the field <img  src="http://latex.codecogs.com/svg.image?F_{p} \ "/>, there exists a unique integer <img  src="http://latex.codecogs.com/svg.image?d"/>  such that <img  src="http://latex.codecogs.com/svg.image?g \times d \equiv 1 \ (mod\ p)"/> 
 
 
 
