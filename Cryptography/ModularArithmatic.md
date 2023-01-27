@@ -85,6 +85,28 @@ Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
 (8×16)≡(1×2)≡2(mod7). □(8×16)≡(1×2)≡2(mod7)
 
 
+
+<details style="dispaly=flex;"><summary>EX</summary>
+
+<div style="border-style: double; padding: 4px">
+
+<img  src="http://latex.codecogs.com/svg.image?\text{What is} \ (8 \times 6) \ (mod\ 7) ?"/>
+
+<img  src="http://latex.codecogs.com/svg.image?\text{since} \ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) , \text{we have} \ "/>
+
+<img  src="http://latex.codecogs.com/svg.image?(8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7)"/>
+
+</div>
+
+</details>
+
+
+
+
+
+
+
+
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ ka \equiv kb \ (mod\ N); \  \text{for any integer} \ k"/>
 
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), and \ c \equiv d \ (mod\ N)\ , then \ \ ac \equiv bd \ (mod\ N);"/>
@@ -117,7 +139,7 @@ Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
 
 
 
-<details style="dispaly=flex;"><summary>EXAMPLES</summary>
+<details style="dispaly=flex;"><summary>EX</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -140,15 +162,7 @@ Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
 
 
 
-```python
-def modinv(a, m):
-    gcd, x, y = egcd(a, m)
-    if gcd != 1:
-        return None  # modular inverse does not exist
-    else:
-        return x % m
 
-```
 
 <br>
 
@@ -188,3 +202,26 @@ knwing that <img  src="http://latex.codecogs.com/svg.image?p"/> is a prime numbe
 <img  src="http://latex.codecogs.com/svg.image?a^{k \times \varphi(n) + 1} \equiv a \ (mod \ n)"/>
 
 <img  src="http://latex.codecogs.com/svg.image?a^{\varphi(n) - 1} \mod n = a^{-1} \mod n"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```python
+def modinv(a, m):
+    gcd, x, y = egcd(a, m)
+    if gcd != 1:
+        return None  # modular inverse does not exist
+    else:
+        return x % m
+
+```
