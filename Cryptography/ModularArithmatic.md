@@ -78,14 +78,6 @@ under both addition and multiplication there is an inverse element `b` for every
 
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N);"/>
 
- What is (8×16)(mod7)?(8×16)(mod7)?
-
-Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
-
-(8×16)≡(1×2)≡2(mod7). □(8×16)≡(1×2)≡2(mod7)
-
-
-
 <details style="dispaly=flex;"><summary>EX</summary>
 
 <div style="border-style: double; padding: 4px">
@@ -108,6 +100,13 @@ Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
 
 
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ ka \equiv kb \ (mod\ N); \  \text{for any integer} \ k"/>
+
+
+
+
+
+
+
 
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), and \ c \equiv d \ (mod\ N)\ , then \ \ ac \equiv bd \ (mod\ N);"/>
 
