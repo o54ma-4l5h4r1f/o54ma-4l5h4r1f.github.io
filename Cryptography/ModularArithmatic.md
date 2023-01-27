@@ -82,11 +82,7 @@ under both addition and multiplication there is an inverse element `b` for every
 
 <div style="border-style: double; padding: 4px">
 
-<img  src="http://latex.codecogs.com/svg.image?\text{What is} \ (8 \times 6) \ (mod\ 7) ?"/>
-
-<img  src="http://latex.codecogs.com/svg.image?\text{since} \ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) , \text{we have} \ "/>
-
-<img  src="http://latex.codecogs.com/svg.image?(8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7)"/>
+<img  src="http://latex.codecogs.com/svg.image?\text{What is} \ (8 \times 16) \ (mod\ 7) ? \newline \newline \text{since} \ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) , \text{we have} \newline  (8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7)"/>
 
 </div>
 
@@ -157,13 +153,10 @@ under both addition and multiplication there is an inverse element `b` for every
 </details>
 
 
+```note
+The last digit of a number is equivalent to the number taken modulo 10.
+```
 
-
-
-
-
-
-<br>
 
 ---
 
