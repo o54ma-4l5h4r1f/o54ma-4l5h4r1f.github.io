@@ -551,3 +551,5 @@ There is a unique solution :
 <img  src="https://latex.codecogs.com/svg.image?\text{2. Find} \ N_{1} = \frac{N}{n_{1}} \ , \ N_{2} = \frac{N}{n_{2}} \ , \ ... \ , \ N_{k} = \frac{N}{n_{k}}"/>
 
 <img  src="https://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1})"/>
