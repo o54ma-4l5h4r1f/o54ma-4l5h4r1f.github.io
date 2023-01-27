@@ -32,11 +32,13 @@ if m | a then a ≡ 0 mod m
 
 
 
-*The multiplicative group modulo p*
+*The integers modulo p define a field, denoted by*
 
 <img src="http://latex.codecogs.com/svg.image?F_{p} = \left\{ 0,1,...,p-1 \right\}"/> 
 
 under both addition and multiplication there is an inverse element `b` for every element `a` in the set, such that `a + b = 0` and `a * b = 1`.
+
+If the modulus is not prime, the set of integers modulo n define a ring.  <img src="http://latex.codecogs.com/svg.image?F_{n}"/> 
 
 
 
@@ -101,14 +103,7 @@ under both addition and multiplication there is an inverse element `b` for every
 
 
 
-
-
-
 <img  src="http://latex.codecogs.com/svg.image?\text{If} \ a \equiv b \ (mod\ N), then \ ka \equiv kb \ (mod\ N); \  \text{for any integer} \ k"/>
-
-
-
-
 
 
 
@@ -167,6 +162,65 @@ The last digit of a number is equivalent to the number taken modulo 10.
 ```
 
 
+
+
+
+
+
+
+---
+
+## Fermat's Little Theorem 
+
+knwing that <img  src="http://latex.codecogs.com/svg.image?p"/> is a prime number
+
+<img  src="http://latex.codecogs.com/svg.image?a^{p} \equiv a \ (mod \ p)"/>
+
+<img  src="http://latex.codecogs.com/svg.image?a^{p-1} \equiv 1 \ (mod \ p)"/>
+
+<img  src="http://latex.codecogs.com/svg.image?a^{p-2} \mod p = a^{-1} \mod p"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Modular Inverse
+
+A modular inverse of an integer <img  src="http://latex.codecogs.com/svg.image?b \ (mod\ n)"/> is the integer <img  src="http://latex.codecogs.com/svg.image?b^{-1}"/> such that :
+
+<img  src="http://latex.codecogs.com/svg.image?b \times b^{-1} \equiv 1 \ (mod\ n)"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ## Euler's Phi-Function | Euler's totient Function 
@@ -180,18 +234,6 @@ The last digit of a number is equivalent to the number taken modulo 10.
 <img  src="http://latex.codecogs.com/svg.image?\varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime"/>
 
 <br>
-
----
-
-## Fermat's Little Theorem 
-
-knwing that <img  src="http://latex.codecogs.com/svg.image?p"/> is a prime number
-
-<img  src="http://latex.codecogs.com/svg.image?a^{p} \equiv a \ (mod \ p)"/>
-
-<img  src="http://latex.codecogs.com/svg.image?a^{p-1} \equiv 1 \ (mod \ p)"/>
-
-<img  src="http://latex.codecogs.com/svg.image?a^{p-2} \mod p = a^{-1} \mod p"/>
 
 
 ---
