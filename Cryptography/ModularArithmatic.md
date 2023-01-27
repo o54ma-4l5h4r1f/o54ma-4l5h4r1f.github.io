@@ -119,6 +119,8 @@ Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
 
 <details style="dispaly=flex;"><summary>EXAMPLES</summary>
 
+<div style="border-style: double; padding: 4px">
+
 <img  src="http://latex.codecogs.com/svg.image?\text{What is} \ 3 ^{16} \ (mod\ 4) \ ?"/>
 
 <p>we observe that</p>
@@ -128,6 +130,8 @@ Since 8≡1(mod7)8≡1(mod7) and 16≡2(mod7)16≡2(mod7), we have
 <p>so</p>
 
 <img  src="http://latex.codecogs.com/svg.image?3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4)"/>
+
+</div>
 
 </details>
 
