@@ -50,3 +50,59 @@ print(encrypt_flag(FLAG))
 </div>
 
 </details>
+
+
+
+
+
+
+
+
+> Output.txt
+
+<details style="dispaly=flex;"><summary>Click To View</summary>
+
+```python
+
+# plz render it !!! 
+
+```
+
+</details>
+
+
+> Output.txt
+
+<details style="dispaly=flex;"><summary>Click To View</summary>
+
+<span>
+
+```python
+
+# plz render it !!! 
+
+```
+</span>
+
+</details>
+
+
+
+> Output.txt
+
+<details style="dispaly=flex;"><summary>Click To View</summary>
+
+<div>
+
+```python
+
+# plz render it !!! 
+
+```
+</div>
+
+</details>
+
+
+<br>
+<br>
