@@ -13,7 +13,7 @@ sort : 2
 <tr>
 <td  style="display:flex; font-size:x-small">
   
-```python
+~~~python
 from random import randint
 
 a = 288260533169915
@@ -37,7 +37,7 @@ def encrypt_flag(flag):
 
 
 print(encrypt_flag(FLAG))
-```
+~~~
   
 </td>
 </tr>
