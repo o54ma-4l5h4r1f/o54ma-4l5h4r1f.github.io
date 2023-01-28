@@ -3,12 +3,7 @@ sort : 2
 ---
 
 
-## [Adrien's Signs](https://cryptohack.org/courses/modular/adrien/) :: python
-
-```python 
-
-```
-
+## [Adrien's Signs](https://cryptohack.org/courses/modular/adrien/)
 
 <table>
 <tr>
