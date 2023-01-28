@@ -5,7 +5,7 @@ sort : 2
 
 ## [Adrien's Signs](https://cryptohack.org/courses/modular/adrien/)
 
-<div style="font-size:x-small">
+<span style="font-size:x-small">
 
 ```python
 from random import randint
@@ -33,7 +33,7 @@ def encrypt_flag(flag):
 print(encrypt_flag(FLAG))
 ```
 
-</div>
+</span>
 
 
 <details style="dispaly=flex;"><summary>Click To View</summary>
