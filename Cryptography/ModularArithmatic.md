@@ -498,7 +498,7 @@ The main use-case for this algorithm is finding elliptic curve co-ordinates
 
 --- 
 
-## Chinese Remainder Theorem
+## Chinese Remainder Theorem (CRT)
 
 gives a unique solution to a set of linear congruences if their moduli are coprime.
 
@@ -567,14 +567,6 @@ There is a unique solution :
 sage: CRT_list([2,3,5], [5,11,17])
 872
 ```
-
-
-
-
-
-
-
-x
 
 
 
