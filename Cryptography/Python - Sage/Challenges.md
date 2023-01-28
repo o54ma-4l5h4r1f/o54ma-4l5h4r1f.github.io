@@ -11,7 +11,7 @@ sort : 2
 </tr>
 
 <tr>
-<td  style="font-size:x-small">
+<td  style="display:flex; font-size:x-small">
   
 ```python
 from random import randint
@@ -23,17 +23,17 @@ FLAG = b'crypto{????????????????????}'
 
 
 def encrypt_flag(flag):
-    ciphertext = []
-    plaintext = ''.join([bin(i)[2:].zfill(8) for i in flag])
-    for b in plaintext:
-        e = randint(1, p)
-        n = pow(a, e, p)
-        if b == '1':
-            ciphertext.append(n)
-        else:
-            n = -n % p
-            ciphertext.append(n)
-    return ciphertext
+	ciphertext = []
+	plaintext = ''.join([bin(i)[2:].zfill(8) for i in flag])
+	for b in plaintext:
+		e = randint(1, p)
+		n = pow(a, e, p)
+		if b == '1':
+			ciphertext.append(n)
+		else:
+			n = -n % p
+			ciphertext.append(n)
+	return ciphertext
 
 
 print(encrypt_flag(FLAG))
@@ -66,3 +66,10 @@ print(encrypt_flag(FLAG))
 
 
 
+
+| Source.py     | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| `col 3 is`      | right-aligned | $1600 |
+| ------------- |:-------------:| -----:|
+| ```python #col 2 is```      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
