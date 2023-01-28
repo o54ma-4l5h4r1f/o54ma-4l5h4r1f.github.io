@@ -191,3 +191,14 @@ sage :          inverse_mod(3, 13)
 
 # References
 * https://cryptohack.org/
+
+
+
+
+
+
+
+
+
+
+
