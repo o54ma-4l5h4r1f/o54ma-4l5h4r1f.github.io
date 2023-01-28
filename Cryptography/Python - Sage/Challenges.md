@@ -5,15 +5,9 @@ sort : 2
 
 ## [Adrien's Signs](https://cryptohack.org/courses/modular/adrien/)
 
-<table>
-<tr>
-<th>Source.py</th>
-</tr>
+<div style="font-size:x-small">
 
-<tr>
-<td  style="display:flex; font-size:x-small">
-  
-~~~python
+```python
 from random import randint
 
 a = 288260533169915
@@ -37,16 +31,10 @@ def encrypt_flag(flag):
 
 
 print(encrypt_flag(FLAG))
-~~~
-  
-</td>
-</tr>
+```
 
-<tr>
-<th>Output.txt</th>
-</tr>
-<tr>
-<td>
+</div>
+
 
 <details style="dispaly=flex;"><summary>Click To View</summary>
 
@@ -59,17 +47,3 @@ print(encrypt_flag(FLAG))
 </div>
 
 </details>
-
-</td>
-</tr>
-</table>
-
-
-
-
-| Source.py     | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| `col 3 is`      | right-aligned | $1600 |
-| ------------- |:-------------:| -----:|
-| ```python #col 2 is```      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
