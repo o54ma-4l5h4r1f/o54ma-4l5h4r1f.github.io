@@ -57,7 +57,7 @@ print(encrypt_flag(FLAG))
 
 <details markdown="1" style="dispaly=flex;"><summary>Click To View</summary>
 
-<div markdown="1" style="font-size:xx-small">
+<div markdown="1">
 
 ```python
 # we are having 2 numbers "a & p" and 7 known characters from the FLAG "crypto{"
@@ -86,7 +86,7 @@ else :
 ```
 <br>
 
-<img  src="https://latex.codecogs.com/svg.image?\text{Since} \ n = a^{e} \mod p \ , \ \ \text{where} \ p \ \text{is a prime number and } 1 \leqslant e \leqslant p \ ( e \in \mathbb{Z} )"/>
+<img  src="https://latex.codecogs.com/svg.image?\text{Since} \ n = a^{e} \mod p \ , \ \ \text{where} \ p \ \text{is a prime number and } 1 \leqslant e \leqslant p"/>
 
 <br>
 
