@@ -114,10 +114,6 @@ else :
 
 <br>
 
-<img  src="https://latex.codecogs.com/svg.image?  \equiv \frac{q}{p} \equiv q^{(\frac{p-1}{2})} \ (mod\ p) \ \ \leftarrow q \text{ quadratic non-residue mod } p"/>	
-
-<br>
-
 ---
 
 <br>
