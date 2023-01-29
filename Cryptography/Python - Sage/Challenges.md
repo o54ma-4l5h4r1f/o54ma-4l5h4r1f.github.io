@@ -131,13 +131,40 @@ else :
 
 </div>
 
+</details>
 
 
+> Solution.py
 
+<details markdown="1" style="dispaly=flex;"><summary>Click To View</summary>
 
+<div markdown="1">
 
+```python
+import json
+import binascii
+
+output = open('output.txt')
+ciphertext = json.load(output)
+
+p = 1007621497415251
+FLAG = '0b'
+
+for n in ciphertext:
+	if pow(n, (p-1)//2, p) == 1:
+		FLAG += '1'
+	else:
+		FLAG += '0'
+
+FLAG = binascii.unhexlify('%x' % int(FLAG, 2))
+
+print(FLAG)
+```
+
+</div>
 
 </details>
+
 
 
 
