@@ -434,9 +434,9 @@ A number `x` is square root of `q` under modulo `p` if
 
 * <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \times \text{Quadratic Residue} = Quadratic Residue"/>
 
-* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \times \text{Quadratic Non-Residue} = Quadratic Non-Residue"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \times \text{Quadratic Non-Residue = Quadratic Non-Residue}"/>
 
-* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Non-Residue} \times \text{Quadratic Non-Residue} = Quadratic Residue"/>
+* <img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Non-Residue} \times \text{Quadratic Non-Residue = Quadratic Residue"/>
 
 an easy way to remember this : 
 

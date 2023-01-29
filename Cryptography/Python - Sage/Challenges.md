@@ -33,6 +33,10 @@ def encrypt_flag(flag):
 print(encrypt_flag(FLAG))
 ```
 
+
+
+
+
 > Output.txt
 
 <details markdown="1" style="dispaly=flex;"><summary>Click To View</summary>
@@ -49,25 +53,102 @@ print(encrypt_flag(FLAG))
 
 
 
+> Code Analysis
 
 <details markdown="1" style="dispaly=flex;"><summary>Click To View</summary>
 
 <div markdown="1" style="font-size:xx-small">
 
 ```python
-# HIIIIOO 
+# we are having 2 numbers "a & p" and 7 known characters from the FLAG "crypto{"
+
+# inside the "encrypt_flag" function :
+'''
+for each ord(char) in the flag, get the binary format of it with "bin(i)" (e.g. bin(ord('A')) = '0b101001')
+
+then take only the binary number after the "0b" chars with [2:]
+
+then fill left of the binary with a padding zeros to make it 8 bits binary with .zfill(8)  
+
+then concatenate all the binary numbers into one long binary as a string called the plaintext 
+
+now for every bit "b" in the plaintext, we will generate a random number between "1 and p (prime)" called "e" and calculate "n" out of it "n = pow(a, e, p)"
+
+if the bit "b" = '1':
+	we will append the number "n" into the ciphertext array  
+
+else :
+	we will append the "n" multiplied by -1 modulo "p"
+'''
 
 
-def HII():
-	pass 
+# so the givin output is an array of the appended "n or -n%p" values
 ```
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{Since} \ n = a^{e} \mod p \ , \ \ \text{where} \ p \ \text{is a prime number and } 1 \leqslant e \leqslant p \ ( e \in \mathbb{Z} )"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{then} \ a^{e} \equiv n \ (mod\ p)"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{sine we can represent } a^{e} \ \text{as} \ (a^{ \frac{e}{2} })^{2}"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{then } n \text{ is always a quadratic residue mod } p"/>
+
+<br>
+
+---
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{Knowing the Legendre symbol methodology }"/>	
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image? 1 \equiv \frac{q}{p} \equiv q^{(\frac{p-1}{2})} \ (mod\ p) \ \ \leftarrow q \text{ quadratic residue mod } p"/>
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?  \equiv \frac{q}{p} \equiv q^{(\frac{p-1}{2})} \ (mod\ p) \ \ \leftarrow q \text{ quadratic non-residue mod } p"/>	
+
+<br>
+
+---
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{So if } n^{(\frac{p-1}{2})} \ mod\ p = 1   \ \ \rightarrow n \text{ quadratic residue mod } p \rightarrow \text{the corresponding bit is '1'}"/>	
+
+<br>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{else } \rightarrow n \text{ quadratic non-residue mod } p \rightarrow \text{the corresponding bit is '0'}"/>	
+
+<p> How ?? </p>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{we know that } -1 \equiv p-1 \ (mod\ p) \ , \ \text{and we find out } p-1 \text{ is quadratic non-residue}"/>	
+
+<p> and from the properties of quadratic (non-)residues </p>
+
+<img  src="https://latex.codecogs.com/svg.image?\text{Quadratic Residue} \times \text{Quadratic Non-Residue = Quadratic Non-Residue}"/>
+
+<p> Thats Why </p>
+
+<img  src="https://latex.codecogs.com/svg.image?\ \{n\} \text{ is Quadratic Residue and } \{(-1 \times n) \ mod\ p\} \text{ is Quadratic Non-Residue}"/>
 
 </div>
 
+
+
+
+
+
+
 </details>
-
-
-
 
 
 
