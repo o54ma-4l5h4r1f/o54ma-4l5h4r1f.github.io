@@ -99,7 +99,7 @@ def HII():
 
 <details markdown="1" style="dispaly=flex;"><summary>Click To View</summary>
 
-<div style="font-size:xx-small" markdown="1">
+<div style="font-size:xx-small">
 
 ```python
 # HIIIIOO 
