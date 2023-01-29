@@ -25,7 +25,7 @@ In RSA the private key is the `modular multiplicative inverse` of the exponent `
 The most common value for e is `0x10001` or `65537`
 
 
-<img  src="https://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n)"/>
+<img  src="https://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n) \ \ \ \ \ \ \text{ or by solving } \ \ \ \ \ \ d \times e = 1 \mod \varphi(n)  "/>
 
 <img  src="https://latex.codecogs.com/svg.image?PublicKey \gets (e, \ n)"/>
 
@@ -68,7 +68,7 @@ wI0JiY2XRTBK5mknIv5Z46sQAtPPkHy317FQsuCOTA==
 ```
 
 ```note
-these public and private keys came only from two prime numbers
+it's recommended using primes that are at least 1024 bits long, multiplying two such 1024 primes gives you a modulus that is 2048 bits large. RSA with a 2048-bit modulus is called `RSA-2048`. 
 ```
 
 ---

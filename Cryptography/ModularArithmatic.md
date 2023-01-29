@@ -255,7 +255,7 @@ knwing that <img  src="https://latex.codecogs.com/svg.image?p"/> is a prime numb
 
 <img  src="https://latex.codecogs.com/svg.image?\text{So for any element} \ g \ \text{in the field} \ F_{p} \ (not \ F_{n}) \ \text{there exists a unique integer } d \ \text{in the field such that}"/>  
 
-* <img  src="https://latex.codecogs.com/svg.image?g \times d \equiv 1 \ (mod\ p)"/>
+* <img  src="https://latex.codecogs.com/svg.image?g \times d \equiv 1 \ (mod\ p) \ \ \ \ OR \ \ \ \ g \times d \ mod \ p = 1"/>
 
 
 

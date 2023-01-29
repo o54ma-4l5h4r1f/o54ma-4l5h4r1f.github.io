@@ -12,7 +12,49 @@ $ docker pull sagemath/sagemath
 $ docker run -it sagemath/sagemath
 # OR 
 $ docker run -p 8888:8888 sagemath/sagemath-jupyter
-``` -->
+``` 
+
+----------------------------------------------------------------------------
+
+from Crypto.Util.number import *
+import hashlib 
+
+N = 15216583....
+d = 111759012...
+M = b'crypto{Immut4ble_m3ssag1ng}'
+
+H = bytes_to_long(hashlib.sha256(M).digest())
+
+# print(H)
+
+S = pow(H, d, N)
+
+print(S)
+
+----------------------------------------------------------------------------
+
+
+
+The elliptic curve factorization method (ECM) is the fastest way to factor a known composite integer if one of the factors is relatively small (up to approximately 80 bits / 25 decimal digits)
+
+https://doc.sagemath.org/html/en/reference/interfaces/sage/interfaces/ecm.html
+
+
+
+
+
+
+----------------------------------------------------------------------------
+
+
+
+
+
+from gmpy2 import iroot
+c = 243251053617903760309941844835411292373350655973075480264001352919865180151222189820473358411037759381328642957324889519192337152355302808400638052620580409813222660643570085177957
+print(bytes.fromhex(hex(iroot(c, 3)[0])[2:]))
+-->
+
 
 
 # Cryptography with Python and Sagemath  
