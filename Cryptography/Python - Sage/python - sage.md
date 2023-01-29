@@ -2,6 +2,19 @@
 sort : 1 
 ---
 
+
+<!-- 
+## Rquirements
+
+```bash
+$ docker pull sagemath/sagemath
+
+$ docker run -it sagemath/sagemath
+# OR 
+$ docker run -p 8888:8888 sagemath/sagemath-jupyter
+``` -->
+
+
 # Cryptography with Python and Sagemath  
 
 ```python
@@ -12,24 +25,12 @@ bytes.fromhex('63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6
 
 
 
-
-
-
-
-
 > base64
 ```python
 from base64 import *
 
 b64encode(bytes.fromhex('72bca9b68fc16ac7beeb8f849dca1d8a783e8acf9679bf9269f7bf')) # b'crypto/Base+64+Encoding+is+Web+Safe/'
 ```
-
-
-
-
-
-
-
 
 ```python
 from Crypto.Util.number import *
@@ -49,10 +50,8 @@ long_to_bytes(310400273487) # b'HELLO'
 
 
 
-
-
-
 > XOR 
+
 XOR is a bitwise operator which returns 0 if the bits are the same, and 1 otherwise. 
 ```python
 from pwn import *
@@ -69,39 +68,18 @@ xor('A', 'A', 'B', 'A', 'B') # b'A'
 
 
 Commutative: A ⊕ B = B ⊕ A
+
 Associative: A ⊕ (B ⊕ C) = (A ⊕ B) ⊕ C
+
 Identity: A ⊕ 0 = A
+
 Self-Inverse: A ⊕ A = 0 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
 > GCD
-
-The Greatest Common Divisor (GCD), sometimes known as the highest common factor, is the largest number which divides two positive integers (a,b).
-
-For a = 12, b = 8 we can calculate the divisors of a: {1,2,3,4,6,12} and the divisors of b: {1,2,4,8}. Comparing these two, we see that gcd(a,b) = 4.
-
-Now imagine we take a = 11, b = 17. Both a and b are prime numbers. As a prime number has only itself and 1 as divisors, gcd(a,b) = 1.
-
-We say that for any two integers a,b, if gcd(a,b) = 1 then a and b are coprime integers.
-
-If a and b are prime, they are also coprime. If a is prime and b < a then a and b are coprime.
-
-Think about the case for a prime and b > a, why are these not necessarily coprime?
-
-There are many tools to calculate the GCD of two integers, but for this task we recommend looking up Euclid's Algorithm.
 
 ```python
 def Mygcd(a, b):
@@ -123,10 +101,6 @@ sage: gcd(66528, 52920)
 ```
 
 
-
-
-
-
 > Extended GCD (XGCD)
 
 The extended Euclidean algorithm is an efficient way to find integers u,v such that
@@ -142,50 +116,44 @@ sage: xgcd(26513, 32321)
 
 
 
+> RSA operations (Factorization / Modular Inverting / euler_phi)
 
+```python
+sage: n = 882564595536224140639625987659416029426239230804614613279163
+sage: e = 65537
+sage: c = 77578995801157823671636298847186723593814843845525223303932 
 
+# ----------------------
+# check http://factordb.com/
+sage: factor(n)
+# 857504083339712752489993810777 * 1029224947942998075080348647219
 
-> The Extended Euclidean Algorithm for finding the inverse of a number mod n.
+sage: p, q = 857504083339712752489993810777, 1029224947942998075080348647219
 
+# ----------------------
 
+phi = (p-1) * (q-1)
+# 882564595536224140639625987657529300394956519977044270821168
 
+# OR 
 
+sage: phi = euler_phi(n)
+# 882564595536224140639625987657529300394956519977044270821168
 
+# ----------------------
 
+sage: inverse_mod(e, phi)
+121832886702415731577073962957377780195510499965398469843281
 
+# ----------------------
 
-
-
-
-
-
-
-> 
-
-
-Calculate the following integers:
-
-11 ≡ x (mod 6)
-8146798528947 ≡ y (mod 17) 		# sage: mod(8146798528947,17) # ===> 4 = y 
-
-
-
- 
-The integers modulo p define a field, denoted Fp.  ==> A finite field Fp is the set of integers {0,1,...,p-1}
-
-
-modulus ?? 
-
-identity ?? 
-
+sage: p = pow(c, d, n)
+# 13371337
+```
 
 
 
 
-
-> Modular Inverting
-
-sage :          inverse_mod(3, 13)
 
 
 

@@ -4,23 +4,32 @@ sort : 2
 
 # RSA 
 
-## Procedure
+In RSA, modular exponentiation, together with the problem of prime factorisation, helps us to build a `trapdoor function`.
+
+The private key is the secret piece of information or "trapdoor" which allows us to quickly invert the encryption function
+
+In RSA the private key is the `modular multiplicative inverse` of the exponent `e` modulo the `totient of N`
+
+## RSA Key Generation, Encryption, and Decryption 
 
 > Key Generation
 
-<img  src="http://latex.codecogs.com/svg.image?\text{Select two large primes} \ p \ \text{and} \ q \ \text{such that} \ p \ \neq \ q"/>
+<img  src="https://latex.codecogs.com/svg.image?\text{Select two large primes} \ p \ \text{and} \ q \ \text{such that} \ p \ \neq \ q"/>
 
-<img  src="http://latex.codecogs.com/svg.image?n \gets p \times q"/>
+<img  src="https://latex.codecogs.com/svg.image?n \gets p \times q"/>
 
-<img  src="http://latex.codecogs.com/svg.image?\varphi(n) \gets (p-1) \times (q-1)"/>
+<img  src="https://latex.codecogs.com/svg.image?\varphi(n) \gets (p-1) \times (q-1)"/>
 
-<img  src="http://latex.codecogs.com/svg.image?\text{Select} \ e \ \text{such that} \ 1 < e < \varphi(n) \ \text{and} \ e \ \text{is coprime to} \ \varphi(n)"/>
+<img  src="https://latex.codecogs.com/svg.image?\text{Select} \ e \ \text{such that} \ 1 < e < \varphi(n) \ \text{and} \ e \ \text{is coprime to} \ \varphi(n)"/>
 
-<img  src="http://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n)"/>
+The most common value for e is `0x10001` or `65537`
 
-<img  src="http://latex.codecogs.com/svg.image?PublicKey \gets (e, \ n)"/>
 
-<img  src="http://latex.codecogs.com/svg.image?PrivateKey \gets d"/>
+<img  src="https://latex.codecogs.com/svg.image?d \gets e^{-1} \mod  \varphi(n)"/>
+
+<img  src="https://latex.codecogs.com/svg.image?PublicKey \gets (e, \ n)"/>
+
+<img  src="https://latex.codecogs.com/svg.image?PrivateKey \gets d"/>
 
 ---
 
@@ -28,6 +37,7 @@ sort : 2
 The Keys sizes could be different {512, 1024, 2048, 4096} -- the bigger the harder to crack -- 
 ```
 
+> Public/Private Key Example
 
 ```
 -----BEGIN PUBLIC KEY-----
@@ -63,16 +73,16 @@ these public and private keys came only from two prime numbers
 
 ---
 
-<img  src="http://latex.codecogs.com/svg.image?P \gets PlainText"/>
+<img  src="https://latex.codecogs.com/svg.image?P \gets PlainText"/>
 
-<img  src="http://latex.codecogs.com/svg.image?C \gets CipherText"/>
+<img  src="https://latex.codecogs.com/svg.image?C \gets CipherText"/>
 
 ---
 
 
 > Enccryption
 
-<img  src="http://latex.codecogs.com/svg.image?C = P^e \mod n"/>
+<img  src="https://latex.codecogs.com/svg.image?C = P^e \mod n"/>
 
 
 
@@ -81,9 +91,9 @@ these public and private keys came only from two prime numbers
 
 > Exponential Complexity
 
-<img  src="http://latex.codecogs.com/svg.image?\text{without having} \ d \ \text{it's hard to find} \ P"/>
+<img  src="https://latex.codecogs.com/svg.image?\text{without having} \ d \ \text{it's hard to find} \ P"/>
 
-<img  src="http://latex.codecogs.com/svg.image?P = \sqrt[e]{C} \mod n"/>
+<img  src="https://latex.codecogs.com/svg.image?P = \sqrt[e]{C} \mod n"/>
 
 
 
@@ -92,29 +102,54 @@ these public and private keys came only from two prime numbers
 
 > Decryption
 
-<img  src="http://latex.codecogs.com/svg.image?P = C^d \mod n"/>
+<img  src="https://latex.codecogs.com/svg.image?P = C^d \mod n"/>
 
 
 
 <br>
 <br>
+
 
 
 ---
-<!-- 
-## Rquirements
 
-```bash
-$ docker pull sagemath/sagemath
+## RSA Digital Signature
 
-$ docker run -it sagemath/sagemath
-# OR 
-$ docker run -p 8888:8888 sagemath/sagemath-jupyter
-``` -->
+> Signing 
+
+* <img src="https://latex.codecogs.com/svg.image?\text{Encrypt the Messsage } (M) \text{ with the reciver Public Key } (e_{0}, N_{0})"/>
+
+<img src="https://latex.codecogs.com/svg.image?C = M^{e_{0}} \mod N_{0}"/>
+
+* <img src="https://latex.codecogs.com/svg.image?\text{Calculate the hash/digest of the message: } H(M) \text{ and encrypt it with my Private Key (sender)}"/>
+
+<img src="https://latex.codecogs.com/svg.image?S = H(M)^{d_{1}} \mod N_{1}"/>
+
+<br>
+
+> Verifying
+
+* <img src="https://latex.codecogs.com/svg.image?\text{The receiver can decrypt the message using their Private Key} "/>
+
+<img src="https://latex.codecogs.com/svg.image?m = C^{d_{0}} \mod N_{0}"/>
+
+* <img src="https://latex.codecogs.com/svg.image?\text{calculate the hash/digest of the received message: } H(M) \text{ and compare it to } s \text{ which calculated using the sender Public Key}"/>
+
+<img src="https://latex.codecogs.com/svg.image?s = S^{e_{1}} \mod N_{1}"/>
+
+* <img src="https://latex.codecogs.com/svg.image?\text{assert } H(m) == s"/>
 
 
+
+<br><br>
+
+---
 
 ## Security of RSA 
+
+```note
+RSA relies on the difficulty of the factorisation of the modulus N
+```
 
 ### composite n
 
@@ -127,11 +162,11 @@ c = 1609304702150675864692137421020756117295420224934762275567309122941326454731
 ```
 ---
 
-<img src="http://latex.codecogs.com/svg.image?Factors(n) = 57809^2  \times 64453^4 \times 1552903013 \times 3157061689^6 \times 13572582255211282411^3"/>
+<img src="https://latex.codecogs.com/svg.image?Factors(n) = 57809^2  \times 64453^4 \times 1552903013 \times 3157061689^6 \times 13572582255211282411^3"/>
 
-<img  src="http://latex.codecogs.com/svg.image?\varphi(n) = \varphi(57809^2) \times \varphi(64453^4) \times \varphi(1552903013) \times \varphi(3157061689^6) \times ...."/>
+<img  src="https://latex.codecogs.com/svg.image?\varphi(n) = \varphi(57809^2) \times \varphi(64453^4) \times \varphi(1552903013) \times \varphi(3157061689^6) \times ...."/>
 
-<img  src="http://latex.codecogs.com/svg.image?\varphi(n) = (57809^2 - 57809^{2-1}) \times (64453^4 - 64453^{4-1}) \times (1552903013 - 1) \times ...."/>
+<img  src="https://latex.codecogs.com/svg.image?\varphi(n) = (57809^2 - 57809^{2-1}) \times (64453^4 - 64453^{4-1}) \times (1552903013 - 1) \times ...."/>
 
 ---
 
