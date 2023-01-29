@@ -100,23 +100,15 @@ else :
 
 <img  src="https://latex.codecogs.com/svg.image?\text{then } n \text{ is always a quadratic residue mod } p"/>
 
-<br>
-
 ---
-
-<br>
 
 <img  src="https://latex.codecogs.com/svg.image?\text{Knowing the Legendre symbol methodology }"/>	
 
 <br>
 
-<img  src="https://latex.codecogs.com/svg.image? 1 \equiv \frac{q}{p} \equiv q^{(\frac{p-1}{2})} \ (mod\ p) \ \ \leftarrow q \text{ quadratic residue mod } p"/>
-
-<br>
+<img  src="https://latex.codecogs.com/svg.image? 1 \equiv \frac{q}{p} \equiv q^{(\frac{p-1}{2})} \ (mod\ p) \ \ \leftarrow \text{only when } q \text{ is quadratic residue mod } p"/>
 
 ---
-
-<br>
 
 <img  src="https://latex.codecogs.com/svg.image?\text{So if } n^{(\frac{p-1}{2})} \ mod\ p = 1   \ \ \rightarrow n \text{ quadratic residue mod } p \rightarrow \text{the corresponding bit is '1'}"/>	
 
