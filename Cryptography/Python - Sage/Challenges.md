@@ -97,6 +97,23 @@ def HII():
 </div>
 
 
+<details markdown="1" style="dispaly=flex;"><summary>Click To View</summary>
+
+<div style="font-size:xx-small" markdown="1">
+
+```python
+# HIIIIOO 
+
+
+def HII():
+	pass 
+```
+
+</div>
+
+</details>
+
+
 
 
 
