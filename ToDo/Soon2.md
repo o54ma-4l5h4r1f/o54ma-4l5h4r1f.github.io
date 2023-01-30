@@ -84,5 +84,8 @@ $$\text{HIIqweq} \ \ \\\ $$
 
 ---
 
-<div markdown="1" style="display:inline-block;"> $$\text{HII the last line}$$ </div>
+<div markdown="1" style="display:inline-block;"> $$\text{HII1 the last line $$ 
 
+<div markdown="1" style="display:inline-block;"> $$\text{HII3 the last line $$ 
+
+<div markdown="1" style="display:inline-block;"> $$\text{HII2 the last line $$ 
