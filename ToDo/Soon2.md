@@ -40,7 +40,9 @@ PORT      STATE SERVICE VERSION
 # Latest Versions 
 
 SSH     9.0
+
 Apache  2.4.46
+
 Nginx   1.18
 
 
@@ -64,6 +66,9 @@ $\text{HII}$
 $$
 \text{HII}
 $$
+
+$a + b = c$
+
 
 </div>
 
