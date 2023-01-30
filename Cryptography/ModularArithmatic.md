@@ -472,7 +472,7 @@ is a technique for solving for x in a congruence of the form:
 
 <img  src="https://latex.codecogs.com/svg.image?x^{2} \equiv q \ (mod\ p)"/>
 
-which is also the square roots modulo a prime 
+which is also the square root of quadratic residue modulo a prime 
 
 ```python
 sage: from sage.rings.finite_rings.integer_mod import square_root_mod_prime 
@@ -580,13 +580,13 @@ sage: CRT_list([2,3,5], [5,11,17])
 
 --- 
 
-## Diffie-Hellman (Exponential Key Exchange Method)
+## Diffie-Hellman (DH - Exponential Key Exchange Method)
 
 <img  src="https://latex.codecogs.com/svg.image?\text{Every element of a finite field } F_{p} \text{ can be used to make a subgroup } H \text{ under repeated action of multiplication." />
 
 <img  src="https://latex.codecogs.com/svg.image?\text{In other words, for an element } g : H = \{g, g^{2}, g^{3}, ...\}" />
 
-> the primitive element
+> Primitive Elements / Generators  
 
 <img  src="https://latex.codecogs.com/svg.image?\text{A primitive element of } F_{p} \text{ is an element whose subgroup } H = F_{p}"/>
 
@@ -594,22 +594,18 @@ sage: CRT_list([2,3,5], [5,11,17])
 
 <img  src="https://latex.codecogs.com/svg.image?\text{which means that every element of } F_{p} \text{ can be written as } \rightarrow \ g^{n} \ mod\ p"/>  <img  src="https://latex.codecogs.com/svg.image? , \ n \in \mathbb{Z}"/> 
 
-Because of this, primitive elements are sometimes called `generators of the finite field`.
+
+<img  src="https://latex.codecogs.com/svg.image?\text{Because of this, primitive elements are sometimes called generators of the finite field}"/>
 
 ```notes
-there could be more than one primitive element for the finite field
-```
-
-```python
-#!/usr/bin/python3
-'''
-Rather than using a set and checking if every element of Fp has been
+There could be more than one primitive element for the finite field, and rather than using a set and checking if every element of Fp has been
 generated, we can also rapidly disregard a number from being a generator
 by checking if the cycle it generates is smaller in size than p.
 
-If we detect a cycle before p elements, k can't be a generator of Fp.
-'''
+If we detect a cycle before p elements, g can't be a generator of Fp.
+```
 
+```python
 def is_generator(g, p):
   for n in range(2, p):
     if pow(g, n, p) == g:
@@ -622,7 +618,38 @@ for g in range(p):
     print(g)
 ```
 
-thanks to [Landryl](https://cryptohack.org/user/Landryl/)
+```python
+sage: GF(28151).primitive_element()
+```
+
+
+> DH Protocol/Procedure 
+
+<p align="center"> 
+  <img src='./../assets/images/DH.png'> 
+</p>)
+
+
+* Establish a prime number `p` and some generator of the finite field `g`
+
+* The user then picks a secret integer `a` (Private Key) , where `a < p` , then calculates
+
+<img  src="https://latex.codecogs.com/svg.image?X = g^{a} \ mod\ p"/>
+
+* The user will send `g`, `p` (Public Key) and `X`, making it so difficult to calculate `a` (by taking the discrete logarithm).
+
+* The receiver then picks a secret integer `b` (Private Key) , where `b < p` , then calculates
+
+<img  src="https://latex.codecogs.com/svg.image?Y = g^{b} \ mod\ p"/>
+
+* Then he will send back `Y` 
+
+* Now both sides can generate their shared keys as follows
+
+<img  src="https://latex.codecogs.com/svg.image?K \ = \ X^{b} \ mod\ p \ =  \ Y^{a} \ mod\ p"/>
+
+
+---
 
 
 
@@ -638,6 +665,15 @@ thanks to [Landryl](https://cryptohack.org/user/Landryl/)
 
 
 
+
+<br><br>
+
+
+
+## References
+
+* https://g.co/kgs/jsEVup
+* https://cryptohack.org/
 
 
 
