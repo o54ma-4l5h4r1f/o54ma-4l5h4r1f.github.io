@@ -4,6 +4,8 @@ sort : 2
 
 # RSA 
 
+The most common Public-Key/Asymmetric-Key algorithm.
+
 In RSA, modular exponentiation, together with the problem of prime factorisation, helps us to build a `trapdoor function`.
 
 The private key is the secret piece of information or "trapdoor" which allows us to quickly invert the encryption function

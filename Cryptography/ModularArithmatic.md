@@ -576,6 +576,54 @@ sage: CRT_list([2,3,5], [5,11,17])
 
 
 
+<br>
+
+--- 
+
+## Diffie-Hellman (Exponential Key Exchange Method)
+
+<img  src="https://latex.codecogs.com/svg.image?\text{Every element of a finite field } F_{p} \text{ can be used to make a subgroup } H \text{ under repeated action of multiplication." />
+
+<img  src="https://latex.codecogs.com/svg.image?\text{In other words, for an element } g : H = \{g, g^{2}, g^{3}, ...\}" />
+
+> the primitive element
+
+<img  src="https://latex.codecogs.com/svg.image?\text{A primitive element of } F_{p} \text{ is an element whose subgroup } H = F_{p}"/>
+
+ 
+
+<img  src="https://latex.codecogs.com/svg.image?\text{which means that every element of } F_{p} \text{ can be written as } \rightarrow \ g^{n} \ mod\ p"/>  <img  src="https://latex.codecogs.com/svg.image? , \ n \in \mathbb{Z}"/> 
+
+Because of this, primitive elements are sometimes called `generators of the finite field`.
+
+```notes
+there could be more than one primitive element for the finite field
+```
+
+```python
+#!/usr/bin/python3
+'''
+Rather than using a set and checking if every element of Fp has been
+generated, we can also rapidly disregard a number from being a generator
+by checking if the cycle it generates is smaller in size than p.
+
+If we detect a cycle before p elements, k can't be a generator of Fp.
+'''
+
+def is_generator(g, p):
+  for n in range(2, p):
+    if pow(g, n, p) == g:
+      return False
+  return True
+
+p = 28151
+for g in range(p):
+  if is_generator(g, p):
+    print(g)
+```
+
+thanks to [Landryl](https://cryptohack.org/user/Landryl/)
+
 
 
 
