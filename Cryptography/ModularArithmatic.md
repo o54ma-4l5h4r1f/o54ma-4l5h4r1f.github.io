@@ -627,7 +627,7 @@ sage: GF(28151).primitive_element()
 
 <p align="center"> 
   <img src='./../assets/images/DH.png'> 
-</p>)
+</p>
 
 
 * Establish a prime number `p` and some generator of the finite field `g`
