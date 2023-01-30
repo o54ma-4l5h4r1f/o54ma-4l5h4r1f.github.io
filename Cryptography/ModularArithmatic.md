@@ -622,6 +622,7 @@ for g in range(p):
 sage: GF(28151).primitive_element()
 ```
 
+<br>
 
 > DH Protocol/Procedure 
 
@@ -655,15 +656,30 @@ sage: GF(28151).primitive_element()
 > MITA
 
 <p align="left"> 
-  <img src='./../assets/images/DH2.png'> 
+  <img src='./../assets/images/DH22.png'> 
 </p>
 
 
 
+<br>
 
-> Discrete Log Problem
+> Discrete Log Problem (DLP)
 
-https://cryptohack.gitbook.io/cryptobook/abstract-algebra/groups/untitled
+we mentioned that using the primitive element `g`, every element in `Fp` can be written as :
+
+<img  src="https://latex.codecogs.com/svg.image?X = g^{n} \ mod\ p"/>
+
+knowing only the values of `X`, `g`, and `p` leaving as with the problem of finding `n`, and this is known as the disctrte log problem.
+
+<img  src="https://latex.codecogs.com/svg.image?n = log_{g}(X) \ mod\ p"/>
+
+The discrete logarithm problem is considered to be computationally intractable. That is, no efficient classical algorithm is known for computing discrete logarithms in general.
+
+<img  src="https://latex.codecogs.com/svg.image?\text{all known algorithms run in } O(2^{N^{C}}) \text{ , where } C > 0"/>
+
+<br>
+
+<!-- https://cryptohack.gitbook.io/cryptobook/abstract-algebra/groups/untitled -->
 
 ```python
 from sympy.ntheory import discrete_log
@@ -673,9 +689,15 @@ a = discrete_log(p, A, g)
 ```
 
 ```python
-# using sagemath
 # A = g^a mod p
+
+# using Pohlig-Hellman and baby-step giant-step alogrithms
 sage: a = discrete_log(A, Mod(g, p))
+
+# OR using a Pari znlog (linear sieve index calculus method)
+sage: int(pari(f"znlog({int(A)},Mod({int(g)},{int(p)}))"))  # a bit faster 
+
+sage: gp.znlog(A, gp.Mod(g, p))
 ```
 
 ```python
