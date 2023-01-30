@@ -1,5 +1,5 @@
 ---
-sort : 1 
+sort : 2
 ---
 
 # Modular Arithmetic
@@ -625,7 +625,7 @@ sage: GF(28151).primitive_element()
 
 > DH Protocol/Procedure 
 
-<p align="center"> 
+<p align="left"> 
   <img src='./../assets/images/DH.png'> 
 </p>
 
@@ -646,7 +646,85 @@ sage: GF(28151).primitive_element()
 
 * Now both sides can generate their shared keys as follows
 
-<img  src="https://latex.codecogs.com/svg.image?K \ = \ X^{b} \ mod\ p \ =  \ Y^{a} \ mod\ p"/>
+<img  src="https://latex.codecogs.com/svg.image?K \ = \ X^{b} \ mod\ p \ =  \ Y^{a} \ mod\ p \ = \ g^{a \times b} \ mod\ p q"/>
+
+
+
+<br>
+
+> MITA
+
+<p align="left"> 
+  <img src='./../assets/images/DH2.png'> 
+</p>
+
+
+
+
+> Discrete Log Problem
+
+https://cryptohack.gitbook.io/cryptobook/abstract-algebra/groups/untitled
+
+```python
+from sympy.ntheory import discrete_log
+
+# A = g^a mod p
+a = discrete_log(p, A, g)
+```
+
+```python
+# using sagemath
+# A = g^a mod p
+sage: a = discrete_log(A, Mod(g, p))
+```
+
+```python
+# using sagemath
+def pohligHellmanPGH(p,A,g):
+    #g must be small
+    F=IntegerModRing(p)
+    g=F(g)
+    A=F(A)
+    G=[]
+    H=[]
+    X=[]
+    c=[]
+    N=factor(p-1)
+    for i in range(0,len(N)):
+        G.append(g^((p-1)/(N[i][0]^N[i][1])))
+        H.append(A^((p-1)/(N[i][0]^N[i][1])))
+        X.append(log(H[i],G[i]))
+        c.append((X[i],(N[i][0]^N[i][1])))
+
+    print("G=",G,"\n","H=",H,"\n","X=",X)
+
+    #Using Chinese Remainder
+    c.reverse()
+
+    for i in range(len(c)):
+        if len(c) < 2:
+            break
+        t1=c.pop()
+        t2=c.pop()
+        r=crt(t1[0],t2[0],t1[1],t2[1])
+        m=t1[1]*t2[1]
+        c.append((r,m))
+
+    print("(a,p-1) =",c[0])
+ 
+
+sage: a = pohligHellmanPGH(p, A, g)
+sage: a 
+# G= [8213473543459478292, 3854530033786951538, 15842502293236950997, 11361374755113076881, 4654654383183389733] 
+#  H= [7794196832818169365, 1, 12912327280035100030, 14801588540420624265, 15860493449920325450] 
+#  X= [3, 0, 83, 1881, 73825648379]
+# (a,p-1) = (3466191685115160123, 16007670376277647656)
+```
+
+
+
+
+
 
 
 ---
