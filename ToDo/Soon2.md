@@ -53,7 +53,7 @@ Nginx   1.18
 # SOOOOOOOOOOOOOOON2222
 
 
-<div markdown="1" style="text-align: left;">
+<div markdown="1" style="display:inline-block;">
 
 $$
 \text{HII}
