@@ -647,7 +647,7 @@ sage: GF(28151).primitive_element()
 
 * Now both sides can generate their shared keys as follows
 
-<img  src="https://latex.codecogs.com/svg.image?K \ = \ X^{b} \ mod\ p \ =  \ Y^{a} \ mod\ p \ = \ g^{a \times b} \ mod\ p q"/>
+<img  src="https://latex.codecogs.com/svg.image?K \ = \ X^{b} \ mod\ p \ =  \ Y^{a} \ mod\ p \ = \ g^{a \times b} \ mod\ p"/>
 
 
 
@@ -669,7 +669,7 @@ we mentioned that using the primitive element `g`, every element in `Fp` can be 
 
 <img  src="https://latex.codecogs.com/svg.image?X = g^{n} \ mod\ p"/>
 
-knowing only the values of `X`, `g`, and `p` leaving as with the problem of finding `n`, and this is known as the disctrte log problem.
+knowing only the values of `X`, `g`, and `p` leaving as with the problem of finding `n`, and this is known as the discrete log problem.
 
 <img  src="https://latex.codecogs.com/svg.image?n = log_{g}(X) \ mod\ p"/>
 
