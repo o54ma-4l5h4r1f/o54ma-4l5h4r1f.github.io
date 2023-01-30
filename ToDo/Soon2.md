@@ -55,13 +55,12 @@ Nginx   1.18
 
 <div markdown="1" style="text-align: left;">
 
-$$
+
 \text{HII}
-$$
 
 
-$$
+
+
 \text{HII}
-$$
 
 </div>
