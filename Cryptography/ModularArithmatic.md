@@ -228,8 +228,6 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 * <span> $$ \varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime $$ </span> 
 
-<br>
-
 
 ---
 
@@ -340,7 +338,6 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 </details>
 
-<br>
 
 ```python
 from Crypto.Util.number import inverse
@@ -420,12 +417,13 @@ has a <span> $$ \frac{p-1}{2} $$ </span>  solutions
 
 </details>
 
-<br>
 
 
 ```note
 A number that is congruent to 0 mod p is neither a residue nor a non-residue. 
 ```
+
+<br>
 
 > Euler’s criterion
 
@@ -471,6 +469,7 @@ Legendre's Symbol obeys:
 
 Which means given any integer a, calculating `pow(q, (p-1)//2, p)` is enough to determine if q is a quadratic residue.
 
+<br>
 
 > Tonelli-Shanks algorithm
 
@@ -565,7 +564,6 @@ There is a unique solution :
 
 </details>
 
-<br>
 
 ```python3
 sage: CRT_list([2,3,5], [5,11,17])
@@ -586,9 +584,9 @@ sage: CRT_list([2,3,5], [5,11,17])
 
 ## Diffie-Hellman (DH - Exponential Key Exchange Method)
 
-<span> $$ \text{Every element of a finite field } F_{p} \text{ can be used to make a subgroup } H \text{ under repeated action of multiplication." />
+<span> $$ \text{Every element of a finite field } F_{p} \text{ can be used to make a subgroup } H \text{ under repeated action of multiplication.} $$ </span> 
 
-<span> $$ \text{In other words, for an element } g : H = \{g, g^{2}, g^{3}, ...\}" />
+<span> $$ \text{In other words, for an element } g : H = \{g, g^{2}, g^{3}, ...\} $$ </span> 
 
 > Primitive Elements / Generators  
 
