@@ -7,7 +7,7 @@ span {
 	markdown: "1";
 }
 
-mjx-container {
+span ~ mjx-container {
   text-align: left;
 }
 
