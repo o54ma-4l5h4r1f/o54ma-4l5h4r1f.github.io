@@ -78,14 +78,7 @@ asdlfkjasdf <span> $$
 
 <details style="display:inline;"><summary>EX</summary>
 
-<span> \\( \text{What is} \ (8 \times 16) \ (mod\ 7) ? \\) </span> 
-
-<p> since </p>
-
-<span> $$ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) $$ </span> 
-
-<p> we have </p>
-
-<span> $$ (8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7) $$ </span> 
+<span> $$ \text{What is} \ (8 \times 16) \ (mod\ 7) ? $$ <br> $$ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) $$ <br> <p> new line </p>  $$ (8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7) $$ </span> 
 
 </details>
+
