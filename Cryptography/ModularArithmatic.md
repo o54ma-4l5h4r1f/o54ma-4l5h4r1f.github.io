@@ -6,6 +6,11 @@ sort : 2
 span {
 	markdown: "1";
 }
+
+mjx-container {
+  text-align: left;
+}
+
 </style>
 
 # Modular Arithmetic
