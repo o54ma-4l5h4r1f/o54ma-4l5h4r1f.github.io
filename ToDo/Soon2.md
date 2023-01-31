@@ -54,4 +54,7 @@ Nginx   1.18
 
 # SOOOOOOOOOOOOOOON2222
 
+<div markdown="1" style="disply:inline-block"> $$\text{BB}$$
+
+<div markdown="1" style="disply:inline-block"> $$\text{AAAAAAAAAAAAAAA}$$
 
