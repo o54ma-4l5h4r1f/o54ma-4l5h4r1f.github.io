@@ -8,10 +8,18 @@ span {
 }
 
 span ~ mjx-container {
-  text-align: left;
+  text-align  : left;
 }
 
 </style>
+
+
+<script>
+MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    displayAlign: "left"
+});
+</script>
 
 # Modular Arithmetic
 
