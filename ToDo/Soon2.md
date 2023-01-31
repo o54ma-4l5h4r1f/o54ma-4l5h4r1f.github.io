@@ -76,9 +76,9 @@ asdlfkjasdf <span> $$
 
 
 
-<details><summary>EX</summary>
+<details style="display:inline;"><summary>EX</summary>
 
-<span> $$ \text{What is} \ (8 \times 16) \ (mod\ 7) ? $$ </span> 
+<span> \\( \text{What is} \ (8 \times 16) \ (mod\ 7) ? \\) </span> 
 
 <p> since </p>
 
