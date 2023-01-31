@@ -54,9 +54,9 @@ Nginx   1.18
 
 # SOOOOOOOOOOOOOOON2222
 
-<div markdown="1" style="disply:inline-block"> $$\text{BB}$$ </div>
+<span markdown="1"> $$\text{BB}$$ </span>
 
-<div markdown="1" style="disply:inline-block"> $$\text{AAAAAAAAAAAAAAA}$$ </div>
+<span markdown="1"> $$\text{AAAAAAAAAAAAAAA}$$ </span>
 
 
 <div markdown="1" style="disply:inline-block"> 
