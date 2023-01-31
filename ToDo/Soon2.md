@@ -47,7 +47,11 @@ Nginx   1.18
 
 
 
-
+<style>
+span {
+	markdown: "1";
+}
+</style>
 
 
 
@@ -58,7 +62,8 @@ asdlfkjasdf <span> $$\text{BB}$$ </span> asdfasdf
 
 <span>$$\text{AAAAAAAAAAAAAAA}$$ </span>
 
-* asdfasd <span> $$ (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; $$ </snap> asdfasdf 
+* asdfasd <span> $+
+$ (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; $$ </snap> asdfasdf 
 
 
 
