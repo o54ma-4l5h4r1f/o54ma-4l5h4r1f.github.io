@@ -7,19 +7,8 @@ span {
 	markdown: "1";
 }
 
-span ~ mjx-container {
-  text-align  : left;
-}
-
 </style>
 
-
-<script>
-MathJax.Hub.Config({
-    jax: ["input/TeX","output/HTML-CSS"],
-    displayAlign: "left"
-});
-</script>
 
 # Modular Arithmetic
 
