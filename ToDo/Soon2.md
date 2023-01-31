@@ -58,7 +58,8 @@ span {
 
 # SOOOOOOOOOOOOOOON2222
 
-asdlfkjasdf <span> $$\text{BB}$$ </span> asdfasdf 
+asdlfkjasdf <span> $$
+\text{BB}$$ </span> asdfasdf 
 
 <span>$$\text{AAAAAAAAAAAAAAA}$$ </span>
 
@@ -71,3 +72,20 @@ asdlfkjasdf <span> $$\text{BB}$$ </span> asdfasdf
 
 * <img src="https://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
 
+
+
+
+
+<details><summary>EX</summary>
+
+<span> $$ \text{What is} \ (8 \times 16) \ (mod\ 7) ? $$ </span> 
+
+<p> since </p>
+
+<span> $$ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) $$ </span> 
+
+<p> we have </p>
+
+<span> $$ (8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7) $$ </span> 
+
+</details>
