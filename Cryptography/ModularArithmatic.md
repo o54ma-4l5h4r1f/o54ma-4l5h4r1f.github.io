@@ -92,16 +92,15 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 <div style="border-style: double; padding: 4px">
 
-<span> $$ \text{What is} \ (8 \times 16) \ (mod\ 7) ? $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{What is} \ (8 \times 16) \ (mod\ 7) ?"/>
 
 <p> since </p>
 
-<span> $$ 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image? 8 \equiv 1 \ (mod\ 7) \ \text{and} \ 16 \equiv 2 \ (mod\ 7) "/>
 
 <p> we have </p>
 
-<span> $$ (8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7) $$ </span> 
-
+<img src="http://latex.codecogs.com/svg.image?(8 \times 16) \equiv (1 \times 2) \equiv 2 \ (mod\ 7)"/>
 
 </div>
 
@@ -150,15 +149,15 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 <div style="border-style: double; padding: 4px;">
 
-<span> $$ \text{What is} \ 3 ^{16} \ (mod\ 4) \ ? $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{What is} \ 3 ^{16} \ (mod\ 4) \ ?"/>
 
 <p>we observe that</p>
 
-<span> $$ 3^{2} \equiv 9 \equiv 1 \ (mod\ 4) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{2} \equiv 9 \equiv 1 \ (mod\ 4)"/>
 
 <p>so</p>
 
-<span> $$ 3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4)"/>
 
 </div>
 
@@ -193,23 +192,23 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 <div style="border-style: double; padding: 4px">
 
-<span> $$ a^{p-1} \equiv 1 \ (mod\ p) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?a^{p-1} \equiv 1 \ (mod\ p)"/>
 
 <br>
 
-<span> $$ a^{p-1} \times a^{-1} \equiv a^{-1} \ (mod\ p) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?a^{p-1} \times a^{-1} \equiv a^{-1} \ (mod\ p)"/>
 
 <br>
 
-<span> $$ a^{p-2} \times a \times a^{-1} \equiv a^{-1} \ (mod\ p) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?a^{p-2} \times a \times a^{-1} \equiv a^{-1} \ (mod\ p)"/>
 
 <br>
 
-<span> $$ a^{p-2} \equiv a^{-1} \ (mod\ p) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?a^{p-2} \equiv a^{-1} \ (mod\ p)"/>
 
 <br>
 
-<span> $$ a^{p-2} \mod p = a^{-1} $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?a^{p-2} \mod p = a^{-1}"/>
 
 </div>
 
@@ -272,31 +271,31 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 <div style="border-style: double; padding: 4px">
 
-<span> $$ \text{What is the inverse element:} \ 3 \times d \equiv 1 \ (mod\ 13) \ ? $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{What is the inverse element:} \ 3 \times d \equiv 1 \ (mod\ 13) \ ?"/>
 
 <p>From the third Fermat's Little Theorem</p>
 
-<span> $$ d \equiv 3^{-1} \equiv 3^{p-2} \ (mod\ p) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?d \equiv 3^{-1} \equiv 3^{p-2} \ (mod\ p)"/>
 
 <br>
 
-<span> $$ 3^{-1} \equiv 3^{13-2} \ (mod\ 13) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 3^{13-2} \ (mod\ 13)"/>
 
 <br>
 
-<span> $$ 3^{-1} \equiv 9 \ (mod\ 13) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 9 \ (mod\ 13)"/>
 
 <p>hence</p>
 
-<span> $$ 3 \times 3^{-1} \equiv 1 \ (mod\ 13) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3 \times 3^{-1} \equiv 1 \ (mod\ 13)"/>
 
 <br>
 
-<span> $$ 3 \times 9 \equiv 1 \ (mod\ 13) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3 \times 9 \equiv 1 \ (mod\ 13)"/>
 
 <p>finally</p>
 
-<span> $$ d = 9 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?d = 9"/>
 
 </div>
 
@@ -307,36 +306,36 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 <div style="border-style: double; padding: 4px">
 
-<span> $$ \text{What is the inverse element:} \ 3 \times d \equiv 1 \ (mod\ 10) \ ? $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{What is the inverse element:} \ 3 \times d \equiv 1 \ (mod\ 10) \ ?"/>
 
 <p>Notice that n = 10, which is not a prime number </p>
 <p>But since g and n are relatively prime, we will apply the third Euler's Theorem</p>
 
-<span> $$ d \equiv 3^{-1} \equiv 3^{\varphi(n)-1} \ (mod\ n) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?d \equiv 3^{-1} \equiv 3^{\varphi(n)-1} \ (mod\ n)"/>
 
 <br>
 
-<span> $$ 3^{-1} \equiv 3^{\varphi(10)-1} \ (mod\ 10) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 3^{\varphi(10)-1} \ (mod\ 10)"/>
 
 <br>
 
-<span> $$ 3^{-1} \equiv 3^{3} \ (mod\ 10) \ \ \ \leftarrow \varphi(10) = \varphi(2) \times \varphi(5) = 4 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 3^{3} \ (mod\ 10) \ \ \ \leftarrow \varphi(10) = \varphi(2) \times \varphi(5) = 4"/>
 
 <br>
 
-<span> $$ 3^{-1} \equiv 7 \ (mod\ 10) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{-1} \equiv 7 \ (mod\ 10)"/>
 
 <p>hence</p>
 
-<span> $$ 3 \times 3^{-1} \equiv 1 \ (mod\ 10) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3 \times 3^{-1} \equiv 1 \ (mod\ 10)"/>
 
 <br>
 
-<span> $$ 3 \times 7 \equiv 1 \ (mod\ 10) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3 \times 7 \equiv 1 \ (mod\ 10)"/>
 
 <p>finally</p>
 
-<span> $$ d = 7 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?d = 7"/>
 
 </div>
 
@@ -398,23 +397,23 @@ has a <span> $$ \frac{p-1}{2} $$ </span>  solutions
 
 <p>Find ALL  quadratic residues mod 5 </p>
 
-<span> $$ 0^{2} \ (mod\ 5)  = 0 \ \leftarrow q $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?0^{2} \ (mod\ 5)  = 0 \ \leftarrow q"/>
 
 <br>
 
-<span> $$ 1^{2} \ (mod\ 5)  = 1 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?1^{2} \ (mod\ 5)  = 1"/>
 
 <br>
 
-<span> $$ 2^{2} \ (mod\ 5)  = 4 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?2^{2} \ (mod\ 5)  = 4"/>
 
 <br>
 
-<span> $$ 3^{2} \ (mod\ 5)  = 4 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?3^{2} \ (mod\ 5)  = 4"/>
 
 <br>
 
-<span> $$ 4^{2} \ (mod\ 5)  = 1 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?4^{2} \ (mod\ 5)  = 1"/>
 
 <p> So the quadratic residues mod 5 are 1,4 and the non-residues are 2,3 </p>
 
@@ -531,39 +530,39 @@ There is a unique solution :
 
 <p>Given the following set of linear congruences: </p>
 
-<span> $$ x \equiv 2 \ (mod\ 5) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?x \equiv 2 \ (mod\ 5)"/>
 
 <br>
 
-<span> $$ x \equiv 3 \ (mod\ 11) $$ </span> 	
+<img src="http://latex.codecogs.com/svg.image?x \equiv 3 \ (mod\ 11)"/>	
 
 <br>
 
-<span> $$ x \equiv 5 \ (mod\ 17) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?x \equiv 5 \ (mod\ 17)"/>
 
 <p> Find the integer a such that </p>
 
-<span> $$ x \equiv a \ (mod\ 935) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?x \equiv a \ (mod\ 935)"/>
 
 <p> the Solution </p>
 
-<span> $$ \text{1. Find} \ N = n_{1} \times n_{2} \times ... \times n_{k} $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{1. Find} \ N = n_{1} \times n_{2} \times ... \times n_{k}"/>
 
 <br>
 
-<span> $$ \text{2. Find} \ N_{1} = \frac{N}{n_{1}} \ , \ N_{2} = \frac{N}{n_{2}} \ , \ ... \ , \ N_{k} = \frac{N}{n_{k}} $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{2. Find} \ N_{1} = \frac{N}{n_{1}} \ , \ N_{2} = \frac{N}{n_{2}} \ , \ ... \ , \ N_{k} = \frac{N}{n_{k}}"/>
 
 <br>
 
-<span> $$ \text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1}  $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
 
 <br>
 
-<span> $$ \text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1}) $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?\text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1})"/>
 
 <br>
 
-<span> $$ x = 872 $$ </span> 
+<img src="http://latex.codecogs.com/svg.image?x = 872"/>
 
 </div>
 
