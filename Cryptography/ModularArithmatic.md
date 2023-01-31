@@ -146,17 +146,17 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 <details style="dispaly=flex;"><summary>EX</summary>
 
-<div style="border-style: double; padding: 4px">
+<div style="border-style: double; padding: 4px;">
 
-<span> $$ \text{What is} \ 3 ^{16} \ (mod\ 4) \ ? $$ </span> 
+<span style="float:left;"> $$ \text{What is} \ 3 ^{16} \ (mod\ 4) \ ? $$ </span> 
 
 <p>we observe that</p>
 
-<span> $$ 3^{2} \equiv 9 \equiv 1 \ (mod\ 4) $$ </span> 
+<span style="float:left;"> $$ 3^{2} \equiv 9 \equiv 1 \ (mod\ 4) $$ </span> 
 
 <p>so</p>
 
-<span> $$ 3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4) $$ </span> 
+<span style="float:left;"> $$ 3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4) $$ </span> 
 
 </div>
 
