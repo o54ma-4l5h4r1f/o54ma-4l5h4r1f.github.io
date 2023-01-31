@@ -86,7 +86,7 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 * <span> $$ \text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N); $$ </span> 
 
-<details style="dispaly=flex;"><summary>EX</summary>
+<details style="display=flex;"><summary>EX</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -144,19 +144,19 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 
 
-<details style="dispaly=flex;"><summary>EX</summary>
+<details style="display=flex;"><summary>EX</summary>
 
 <div style="border-style: double; padding: 4px;">
 
-<span style="float:left;"> $$ \text{What is} \ 3 ^{16} \ (mod\ 4) \ ? $$ </span> 
+<span> $$ \text{What is} \ 3 ^{16} \ (mod\ 4) \ ? $$ </span> 
 
 <p>we observe that</p>
 
-<span style="float:left;"> $$ 3^{2} \equiv 9 \equiv 1 \ (mod\ 4) $$ </span> 
+<span> $$ 3^{2} \equiv 9 \equiv 1 \ (mod\ 4) $$ </span> 
 
 <p>so</p>
 
-<span style="float:left;"> $$ 3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4) $$ </span> 
+<span> $$ 3^{16} \ (mod\ 4) \equiv (3^{2})^{8} \ (mod\ 4) \equiv (1)^{8} \ (mod\ 4) \equiv 1 \ (mod\ 4) $$ </span> 
 
 </div>
 
@@ -187,7 +187,7 @@ knwing that <span> $$ p $$ </span>  is a prime number
 * <span> $$ a^{-1} \equiv a^{p-2} \ (mod\ p) $$ </span> 
 
 
-<details style="dispaly=flex;"><summary>HOW ?</summary>
+<details style="display=flex;"><summary>HOW ?</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -266,7 +266,7 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 
 
-<details style="dispaly=flex;"><summary>EX1</summary>
+<details style="display=flex;"><summary>EX1</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -301,7 +301,7 @@ knwing that <span> $$ p $$ </span>  is a prime number
 </details>
 
 
-<details style="dispaly=flex;"><summary>EX2</summary>
+<details style="display=flex;"><summary>EX2</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -390,7 +390,7 @@ has a <span> $$ \frac{p-1}{2} $$ </span>  solutions
 
 
 
-<details style="dispaly=flex;"><summary>EX</summary>
+<details style="display=flex;"><summary>EX</summary>
 
 <div style="border-style: double; padding: 4px">
 
@@ -523,7 +523,7 @@ There is a unique solution :
 
 
 
-<details style="dispaly=flex;"><summary>EX</summary>
+<details style="display=flex;"><summary>EX</summary>
 
 <div style="border-style: double; padding: 4px">
 
