@@ -6,7 +6,6 @@ sort : 2
 span {
 	markdown: "1";
 }
-
 </style>
 
 
@@ -443,7 +442,7 @@ A number `x` is square root of `q` under modulo `p` if
 
 * <span> $$ \text{Quadratic Residue} \times \text{Quadratic Non-Residue = Quadratic Non-Residue} $$ </span> 
 
-* <span> $$ \text{Quadratic Non-Residue} \times \text{Quadratic Non-Residue = Quadratic Residue $$ </span> 
+* <span> $$ \text{Quadratic Non-Residue} \times \text{Quadratic Non-Residue = Quadratic Residue} $$ </span> 
 
 an easy way to remember this : 
 
@@ -554,9 +553,7 @@ There is a unique solution :
 
 <br>
 
-<img src="http://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \ \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ \text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
-
-<br>
+<img src="http://latex.codecogs.com/svg.image?\text{3. Find the multiplicative inverse of} \ N_{1} \ , \ N_{2} \ , \ ... \ , N_{k} \"/> <img src="http://latex.codecogs.com/svg.image? \text{using the corresponding moduli} \ n_{1} \ , \ n_{2} \ , \ ... \ , \ n_{k} \ , \ \"/> <img src="http://latex.codecogs.com/svg.image?\text{call the inverse} \ N_{1}^{-1} \ , \ N_{2}^{-1} \ , \ ... \ , \ N_{k}^{-1} "/>
 
 <img src="http://latex.codecogs.com/svg.image?\text{4. } \ x = (a_{1} \times N_{1} \times N_{1}^{-1}) + (a_{2} \times N_{2} \times N_{2}^{-1}) + ... + (a_{k} \times N_{k} \times N_{k}^{-1})"/>
 
