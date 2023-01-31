@@ -63,10 +63,7 @@ Nginx   1.18
 
 
 
-* <img src="https://latex.codecogs.com/svg.image?"/>
+* <img src="https://latex.codecogs.com/svg.image?(a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n;"/>
 
 * <img src="https://latex.codecogs.com/svg.image?(a-b) \mod n = [(a \mod n) - (b \mod n)] \mod n;"/>
 
-* <img src="https://latex.codecogs.com/svg.image?(a\times b) \mod n = [(a \mod n)\times (b \mod n)] \mod n;"/>
-
-* <img  src="https://latex.codecogs.com/svg.image?10^a \mod n = (10 \mod n)^a;"/>
