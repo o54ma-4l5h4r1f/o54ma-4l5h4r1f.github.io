@@ -54,11 +54,11 @@ Nginx   1.18
 
 # SOOOOOOOOOOOOOOON2222
 
-<span markdown="1"> $$\text{BB}$$ </span>
+asdlfkjasdf <span> $$\text{BB}$$ </span> asdfasdf 
 
-<span markdown="1"> $$\text{AAAAAAAAAAAAAAA}$$ </span>
+<span>$$\text{AAAAAAAAAAAAAAA}$$ </span>
 
-* <span markdown="1"> $$ (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; $$ </snap>
+* asdfasd <span> $$ (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; (a+b) \mod n = [(a \mod n) + (b \mod n)] \mod n; $$ </snap> asdfasdf 
 
 
 
