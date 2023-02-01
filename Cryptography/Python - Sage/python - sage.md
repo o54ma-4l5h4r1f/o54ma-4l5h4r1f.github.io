@@ -133,6 +133,31 @@ ciphertext = ?
 print(decrypt_flag(shared_secret, iv, ciphertext))
 
 
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+    if encoding == "base64":
+        decoded = base64.b64decode(value).decode()
+    elif encoding == "hex":
+        decoded = long_to_bytes(int(value, 16)).decode()
+    elif encoding == "rot13":
+        decoded = codecs.encode(value, 'rot_13')
+    elif encoding == "bigint":
+        decoded = long_to_bytes(int(value, 16)).decode()
+    elif encoding == "utf-8":
+        decoded = ''.join([chr(b) for b in value])
+
+
 -->
 
 
@@ -148,6 +173,7 @@ bytes.fromhex('63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6
 
 
 > base64
+
 ```python
 from base64 import *
 
