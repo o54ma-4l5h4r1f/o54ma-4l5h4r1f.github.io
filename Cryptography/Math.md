@@ -160,3 +160,13 @@ bool IsPrime(int n)
 
 ---
 
+## XOR 
+
+```note
+xor properties:
+
+Commutative: A ⊕ B = B ⊕ A
+Associative: A ⊕ (B ⊕ C) = (A ⊕ B) ⊕ C
+Identity: A ⊕ 0 = A
+Self-Inverse: A ⊕ A = 0 
+```

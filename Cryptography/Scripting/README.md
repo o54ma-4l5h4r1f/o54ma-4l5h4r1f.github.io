@@ -2,6 +2,6 @@
 sort: 2
 ---
 
-# Python | Sagemath
+# Scripting
 
 {% include list.liquid all=true %}
