@@ -918,7 +918,7 @@ So
 
 <p> we can get the value of the left hand side since all values are known (lets call it X)</p>
 
-<p> and for the right hand side is equal to q modulo N </p>
+<!-- <p> and for the right hand side is equal to q modulo N </p> -->
 
 
 <img src="http://latex.codecogs.com/svg.image? q = \gcd(X, N)"/>
