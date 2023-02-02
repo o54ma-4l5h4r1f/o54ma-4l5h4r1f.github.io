@@ -258,7 +258,7 @@ sage: bytes.fromhex(hex(c.nth_root(3, True)[0])[2:])
 
 <span> $$ \text{Let } n = pq \text{ with } q < p < 2q. \ \text{ Let } d < \frac{1}{3} n^{\frac{1}{4}} $$ </span>
 
-<span> $$ \text{Given } n \text{ and } e  \text{ with } ed \equiv 1 \ (mod\ \varphi(n)) \text{ , the attacker can efficiently recover d d }$$ </span>
+<span> $$ \text{Given } n \text{ and } e  \text{ with } ed \equiv 1 \ (mod\ \varphi(n)) \text{ , the attacker can efficiently recover d }$$ </span>
 
 > Example
 

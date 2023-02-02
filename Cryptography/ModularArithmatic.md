@@ -855,7 +855,6 @@ sage: a
 
 So 
 
-
 <span style="border-style: double; padding: 8px"> $$ \ (x+y)^n \equiv (x)^{n} + (y)^{n} \ (mod\ m)  $$ </span>
 
 
@@ -870,17 +869,68 @@ So
 
 <br>
 
-> Ex
+<details style="display=flex;"><summary>EX</summary>
+
+<div style="border-style: double; padding: 4px">
+
+<img src="http://latex.codecogs.com/svg.image?\text{Let } N = p \times q \ \text{ and }"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{1} \equiv (2p + 3q)^{e_{1}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{2} \equiv (5p + 7q)^{e_{2}} \ (mod\ N) "/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image? \text{Find the values of } p \text{ and } q \text{ knowing everything else !}"/>
+
+<hr>
+
+<img src="http://latex.codecogs.com/svg.image?c_{1} \equiv (2p)^{e_{1}} + (3q)^{e_{1}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{2} \equiv (5p)^{e_{2}} + (7q)^{e_{2}} \ (mod\ N) "/>
 
 
+<p> Rise both sides of first equation to e2 and the second one to e1 </p>
 
-<span> $$ \text{Let } N = p \times q \ \text{ and }$$ </span>
+<img src="http://latex.codecogs.com/svg.image?c_{1}^{e_{2}} \equiv ((2p)^{e_{1}} + (3q)^{e_{1}})^{e_{2}} \ (mod\ N) \ \ \Longrightarrow \ \ c_{1}^{e_{2}} \equiv (2p)^{e_{1} e_{2}} + (3q)^{e_{1} e_{2}} \ (mod\ N)"/>
 
-<span> $$ c1 \equiv (2p + 3q)^{e_{1}} \ (mod\ N)  $$ </span>
+<br>
 
-<span> $$ c2 \equiv (5p + 7q)^{e_{2}} \ (mod\ N)  $$ </span>
+<img src="http://latex.codecogs.com/svg.image?c_{2}^{e_{1}} \equiv ((5p)^{e_{2}} + (7q)^{e_{2}})^{e_{1}} \ (mod\ N) \ \ \Longrightarrow \ \ c_{2}^{e_{1}} \equiv (5p)^{e_{2}e_{1}} + (7q)^{e_{2}e_{1}} \ (mod\ N) "/>
 
-<span> $$ \text{Find the values of } p \text{ and } q \text{ knowing everything else !} $$ </span>
+<p> Multiply both sides of first equation with 2^(-1 * e1 * e2) and the second one with 5^(-1 * e1 * e2) </p>
+
+<img src="http://latex.codecogs.com/svg.image?(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}} \equiv (2^{-e_{1}e_{2}}) \times (2p)^{e_{1} e_{2}} + (2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}} \ (mod\ N) \ \ \Longrightarrow \ \"/> <img src="http://latex.codecogs.com/svg.image?(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}} \equiv p^{e_{1} e_{2}} + (2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} \equiv (5^{-e_{1}e_{2}}) \times (5p)^{e_{2}e_{1}} + (5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}} \ (mod\ N) \ \ \Longrightarrow \ \ "/> <img src="http://latex.codecogs.com/svg.image?(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} \equiv  p^{e_{2}e_{1}} + (5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}} \ (mod\ N)"/>
+
+<p> Subtract both equations from each other </p>
+
+<img src="http://latex.codecogs.com/svg.image? [(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}}] - [(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} ] \equiv 0 \ +  "/> <img src="http://latex.codecogs.com/svg.image? \ [(2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}}] - [(5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}}] \ (mod\ N)"/>
+
+<p> we can get the value of the left hand side since all values are known (lets call it X)</p>
+
+<p> and for the right hand side is equal to q modulo N </p>
+
+
+<img src="http://latex.codecogs.com/svg.image? q = \gcd(X, N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image? p = N / q"/>
+
+</div>
+
+</details>
+
 
 
 
