@@ -2,6 +2,13 @@
 sort : 1
 ---
 
+<style>
+span {
+	markdown: "1";
+}
+</style>
+
+
 # Mathematics Of Cryptography
 
 ## Concepts and Definitions
@@ -20,15 +27,15 @@ sort : 1
 
 *dividend vs divisor vs qoutient*
 
-<img src="http://latex.codecogs.com/svg.image?\frac{24 \leftarrow   }{6 \leftarrow divisor} = 4 \leftarrow qoutient"/>
+<span> $$ \frac{24 \ \leftarrow  \ dividend}{6 \ \leftarrow \ divisor} = 4 \ \leftarrow \ qoutient $$ </span>
 
 *a divides b* - without a remainder -
 
-<img src="http://latex.codecogs.com/svg.image?a \ \vert \ b, \ \ a \rightarrow divisor, b \rightarrow dividend"/>
+<span> $$ a \ \vert \ b, \ \ a \rightarrow divisor, \ b \rightarrow dividend $$ </span>
 
 *a does not divides b* 
 
-<img src="http://latex.codecogs.com/svg.image?a \not\vert \ b, \ \ a \rightarrow divisor, b \rightarrow dividend"/>
+<span> $$ a \not\vert \ b, \ \ a \rightarrow divisor, \ b \rightarrow dividend $$ </span>
 
 
 <br>
@@ -39,7 +46,7 @@ sort : 1
 
 By the fundamental theorem of arithmetic, every positive integer has a unique prime factorization.  
 
-<img src="http://latex.codecogs.com/svg.image?n = p_1^{e_1} \times p_2^{e_2} \times ... \times p_k^{e_k}"/>
+<span> $$ n = p_1^{e_1} \times p_2^{e_2} \times ... \times p_k^{e_k} $$ </span>
 
 
 
@@ -49,19 +56,19 @@ By the fundamental theorem of arithmetic, every positive integer has a unique pr
 
 ## GCD & LCM
 
-<img src="http://latex.codecogs.com/svg.image?\text{let} \ a = p_1^{x_1} \times p_2^{x_2} \times ... \times p_k^{x_k}"/>
+<span> $$ \text{let} \ a = p_1^{x_1} \times p_2^{x_2} \times ... \times p_k^{x_k} $$ </span>
 
-<img src="http://latex.codecogs.com/svg.image?\text{and} \ b = p_1^{y_1} \times p_2^{y_2} \times ... \times p_k^{y_k}"/>
+<span> $$ \text{and} \ b = p_1^{y_1} \times p_2^{y_2} \times ... \times p_k^{y_k} $$ </span>
 
 <br>
 
-<img src="http://latex.codecogs.com/svg.image?\text{then} \ \gcd(a, b) = p_1^{min(x1, y1)} \times p_2^{min(x_2, y_2)} \times ... \times p_k^{min(x_k, y_k)}"/>
+<span> $$ \text{then} \ \gcd(a, b) = p_1^{min(x1, y1)} \times p_2^{min(x_2, y_2)} \times ... \times p_k^{min(x_k, y_k)} $$ </span>
 
-<img src="http://latex.codecogs.com/svg.image?\text{and } \ \text{lcm}(a, b) = p_1^{max(x_1, y_1)} \times p_2^{max(x_2, y_2)} \times ... \times p_k^{max(x_k, y_k)}"/>
+<span> $$ \text{and } \ \text{lcm}(a, b) = p_1^{max(x_1, y_1)} \times p_2^{max(x_2, y_2)} \times ... \times p_k^{max(x_k, y_k)} $$ </span>
 
 
 ```note
-gcd(a,b) = x, since x <= a OR x <= b  
+if gcd(a,b) = x, then x <= a OR x <= b  
 ```
 
 
@@ -72,6 +79,12 @@ If a and b are prime, they are also coprime.
 
 If a is prime and b < a then a and b are coprime.
 ```
+
+
+<span> $$ \text{lcm}(a, b) = \frac{|a \ . \ b|}{\text{gcd}(a, b)} $$ </span>
+
+
+<br>
 
 > Euclidean Algorithm / Euclid's Algorithm
 
@@ -85,11 +98,13 @@ def gcd(a, b):
         return gcd(b, a % b)
 ```
 
+<br>
+
 >  Extended Euclidean algorithm  -->  (Bézout's identity or Bézout's lemma)
 
-is an efficient way to find integers <img src="http://latex.codecogs.com/svg.image?u, v"/> such that
+is an efficient way to find integers <span> $$ u, v $$ </span> such that
 
-<img src="http://latex.codecogs.com/svg.image?a \times u + b \times v = \gcd(a,b)"/>
+<span> $$ a \times u + b \times v = \gcd(a,b) $$ </span>
 
 
 ```note
@@ -124,11 +139,11 @@ def egcd(a, b):
 
 ## Primality Test
 
-given a number <img src="http://latex.codecogs.com/svg.image?n"/> how can we determain if it's prime or not
+given a number <span> $$ n $$ </span> how can we determain if it's prime or not
 
 > Divisibility test
 
-check whether <img src="http://latex.codecogs.com/svg.image?n"/> is divisible by any prime number between 2 and <img src="http://latex.codecogs.com/svg.image?\sqrt{n}"/>
+check whether <span> $$ n $$ </span> is divisible by any prime number between 2 and <span> $$ \sqrt{n} $$ </span>
 
 ```cpp
 // https://en.wikipedia.org/wiki/Primality_test

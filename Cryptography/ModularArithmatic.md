@@ -17,13 +17,8 @@ span {
 
 *Modulo and Modulus* : It is basically an operator which is denoted by `mod` and in programming uses `%` symbol. 
  
-<span> $$ x \mod N, \ \ a \rightarrow dividend, N \rightarrow divisor \ (Modulus \ | \ Moduli)$$ </span>  
+<span> $$ a \mod N, \ \ a \rightarrow dividend, N \rightarrow divisor \ (Modulus \ | \ Moduli)$$ </span>  
 
-*congruence operator* : `≡` is the symbol for congruence, which means the values A and B are in the same equivalence class. i.e. `2 ≡ 12 (mod 10)`  ==> `2 mod 10 = 12 mod 10` 
-
-```
-if m | a then a ≡ 0 mod m
-```
 
 *identity element / neutral element* : The element of a set of numbers that when combined with another number under a particular binary operation leaves the second number unchanged
 
@@ -48,9 +43,61 @@ under both addition and multiplication there is an inverse element `b` for every
 If the modulus is not prime, the set of integers modulo n define a ring.  <span> $$ F_{n} $$ </span>  
 
 
+<br>
+
+---
 
 
+## Congruence
 
+> Definition by Remainder after Division
+
+<span> $$ \text{Congruence modulo } m \text{ is defined as the relation } \equiv \ (mod\ m) \text{ on the set of all } a,b \in \mathbb{Z} $$ </span>  
+
+<span> $$ a \equiv b \ (mod\ m) \ \Longleftrightarrow \  a \mod m = b \mod m $$ </span>  
+
+<br>
+
+> Definition by Integer Multiple
+
+<span> $$ \text{We also see that } a \text{ is congruent to } b \text{ modulo } m \text{ if their difference is a multiple of } m $$ </span>  
+
+<span> $$ a \equiv b \ (mod\ m) \ \Longleftrightarrow \ \exists k \in \mathbb{Z} \ \ : \ \ a - b = km $$ </span>  
+
+<details style="display=flex;"><summary>EX</summary>
+
+<div style="border-style: double; padding: 4px">
+
+<img src="http://latex.codecogs.com/svg.image?a \equiv b \ (mod\ 0) \ \Longrightarrow \ a \mod 0 = b \mod 0 \ \Longrightarrow \ a = b"/>
+
+<p> And </p>
+
+<img src="http://latex.codecogs.com/svg.image?a \equiv b \ (mod\ 0) \ \Longrightarrow \ a - b = k \times 0 \ \Longrightarrow \ a = b "/>
+
+</div>
+
+</details>
+
+
+<br>
+
+> GCD from Congruence Modulo m
+
+<span> $$ \text{Let } a,b, \text{ and } m \in \mathbb{Z}  $$ </span>  
+
+<span> $$ a \equiv b \ (mod\ m) \ \Longrightarrow \ \gcd(a, m) = \gcd(b, m) $$ </span>  
+
+<span> $$ \text{Since } a \equiv b \ (mod\ m) \ \Longrightarrow \ \exists k \in \mathbb{Z} \ \ : \ \ a = b + km  $$ </span>  <span> $$ \ \Longrightarrow \ a + km \equiv b \ (mod\ m) \  $$ </span> 
+
+<br>
+
+---
+
+<span> $$ \text{Let } N = a \times b \ \text{ and } \ \exists k \in \mathbb{Z} $$ </span>  
+
+<span> $$   a + kN \equiv a \ (mod\ ab) \ \Longrightarrow \  a + kN \equiv a \ (mod\ N)  \ \Longrightarrow \  c \equiv a \ (mod\ N) $$ </span>  
+
+<span> $$ \text{Since } a \text{ is a factor of } N \text{ then } \ \Longrightarrow \ \gcd(c, N) = a $$ </span>  
 
 
 <br>
@@ -69,8 +116,15 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 * <span> $$ 10^a \mod n = (10 \mod n)^a;$$ </span> 
 
+---
 
----------------------------------------------
+My property ^^ 
+
+* <span> $$ k^{e} \times (x^{e_{1}}y^{e_{2}}z^{e_{3}})^{e_{4}} \equiv k \times (xyz)^e \equiv xyz \equiv 0 \ (mod\ xyz); $$ </span> 
+
+
+<br>
+
 > Properties of addition
 
 * <span> $$ \text{If} \ a + b = c, \ then \ a \ (mod\ N) + b \ (mod\ N) \equiv c \ (mod\ N); $$ </span> 
@@ -82,7 +136,8 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 * <span> $$ \text{If} \ a \equiv b \ (mod\ N), then -a \equiv -b \ (mod\ N); $$ </span> 
 
----------------------------------------------
+<br>
+
 > Properties of multiplication
 
 * <span> $$ \text{If} \ a \times b = c, then \ a \ (mod\ N) \times b \ (mod\ N) \equiv c \ (mod\ N); $$ </span> 
@@ -137,7 +192,8 @@ If the modulus is not prime, the set of integers modulo n define a ring.  <span>
 
 
 
----------------------------------------------
+<br>
+
 > Properties of Exponentiation
 
 * <span> $$ \text{If} \ a \equiv b \ (mod\ N), then \ a^{k} \equiv b^{k} \ (mod\ N); \  \text{for any positive integer} \ k $$ </span> 
@@ -172,7 +228,7 @@ The last digit of a number is equivalent to the number taken modulo 10.
 
 
 
-
+<br>
 
 ---
 
@@ -214,7 +270,7 @@ knwing that <span> $$ p $$ </span>  is a prime number
 </details>
 
 
-
+<br>
 
 ---
 
@@ -228,6 +284,7 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 * <span> $$ \varphi(p^e) = p^e - p^{e-1};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p \ is \ prime $$ </span> 
 
+<br>
 
 ---
 
@@ -245,7 +302,7 @@ knwing that <span> $$ p $$ </span>  is a prime number
 
 
 
-
+<br>
 
 ---
 
@@ -361,7 +418,7 @@ def modinv(a, n):
 modinv(3, 13)
 ```
 
-
+<br>
 
 ---
 
@@ -571,9 +628,11 @@ sage: CRT_list([2,3,5], [5,11,17])
 ```
 
 
+<br>
 
+--- 
 
-
+## Modular Binomials
 
 
 
@@ -774,6 +833,54 @@ sage: a
 
 
 
+
+
+
+
+
+## Modular Binomials
+
+> Binomials Theorem
+
+<span> $$ \text{According to the theorem, it is possible to expand any nonnegative integer power of } (x + y) \text{ into a sum of the form } $$ </span>
+
+
+
+<span> $$ (x + y)^{n} = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^{k} = \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k}$$ </span>
+
+<span> $$ \text{Knowing that } \binom{n}{k} = \frac{n!}{k! \ (n-k)!} $$ </span>
+
+
+<span> $$ (x+y)^n = \binom{n}{0} x^n y^0 + \binom{n}{1} x^{n-1} y^1 + \binom{n}{2} x^{n-2} y^2 + \cdots + \binom{n}{n-1} x^1 y^{n-1} + \binom{n}{n} x^0 y^n $$ </span>
+
+So 
+
+
+<span style="border-style: double; padding: 8px"> $$ \ (x+y)^n \equiv (x)^{n} + (y)^{n} \ (mod\ m)  $$ </span>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+> Ex
+
+
+
+<span> $$ \text{Let } N = p \times q \ \text{ and }$$ </span>
+
+<span> $$ c1 \equiv (2p + 3q)^{e_{1}} \ (mod\ N)  $$ </span>
+
+<span> $$ c2 \equiv (5p + 7q)^{e_{2}} \ (mod\ N)  $$ </span>
+
+<span> $$ \text{Find the values of } p \text{ and } q \text{ knowing everything else !} $$ </span>
 
 
 

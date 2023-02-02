@@ -3,7 +3,14 @@ sort :
 --- 
 
 # Quik Lists 
+<!-- 
 
+>>> li = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+>>> 
+>>> v = iter(li)
+>>> li = [(i, next(v), next(v)) for i in v]  # creates list of tuples 
+
+-->
 
 ## list comprehension
 

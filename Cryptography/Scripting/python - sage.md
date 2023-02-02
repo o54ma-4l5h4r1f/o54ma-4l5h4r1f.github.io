@@ -197,6 +197,30 @@ xor('ABCD', 'AB')               # b'\x00\x00\x02\x06'
 xor('A', 'A', 'B', 'A', 'B')    # b'A'
 ```
 
+XOR 2 .png images with each other !!
+
+```python
+from PIL import Image, ImageChops
+from pwn import *
+
+im1 = Image.open('./lemur.png')
+im2 = Image.open('./flag.png')
+
+leak_bytes = xor(im1.tobytes(), im2.tobytes())
+im3 = Image.frombytes(im2.mode, im2.size, leak_bytes)
+
+im3.show()
+
+#------------------------------------------------------------------------
+import cv2
+
+im1 = cv2.imread('lemur.png')
+im2 = cv2.imread('flag.png')
+
+im3 = cv2.bitwise_xor(im1, im2)  
+cv2.imshow('image3', im3)
+cv2.waitKey(0)
+```
 
 
 
@@ -353,7 +377,7 @@ sage: phi = euler_phi(n)
 # ----------------------
 
 sage: inverse_mod(e, phi)
-121832886702415731577073962957377780195510499965398469843281
+# 121832886702415731577073962957377780195510499965398469843281
 
 # ----------------------
 
