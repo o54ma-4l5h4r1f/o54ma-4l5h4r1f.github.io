@@ -301,17 +301,13 @@ c5 = 102337878278656922779346349629072960440978176791550192397402265855983209473
 
 
 
-<span> $$ C_{1} = P^{e_{1}} \mod n \ \ \ \ \ \ \ \ \ $$ </span>
-<span> $$ C_{2} = C_{1}^{e_{2}} \mod n \ \ \ \ \ \ \ \ \  $$ </span>
-<span> $$ C_{3} = C_{2}^{e_{3}} \mod n \ \ \ \ \ \ \ \ \ \text{.....} $$ </span>
+<span> $$ C_{1} = P^{e_{1}} \mod n \ \ \ \ \ \ \ \ \ C_{2} = C_{1}^{e_{2}} \mod n \ \ \ \ \ \ \ \ \ C_{3} = C_{2}^{e_{3}} \mod n \ \ \ \ \ \ \ \ \ \text{.....} $$ </span>
 
-<span> $$ \text{So } \  C_{5} = P^{e_{1} \times e_{2} \times e_{3} \times e_{4} \times e_{5}} \mod n \ \ \ \ \ \ \ \ \  $$ </span>
+<span> $$ \text{So } \  C_{5} = P^{e_{1} \times e_{2} \times e_{3} \times e_{4} \times e_{5}} \mod n   $$ </span>
 
 <span> $$ \text{Assume that } E = e_{1} \times e_{2} \times e_{3} \times e_{4} \times e_{5} $$ </span>
 
-<span> $$ \text{And we know that }\  e \times d \equiv 1 \ (mod\ \varphi(n)) \ \ \ \text{ So we can find the inverse of the equation } \ $$ </span>
-<span> $$ C^d \equiv (P^{e})^{d} \equiv P^{ed} \equiv P \mod n $$ </span>
-
+<span> $$ \text{And we know that } \ e \times d \equiv 1 \ (mod\ \varphi(n)) \ \ \ \text{ So we can find the inverse of the equation } \  C^d \equiv (P^{e})^{d} \equiv P^{ed} \equiv P \mod n $$ </span>
 
 
 <span> $$ \text{From that } \ C_{5}^d \equiv (P^{e_{1} \times e_{2} \times e_{3} \times e_{4} \times e_{5}})^{d} \equiv P^{Ed} \equiv P \mod n $$ </span>
@@ -319,8 +315,7 @@ c5 = 102337878278656922779346349629072960440978176791550192397402265855983209473
 <span> $$ \text{So we need just to find a proper value of } d \text{ that allow as to inverse the equation, and lets call it } D $$ </span>
 
 
-<span> $$ D \times E \equiv 1 \ (mod\ \varphi(n)) \ \ \rightarrow \ \ $$ </span>
-<span> $$ D = E^{-1} \mod \varphi(n) $$ </span>
+<span> $$ D \times E \equiv 1 \ (mod\ \varphi(n)) \ \ \rightarrow \ \ D = E^{-1} \mod \varphi(n) $$ </span>
 
 <span> $$ P = C_{5}^{D} \mod n $$ </span>
 
