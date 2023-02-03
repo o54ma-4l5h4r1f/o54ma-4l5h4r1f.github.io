@@ -632,7 +632,113 @@ sage: CRT_list([2,3,5], [5,11,17])
 
 --- 
 
+
 ## Modular Binomials
+
+> Binomials Theorem
+
+<span> $$ \text{According to the theorem, it is possible to expand any nonnegative integer power of } (x + y) \text{ into a sum of the form } $$ </span>
+
+
+
+<span> $$ (x + y)^{n} = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^{k} = \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k}$$ </span>
+
+<span> $$ \text{Knowing that } \binom{n}{k} = \frac{n!}{k! \ (n-k)!} $$ </span>
+
+
+<span> $$ (x+y)^n = \binom{n}{0} x^n y^0 + \binom{n}{1} x^{n-1} y^1 + \binom{n}{2} x^{n-2} y^2 + \cdots + \binom{n}{n-1} x^1 y^{n-1} + \binom{n}{n} x^0 y^n $$ </span>
+
+So 
+
+<span style="border-style: double; padding: 8px"> $$ \ (x+y)^n \equiv (x)^{n} + (y)^{n} \ (mod\ m)  $$ </span>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+<details style="display=flex;"><summary>EX</summary>
+
+<div style="border-style: double; padding: 4px">
+
+<img src="http://latex.codecogs.com/svg.image?\text{Let } N = p \times q \ \text{ and }"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{1} \equiv (2p + 3q)^{e_{1}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{2} \equiv (5p + 7q)^{e_{2}} \ (mod\ N) "/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image? \text{Find the values of } p \text{ and } q \text{ knowing everything else !}"/>
+
+<hr>
+
+<img src="http://latex.codecogs.com/svg.image?c_{1} \equiv (2p)^{e_{1}} + (3q)^{e_{1}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{2} \equiv (5p)^{e_{2}} + (7q)^{e_{2}} \ (mod\ N) "/>
+
+
+<p> Rise both sides of first equation to e2 and the second one to e1 </p>
+
+<img src="http://latex.codecogs.com/svg.image?c_{1}^{e_{2}} \equiv ((2p)^{e_{1}} + (3q)^{e_{1}})^{e_{2}} \ (mod\ N) \ \ \Longrightarrow \ \ c_{1}^{e_{2}} \equiv (2p)^{e_{1} e_{2}} + (3q)^{e_{1} e_{2}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?c_{2}^{e_{1}} \equiv ((5p)^{e_{2}} + (7q)^{e_{2}})^{e_{1}} \ (mod\ N) \ \ \Longrightarrow \ \ c_{2}^{e_{1}} \equiv (5p)^{e_{2}e_{1}} + (7q)^{e_{2}e_{1}} \ (mod\ N) "/>
+
+<p> Multiply both sides of first equation with 2^(-1 * e1 * e2) and the second one with 5^(-1 * e1 * e2) </p>
+
+<img src="http://latex.codecogs.com/svg.image?(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}} \equiv (2^{-e_{1}e_{2}}) \times (2p)^{e_{1} e_{2}} + (2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}} \ (mod\ N) \ \ \Longrightarrow \ \"/> <img src="http://latex.codecogs.com/svg.image?(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}} \equiv p^{e_{1} e_{2}} + (2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}} \ (mod\ N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image?(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} \equiv (5^{-e_{1}e_{2}}) \times (5p)^{e_{2}e_{1}} + (5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}} \ (mod\ N) \ \ \Longrightarrow \ \ "/> <img src="http://latex.codecogs.com/svg.image?(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} \equiv  p^{e_{2}e_{1}} + (5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}} \ (mod\ N)"/>
+
+<p> Subtract both equations from each other </p>
+
+<img src="http://latex.codecogs.com/svg.image? [(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}}] - [(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} ] \equiv 0 \ +  "/> <img src="http://latex.codecogs.com/svg.image? \ [(2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}}] - [(5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}}] \ (mod\ N)"/>
+
+<p> we can get the value of the left hand side since all values are known (lets call it X)</p>
+
+<!-- <p> and for the right hand side is equal to q modulo N </p> -->
+
+
+<img src="http://latex.codecogs.com/svg.image? q = \gcd(X, N)"/>
+
+<br>
+
+<img src="http://latex.codecogs.com/svg.image? p = N / q"/>
+
+</div>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -837,99 +943,6 @@ sage: a
 
 
 
-
-## Modular Binomials
-
-> Binomials Theorem
-
-<span> $$ \text{According to the theorem, it is possible to expand any nonnegative integer power of } (x + y) \text{ into a sum of the form } $$ </span>
-
-
-
-<span> $$ (x + y)^{n} = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^{k} = \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k}$$ </span>
-
-<span> $$ \text{Knowing that } \binom{n}{k} = \frac{n!}{k! \ (n-k)!} $$ </span>
-
-
-<span> $$ (x+y)^n = \binom{n}{0} x^n y^0 + \binom{n}{1} x^{n-1} y^1 + \binom{n}{2} x^{n-2} y^2 + \cdots + \binom{n}{n-1} x^1 y^{n-1} + \binom{n}{n} x^0 y^n $$ </span>
-
-So 
-
-<span style="border-style: double; padding: 8px"> $$ \ (x+y)^n \equiv (x)^{n} + (y)^{n} \ (mod\ m)  $$ </span>
-
-
-
-
-
-
-
-
-
-
-
-<br>
-
-<details style="display=flex;"><summary>EX</summary>
-
-<div style="border-style: double; padding: 4px">
-
-<img src="http://latex.codecogs.com/svg.image?\text{Let } N = p \times q \ \text{ and }"/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image?c_{1} \equiv (2p + 3q)^{e_{1}} \ (mod\ N)"/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image?c_{2} \equiv (5p + 7q)^{e_{2}} \ (mod\ N) "/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image? \text{Find the values of } p \text{ and } q \text{ knowing everything else !}"/>
-
-<hr>
-
-<img src="http://latex.codecogs.com/svg.image?c_{1} \equiv (2p)^{e_{1}} + (3q)^{e_{1}} \ (mod\ N)"/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image?c_{2} \equiv (5p)^{e_{2}} + (7q)^{e_{2}} \ (mod\ N) "/>
-
-
-<p> Rise both sides of first equation to e2 and the second one to e1 </p>
-
-<img src="http://latex.codecogs.com/svg.image?c_{1}^{e_{2}} \equiv ((2p)^{e_{1}} + (3q)^{e_{1}})^{e_{2}} \ (mod\ N) \ \ \Longrightarrow \ \ c_{1}^{e_{2}} \equiv (2p)^{e_{1} e_{2}} + (3q)^{e_{1} e_{2}} \ (mod\ N)"/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image?c_{2}^{e_{1}} \equiv ((5p)^{e_{2}} + (7q)^{e_{2}})^{e_{1}} \ (mod\ N) \ \ \Longrightarrow \ \ c_{2}^{e_{1}} \equiv (5p)^{e_{2}e_{1}} + (7q)^{e_{2}e_{1}} \ (mod\ N) "/>
-
-<p> Multiply both sides of first equation with 2^(-1 * e1 * e2) and the second one with 5^(-1 * e1 * e2) </p>
-
-<img src="http://latex.codecogs.com/svg.image?(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}} \equiv (2^{-e_{1}e_{2}}) \times (2p)^{e_{1} e_{2}} + (2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}} \ (mod\ N) \ \ \Longrightarrow \ \"/> <img src="http://latex.codecogs.com/svg.image?(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}} \equiv p^{e_{1} e_{2}} + (2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}} \ (mod\ N)"/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image?(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} \equiv (5^{-e_{1}e_{2}}) \times (5p)^{e_{2}e_{1}} + (5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}} \ (mod\ N) \ \ \Longrightarrow \ \ "/> <img src="http://latex.codecogs.com/svg.image?(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} \equiv  p^{e_{2}e_{1}} + (5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}} \ (mod\ N)"/>
-
-<p> Subtract both equations from each other </p>
-
-<img src="http://latex.codecogs.com/svg.image? [(2^{-e_{1}e_{2}}) \times c_{1}^{e_{2}}] - [(5^{-e_{1}e_{2}}) \times c_{2}^{e_{1}} ] \equiv 0 \ +  "/> <img src="http://latex.codecogs.com/svg.image? \ [(2^{-e_{1}e_{2}}) \times (3q)^{e_{1} e_{2}}] - [(5^{-e_{1}e_{2}}) \times (7q)^{e_{2}e_{1}}] \ (mod\ N)"/>
-
-<p> we can get the value of the left hand side since all values are known (lets call it X)</p>
-
-<!-- <p> and for the right hand side is equal to q modulo N </p> -->
-
-
-<img src="http://latex.codecogs.com/svg.image? q = \gcd(X, N)"/>
-
-<br>
-
-<img src="http://latex.codecogs.com/svg.image? p = N / q"/>
-
-</div>
-
-</details>
 
 
 
