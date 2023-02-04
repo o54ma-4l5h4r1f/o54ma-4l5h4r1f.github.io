@@ -6,7 +6,7 @@
 
 <style>
 
-* {
+p {
     font-family: 'Comfortaa', cursive;
     font-family: 'Cuprum', sans-serif;
     font-size: 40px;
