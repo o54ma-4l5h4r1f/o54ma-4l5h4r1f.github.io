@@ -23,14 +23,12 @@ span {
 
 </style>
 
-<p class="center">
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Followers][Followers-shield]][Followers-url]
 
-</p>
 
 
 Hi, I am <span> [Osama Alsharif](https://www.linkedin.com/in/osama-alsharif-21153716a) </span> :wave: . I am making this blog as a reference resource for people who are interested in cyber security.
