@@ -3,7 +3,7 @@ sort : 1
 ---
 
 
-# SH 
+# Bash & Sh
 
 ```
 #include <stdio.h>

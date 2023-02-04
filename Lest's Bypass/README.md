@@ -2,6 +2,6 @@
 sort: 3
 ---
 
-# Binary Exploitation
+# Let's Bypass
 
 {% include list.liquid all=true %}
