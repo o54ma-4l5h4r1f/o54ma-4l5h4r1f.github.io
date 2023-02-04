@@ -20,7 +20,7 @@ span {
 
 
 
-Hi, I am <span> [Osama Alsharif](https://www.linkedin.com/in/osama-alsharif-21153716a) </span>. I am making this blog as a reference resource for people who are interested in cyber security.
+Hi, I am <span> [Osama Alsharif](https://www.linkedin.com/in/osama-alsharif-21153716a) </span> :wave: . I am making this blog as a reference resource for people who are interested in cyber security.
 
 
 The topics covered in this blog are a reflection of my educational and practical experience, and are designed to serve as a quick, concise, and self-explanatory resource for those interested in cybersecurity. Whether you are a seasoned professional or just starting out, I hope that my blog provides you with valuable information and insights.
