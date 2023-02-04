@@ -14,6 +14,7 @@ p {
 
 .center {
   text-align: center;
+  markdown : "1";
 }
 
 span {
