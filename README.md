@@ -19,15 +19,14 @@ span {
 </style>
 
 
-![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
-![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
+<span style='text-align: center;'>
 
-[![Python-shield][Python-shield]][Python-shield]
-[![Forks][forks-shield]][forks-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Followers][Followers-shield]][Followers-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
+</span>
 
 Hi, I am <span> [Osama Alsharif](https://www.linkedin.com/in/osama-alsharif-21153716a) </span> :wave: . I am making this blog as a reference resource for people who are interested in cyber security.
 
@@ -39,50 +38,19 @@ The idea for this blog came from my desire to document what I have learned, as w
 
 So, whether you're here to learn something new, or just to see what I have to say, I hope that you find this blog to be a valuable resource. Thank you for stopping by and I look forward to connecting with you!
 
-meta:
-  key1: value1
-  key2: value2
-  .
-  .
-  .
 
-google:
-  gtag:
-  adsense:
-
-mathjax: # this will prased to json, default: {}
-
-mermaid:
-  custom:     # mermaid link
-  initialize: # this will prased to json, default: {}
-
-scss:   # also _includes/extra/styles.scss
-script: # also _includes/extra/script.js
-
-translate:
-  # shortcodes
-  danger:
-  note:
-  tip:
-  warning:
-  # 404
-  not_found:
-  # copyright
-  revision:
-  # search
-  searching:
-  search:
-  search_docs:
-  search_results:
-  search_results_found: # the "#" in this translate will replaced with results size!
-  search_results_not_found:
-
-plugins:
-  - jemoji
-  - jekyll-avatar
-  - jekyll-mentions
-```
-
-## The license
-
-The theme is available as open source under the terms of the MIT License
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Python-shield]: https://img.shields.io/pypi/pyversions/strings?style=for-the-badge
+[last-commit-shield]: https://img.shields.io/github/last-commit/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II.svg?style=for-the-badge
+[forks-url]: https://github.com/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II/network/members
+[stars-shield]: https://img.shields.io/github/stars/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II.svg?style=for-the-badge
+[stars-url]: https://github.com/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II/stargazers
+[issues-shield]: https://img.shields.io/github/issues/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II.svg?style=for-the-badge
+[issues-url]: https://github.com/o54ma-4l5h4r1f/From-SQL-injection-to-Shell-II/issues
+[Followers-shield]: https://img.shields.io/github/followers/o54ma-4l5h4r1f?style=for-the-badge
+[Followers-url]:https://github.com/o54ma-4l5h4r1f?tab=followers
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/osama-alsharif-21153716a
+[product-screenshot]: images/screenshot.png
