@@ -6,6 +6,10 @@
 
 <style>
 
+body {
+    background-image: url('../../assets/images/9.png');
+}
+
 p {
     font-family: 'Comfortaa', cursive;
     font-family: 'Cuprum', sans-serif;
