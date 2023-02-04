@@ -13,7 +13,7 @@ body {
 p {
     font-family: 'Comfortaa', cursive;
     font-family: 'Cuprum', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 span {
