@@ -1,4 +1,4 @@
-# Remindme.txt
+# RemindMe.txt
 
 Hi, I am [Osama Alsharif](https://www.linkedin.com/in/osama-alsharif-21153716a). I am making this blog as a reference resource for people who are interested in cyber security.
 
