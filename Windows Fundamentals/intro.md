@@ -4,7 +4,7 @@ sort : 2
 
 # Intro
 
-Big thank you to [HTB Academy](https://academy.hackthebox.com/)
+Big thanks to [HTB Academy](https://academy.hackthebox.com/)
 
 ## History
 
@@ -73,7 +73,7 @@ NT = New Technology
 <br>
 <br>
 
-# Windows Directory Structure
+## Windows Directory Structure
 
 the root directory (boot partition) is `<drive_letter>`:\ (commonly `C` drive)
 
@@ -91,3 +91,52 @@ the root directory (boot partition) is `<drive_letter>`:\ (commonly `C` drive)
 | System, System32, SysWOW64 | They Contains all **DLLs** required for the core features of Windows and the Windows API. <br> The operating system searches these folders any time a program asks to load a DLL without specifying an absolute path. |
 | WinSxS | The **Windows Component Store** contains a copy of all Windows components, updates, and service packs. |
 
+## Windows File System
+
+There is 5 types : 
+* `FAT12` & `FAT16` (both deprecated), `FAT32`, `NTFS`, and `exFAT`.
+
+**FAT** = File Allocation Table
+- Used in : SD Cards  / USBs / and to format hard drives.
+- 32 == identifying the data cluster on the storage account. 
+
+*FAT32 Cons* 
+- Can only be used with files that are less than 4GB.
+- No built-in data protection or file compression features.
+- Must use third-party tools for file encryption
+
+**NTFS** = New Technology File System 
+- The default win file sys type **currently**
+
+## Permissions
+
+### Basic
+
+|     Permission Type    |     Description    |
+|---|---|
+|Full Control| Allows reading, writing, **changing**, deleting of files/folders.|
+|Modify| Allows reading, writing, and deleting of files/folders.|
+|List Folder Contents| Allows for **viewing** and **listing** folders and subfolders as well as **executing** files. <br> *Folders only inherit this permission.*|
+|Read and Execute| Allows for viewing and listing files and subfolders as well as executing files. <br> *Files and folders inherit this permission*.|
+| Write| Allows for **adding** files to folders and subfolders and **writing** to a file.|
+| Read | Allows for **viewing** and **listing** of folders and subfolders and **viewing** a file's contents.|
+
+
+### Advanced
+
+|     Permission    |     Description    |
+|---|---|
+|     Full control    |     Users are   permitted or denied permissions to add, edit, move, delete files &   folders as well as change NTFS permissions that apply to all permitted   folders    |
+|     Traverse folder / execute file    |     Users are   permitted or denied permissions to access a subfolder within a directory   structure even if the user is denied access to contents at the parent folder   level. Users may also be permitted or denied permissions to execute programs    |
+|     List folder/read data    |     Users are   permitted or denied permissions to view files and folders contained in the   parent folder. Users can also be permitted to open and view files    |
+|     Read attributes    |     Users are   permitted or denied permissions to view basic attributes of a file or folder.   Examples of basic attributes: system, archive, read-only, and hidden    |
+|     Read extended attributes    |     Users are   permitted or denied permissions to view extended attributes of a file or   folder. Attributes differ depending on the program    |
+|     Create files/write data    |     Users are   permitted or denied permissions to create files within a folder and make   changes to a file    |
+|     Create folders/append data    |     Users are   permitted or denied permissions to create subfolders within a folder. Data   can be added to files but pre-existing content cannot be overwritten    |
+|     Write attributes    |     Users are   permitted or denied to change file attributes. This permission does not grant   access to creating files or folders    |
+|     Write extended attributes    |     Users are   permitted or denied permissions to change extended attributes on a file or   folder. Attributes differ depending on the program    |
+|     Delete subfolders and files    |     Users are   permitted or denied permissions to delete subfolders and files. Parent   folders will not be deleted    |
+|     Delete    |     Users are   permitted or denied permissions to delete parent folders, subfolders and   files.    |
+|     Read permissions    |     Users are   permitted or denied permissions to read permissions of a folder    |
+|     Change permissions    |     Users are   permitted or denied permissions to change permissions of a file or folder    |
+|     Take ownership    |     Users are   permitted or denied permission to take ownership of a file or folder. The   owner of a file has full permissions to change any permissions    |
