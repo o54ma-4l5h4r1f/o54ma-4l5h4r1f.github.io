@@ -268,14 +268,18 @@ Notice the default access control entry and default permissions settings.
 
 2. Search > Windows Defender Firewall > Advanced settings > Inbound rules 
 
-    - Enable "File and Printer Sharing (NB-Session-In)"
-	- Enable "File and Printer Sharing (SMB-In)"
+   - Enable "File and Printer Sharing (NB-Session-In)"
+   - Enable "File and Printer Sharing (SMB-In)"
+
+```note
+Firewall rules on desktop systems can be centrally managed when joined to a Windows Domain environment through the use of `Group Policy`. 
+```
 
 3. Create a Folder > Right Click > Properties > Sharing > Advanced Sharing > Enable "Share this folder" > Permissions > Select the needed permissions & Assing the related Groups. 
 
 > To list the exsisting shared folders on your system 
 
-   - File Explorer > Search > \\IP
+   - File Explorer > Search > \\\\IP
 
    - or from the Search > Computer Management > Under System Tools _ Shares _ … 
 
@@ -293,9 +297,9 @@ Notice the default access control entry and default permissions settings.
 
 > to access the shared folder
 
-   - make sure the folder assigned to the right group
+   - make sure the folder assigned the right groups
 
-   - File Explorer > Search > \\IP\ShareName
+   - File Explorer > Search > \\\\IP\ShareName
 
    - using powershell
         ```powershell
@@ -304,6 +308,11 @@ Notice the default access control entry and default permissions settings.
         ```
 
 
+
+
+<br>
+<br>
+
 ### On Linux Machine
 
 
@@ -311,7 +320,6 @@ Notice the default access control entry and default permissions settings.
     ```bash
     $ impacket-smbserver ShareName FolderToShare -smb2support
     ```
-
 
 > To list the exsisting shared folders on your system 
 
@@ -322,7 +330,7 @@ Notice the default access control entry and default permissions settings.
 
 > to access the shared folder
 
-   - make sure the folder assigned to the right group
+   - make sure the folder assigned the right groups
 
    - using smbclient
         ```bash
@@ -334,7 +342,3 @@ Notice the default access control entry and default permissions settings.
         ```
 
 <br>
-
-```note
-Firewall rules on desktop systems can be centrally managed when joined to a Windows Domain environment through the use of `Group Policy`. 
-```
