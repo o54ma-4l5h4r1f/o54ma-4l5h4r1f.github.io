@@ -1,0 +1,73 @@
+---
+sort : 1
+---
+
+# Intro
+
+Big thank you to [HTB Academy](https://academy.hackthebox.com/)
+
+## History
+
+Microsoft first introduced the Windows OS on `1985`.
+
+Windows 95 was the first full integration of Windows and DOS and offered built-in Internet support for the first time.
+
+Windows Server was first released in `1993` with the release of Windows NT 3.1 Advanced Server.
+
+With the release of Windows 2000, Microsoft debuted Active Directory + Microsoft Management Console (MMC).
+
+> Versions 
+
+- Windows NT 4
+- Windows 2000
+- Windows XP
+- Windows Server 2003, 2003 R2
+- Windows Vista, Server 2008
+- Windows 7, Server 2008 R2
+- Windows 8, Server 2012
+- Windows 8.1, Server 2012 R2
+- Windows 10, Server 2016, Server 2019
+
+
+`Windows NT` is a family of Windows operating systems from 1993 that includes Windows 2000, Vista, 7, 8, 8.1, Windows 10, and now Windows 11
+
+```note
+NT = New Technology
+```
+
+
+## Remote Access 
+
+> SSH 
+
+> VPN 
+
+> FTP 
+
+> VNC
+
+> WinRM
+
+> RDP 
+
+- By default, remote access is **not** allowed on Windows operating systems.
+- Remote Desktop Files (.rdp)
+- RDP Clients :
+    
+    ```powershell
+    PS> mstsc.exe
+    ``` 
+
+    ```bash
+    $ Xfreerdp /v:$IP /u:$USERNAME /p:$PASSWD
+    ```
+
+    ```bash
+    $ rdesktop -u $USERNAME $IP
+    ```
+    
+    ```bash
+    $ remmina
+    ```
+
+
