@@ -428,5 +428,9 @@ PS> \\live.sysinternals.com\tools\TOOLNAME
 
 The suite includes tools such as **Process Explorer**, an *enhanced version* of **Task Manager**, and **Process Monitor**, **TCPView**, **PSExec**.
 
+```tip
+Process Explorer is a part of the Sysinternals tool suite. 
+This tool can show which **handles** and **DLL processes** are loaded when a program runs.
+```
 
 

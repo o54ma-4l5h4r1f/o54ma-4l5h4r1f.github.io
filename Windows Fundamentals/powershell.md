@@ -6,8 +6,14 @@ sort : 3
 
 ## Others 
 
+> Task Manager
 ```powershell
 PS> taskmgr
+```
+
+> Resource Monitor
+```powershell
+PS> resmon
 ```
 
 
