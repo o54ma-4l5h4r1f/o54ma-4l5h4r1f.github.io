@@ -384,6 +384,49 @@ In Windows, we have some critical system services that cannot be stopped and res
 [For more](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_components#Services)
 
 
+
+
+
+
+
 ## Windows Processes
 
 Processes **run in the background** on Windows systems. They either *run automatically* as part of the Windows operating system or are *started by other installed applications.*
+
+Processes associated with installed applications can often be terminated without causing a severe impact on the operating system. Certain processes are critical and, if terminated, will stop certain components of the operating system from running properly. 
+
+Some examples include the **Windows Logon Application**, **System**, **System Idle Process**, **Windows Start-Up Application**, **Client Server Runtime**, **Windows Session Manager**, **Service Host**, and **Local Security Authority Subsystem Service (LSASS)** process.
+
+### Local Security Authority Subsystem Service (LSASS.exe)
+
+`lsass.exe` is the process that is responsible for enforcing the `security policy` on Windows systems. 
+
+When a user attempts to **log on** to the system, this process verifies their log on attempt and **creates access tokens** based on the user's **permission levels**.
+
+LSASS is also responsible for **user account password changes**. All events associated with this process (logon/logoff attempts, etc.) are logged within the `Windows Security Log`. 
+
+```note
+LSASS is an extremely high-value target as several tools exist to extract both cleartext and hashed credentials stored in memory by this process.
+```
+
+
+
+
+
+
+
+
+## Sysinternals Tools
+
+[https://learn.microsoft.com/en-us/sysinternals/](https://learn.microsoft.com/en-us/sysinternals/)
+
+`Sysinternals Live` is a service that enables you to execute Sysinternals tools directly from the Web without hunting for and manually downloading them, (you can download them though!!)
+
+```powershell
+PS> \\live.sysinternals.com\tools\TOOLNAME
+```
+
+The suite includes tools such as **Process Explorer**, an *enhanced version* of **Task Manager**, and **Process Monitor**, **TCPView**, **PSExec**.
+
+
+
