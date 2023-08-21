@@ -140,3 +140,57 @@ There is 5 types :
 |     Read permissions    |     Users are   permitted or denied permissions to read permissions of a folder    |
 |     Change permissions    |     Users are   permitted or denied permissions to change permissions of a file or folder    |
 |     Take ownership    |     Users are   permitted or denied permission to take ownership of a file or folder. The   owner of a file has full permissions to change any permissions    |
+
+
+## Managing Permissions
+
+```powershell
+PS> Exploere.exe 
+# > Security > Advanced > ...  
+```
+
+```powershell
+PS> icalcs.exe 
+PS > icacls.exe .\Folder\
+# .\Folder\ NT AUTHORITY\SYSTEM:(OI)(CI)(F)
+        # BUILTIN\Administrators:(OI)(CI)(F)
+        # Domain\user.name:(OI)(CI)(F)
+        # S-1-15-3-65536-385xxxxxxx-322xxxxxxx-236xxxxxxx-....:(S,X)
+
+# Successfully processed 1 files; Failed processing 0 files
+```
+
+<br>
+
+```note
+Files and folders inherit the NTFS permissions of their parent folder for ease of administration.
+
+By default, all NTFS permissions are inherited from the parent directory. 
+In the Windows world, the C:\ drive is the parent directory to rule all directories, unless a system administrator were to **disable inheritance** inside a newly created folder’s advanced Security settings.
+
+File/Folder Right Click > Properties > Security > Advanced > Disable inheiritance
+```
+
+```note 
+Anytime we see a gray checkmark next to a permission, it was inherited from a parent directory.
+```
+
+![Permissons](../assets/images/Permissions.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
