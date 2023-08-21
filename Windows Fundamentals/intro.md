@@ -149,19 +149,6 @@ PS> Exploere.exe
 # > Security > Advanced > ...  
 ```
 
-```powershell
-PS> icalcs.exe 
-PS > icacls.exe .\Folder\
-# .\Folder\ NT AUTHORITY\SYSTEM:(OI)(CI)(F)
-        # BUILTIN\Administrators:(OI)(CI)(F)
-        # Domain\user.name:(OI)(CI)(F)
-        # S-1-15-3-65536-385xxxxxxx-322xxxxxxx-236xxxxxxx-....:(S,X)
-
-# Successfully processed 1 files; Failed processing 0 files
-```
-
-<br>
-
 ```note
 Files and folders inherit the NTFS permissions of their parent folder for ease of administration.
 
@@ -179,9 +166,35 @@ Anytime we see a gray checkmark next to a permission, it was inherited from a pa
 
 
 
+### Integrity Control Access Control List (icacls)
 
+```powershell
+PS> icalcs.exe 
+PS > icacls.exe .\Folder\
+# .\Folder\ BUILTIN\Administrators:(I)(OI)(CI)(F)
+#           NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+#           BUILTIN\Users:(I)(OI)(CI)(RX)
+#           NT AUTHORITY\Authenticated Users:(I)(M)
+#           NT AUTHORITY\Authenticated Users:(I)(OI)(CI)(IO)(M)
 
+# Successfully processed 1 files; Failed processing 0 files
+```
 
+The possible inheritance settings are:
+- (CI): container inherit
+- (OI): object inherit
+- (IO): inherit only
+- (NP): do not propagate inherit
+- (I): permission inherited from parent container
+
+Basic access permissions are as follows:
+- F : full access
+- D : delete access
+- N : no access
+- M : modify access
+- RX: read and execute access
+- R : read-only access
+- W : write-only access
 
 
 
