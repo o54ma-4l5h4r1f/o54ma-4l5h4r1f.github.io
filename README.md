@@ -4,26 +4,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Cuprum&display=swap" rel="stylesheet"> 
 
-<style>
-  
-p {
-    font-family: 'Comfortaa', cursive;
-    font-family: 'Cuprum', sans-serif;
-    font-size: 30px;
-}
-
-.center {
-  text-align: center;
-  markdown : "1";
-}
-
-span {
-  markdown : "1"
-}
-
-</style>
-
-
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
