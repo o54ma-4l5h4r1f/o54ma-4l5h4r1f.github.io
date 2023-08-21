@@ -91,6 +91,3 @@ the root directory (boot partition) is `<drive_letter>`:\ (commonly `C` drive)
 | System, System32, SysWOW64 | They Contains all **DLLs** required for the core features of Windows and the Windows API. <br> The operating system searches these folders any time a program asks to load a DLL without specifying an absolute path. |
 | WinSxS | The **Windows Component Store** contains a copy of all Windows components, updates, and service packs. |
 
-
-
-
