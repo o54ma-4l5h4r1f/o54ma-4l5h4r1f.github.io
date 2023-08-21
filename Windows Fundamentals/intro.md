@@ -155,7 +155,7 @@ Files and folders inherit the NTFS permissions of their parent folder for ease o
 By default, all NTFS permissions are inherited from the parent directory. 
 In the Windows world, the C:\ drive is the parent directory to rule all directories, unless a system administrator were to **disable inheritance** inside a newly created folder’s advanced Security settings.
 
-`File/Folder Right Click > Properties > Security > Advanced > Disable inheiritance`
+File/Folder Right Click > Properties > Security > Advanced > Disable inheiritance
 ```
 
 ```note 
@@ -273,19 +273,13 @@ Notice the default access control entry and default permissions settings.
 
 3. Create a Folder > Right Click > Properties > Sharing > Advanced Sharing > Enable "Share this folder" > Permissions > Select the needed permissions & Assing the related Groups. 
 
-### On Linux Machine
+> To list the exsisting shared folders on your system 
 
-```bash
-$ impacket-smbserver ShareName FolderToShare -smb2support
-```
+   - File Explorer > Search > \\IP
 
-> To See the exsisting shared folders on your system 
+   - or from the Search > Computer Management > Under System Tools _ Shares _ … 
 
-    - File Explorer > Search > \\IP
-
-    - or from the Search > Computer Management > Under System Tools _ Shares _ … 
-
-    - or using powershell
+   - or using powershell
         ```powershell
         PS> net share
         # Share name   Resource                        Remark
@@ -303,18 +297,39 @@ $ impacket-smbserver ShareName FolderToShare -smb2support
 
    - File Explorer > Search > \\IP\ShareName
 
-   - From windows machine
+   - using powershell
         ```powershell
         PS> net use \\IP[\ShareName] /USER:\USERNAME PASSWORD
         PS> cd "\\IP\ShareName\"
         ```
 
-   - From linux machine
+
+### On Linux Machine
+
+
+1. create temp smb-server
+    ```bash
+    $ impacket-smbserver ShareName FolderToShare -smb2support
+    ```
+
+
+> To list the exsisting shared folders on your system 
+
+   - using smbclient
+        ```bash
+        $ smbclient -L \\\\IP -U USERNAME --password=PASSWORD
+        ```
+
+> to access the shared folder
+
+   - make sure the folder assigned to the right group
+
+   - using smbclient
         ```bash
         $ smbclient \\\\IP\\ShaerName -U USERNAME --password=PASSWORD
 
         # Creating mount point to the shared folder
-        $ sudoapt-getinstallcifs-utils
+        $ sudo apt-get install cifs-utils
         $ sudo mount -t cifs -o username=USERNAME,password=PASSWORD //IP/ShareName /home/USERNAME/..../MonutDest
         ```
 
