@@ -4,6 +4,13 @@ sort : 3
 
 # powershell
 
+## Others 
+
+```powershell
+PS> taskmgr
+```
+
+
 ## Windows Services
 
 > Get-Service 
