@@ -155,14 +155,14 @@ Files and folders inherit the NTFS permissions of their parent folder for ease o
 By default, all NTFS permissions are inherited from the parent directory. 
 In the Windows world, the C:\ drive is the parent directory to rule all directories, unless a system administrator were to **disable inheritance** inside a newly created folder’s advanced Security settings.
 
-File/Folder Right Click > Properties > Security > Advanced > Disable inheiritance
+`File/Folder Right Click > Properties > Security > Advanced > Disable inheiritance`
 ```
 
 ```note 
 Anytime we see a gray checkmark next to a permission, it was inherited from a parent directory.
 ```
 
-<p align="center" style="width:50%"> 
+<p align="left" style="width:50%"> 
   <img src='../assets/images/Permissions.png'> 
 </p>
 
@@ -170,7 +170,7 @@ Anytime we see a gray checkmark next to a permission, it was inherited from a pa
 ### Integrity Control Access Control List (icacls)
 
 ```powershell
-PS> icalcs.exe 
+PS> icacls.exe 
 PS > icacls.exe .\Folder\
 # .\Folder\ BUILTIN\Administrators:(I)(OI)(CI)(F)
 #           NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
@@ -182,26 +182,144 @@ PS > icacls.exe .\Folder\
 ```
 
 The possible inheritance settings are:
-- (CI): container inherit
-- (OI): object inherit
-- (IO): inherit only
-- (NP): do not propagate inherit
-- (I): permission inherited from parent container
+- `(CI)`: container inherit
+- `(OI)`: object inherit
+- `(IO)`: inherit only
+- `(NP)`: do not propagate inherit
+- `(I):` permission inherited from parent container
 
 Basic access permissions are as follows:
-- F : full access
-- D : delete access
-- N : no access
-- M : modify access
-- RX: read and execute access
-- R : read-only access
-- W : write-only access
+- `F` : full access
+- `D` : delete access
+- `N` : no access
+- `M` : modify access
+- `RX`: read and execute access
+- `R` : read-only access
+- `W` : write-only access
 
 
+```powershell
+# Grant permission of a File/Folder to a User 
+PS> icacls.exe C:\Folder\ /grant USER:F 
+# The User Won't have a permission to the sub-directories since the (oi) and (ci) not included in the command 
+
+PS> icacls.exe C:\Folder\
+# C:\Folder\ COMPUTERNAME\osama:(F)   <==================== give access to the user osama
+#         BUILTIN\Administrators:(I)(OI)(CI)(F)
+#         NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+#         BUILTIN\Users:(I)(OI)(CI)(RX)
+#         NT AUTHORITY\Authenticated Users:(I)(M)
+#         NT AUTHORITY\Authenticated Users:(I)(OI)(CI)(IO)(M)
+```
+
+```powershell
+# Remove permission of a File/Folder to a User 
+PS> icacls.exe C:\Folder\ /remove USER 
+```
+
+[For more](https://ss64.com/nt/icacls.html)
+
+>>>> Audit
+
+# Server Message Block (SMB) 
+
+The `SMB` protocol: is used in Windows to connect shared resources like files and printers.
+
+Many variants of malware written for Windows can spread over the network via network shares with lenient permissions applied.
+
+## NTFS vs. Share Permissions
+
+NTFS permissions and share permissions are not the same ---->  but often apply to the same shared resource.
+Which means both the SMB and NTFS permissions lists apply to every resource that gets shared in Windows. 
+NOTE : : Security settings override Share permissions.
+
+NTFS permissions apply to the system where the folder and files are hosted 
+The share permissions apply when the folder is being accessed through SMB, typically from a different system over the network. 
+This means someone logged in locally to the machine or via RDP can access the shared folder and files by simply navigating to the location on the file system and only need to consider NTFS permissions
+
+### Share Permissions
+
+|     Permission    |     Description    |
+|---|---|
+|     Full Control    |     Users are   permitted to perform all actions given by Change and Read permissions as well   as change permissions for NTFS files and subfolders    |
+|     Change    |     Users are   permitted to read, edit, delete and add files and subfolders    |
+|     Read    |     Users are   allowed to view file & subfolder contents    |
 
 
+<br>
+
+Keep in mind that in most large enterprise environments, shares are created on a Storage Area Network (`SAN`), Network Attached Storage device (`NAS`), or a `separate partition` on drives accessed via a server operating system like Windows Server.
+
+Similar to NTFS permissions, there is an access control list (ACL) for shared resources. We can consider this the SMB permissions list
+The `ACL` contains access control entries (`ACEs`). -----> are made up of users & groups (also called `security principals`)
+
+Notice the default access control entry and default permissions settings.
+
+<p align="left" style="width:50%"> 
+  <img src='../assets/images/ACEs.png'> 
+</p>
 
 
+## Creating Shared Folder
+
+### On Windows Machine
+
+1. Search > Manage advanced sharing settings > Enable File and printer sharing
+
+2. Search > Windows Defender Firewall > Advanced settings > Inbound rules 
+
+    - Enable "File and Printer Sharing (NB-Session-In)"
+	- Enable "File and Printer Sharing (SMB-In)"
+
+3. Create a Folder > Right Click > Properties > Sharing > Advanced Sharing > Enable "Share this folder" > Permissions > Select the needed permissions & Assing the related Groups. 
+
+### On Linux Machine
+
+```bash
+$ impacket-smbserver ShareName FolderToShare -smb2support
+```
+
+> To See the exsisting shared folders on your system 
+
+    - File Explorer > Search > \\IP
+
+    - or from the Search > Computer Management > Under System Tools _ Shares _ … 
+
+    - or using powershell
+        ```powershell
+        PS> net share
+        # Share name   Resource                        Remark
+        # ------------------------------------------------------------------------
+        # IPC$                                         Remote IPC
+        # C$           C:\                             Default share
+        # ADMIN$       C:\Windows                      Remote Admin
+        # Folder       C:\Folder
+        ``` 
 
 
+> to access the shared folder
 
+   - make sure the folder assigned to the right group
+
+   - File Explorer > Search > \\IP\ShareName
+
+   - From windows machine
+        ```powershell
+        PS> net use \\IP[\ShareName] /USER:\USERNAME PASSWORD
+        PS> cd "\\IP\ShareName\"
+        ```
+
+   - From linux machine
+        ```bash
+        $ smbclient \\\\IP\\ShaerName -U USERNAME --password=PASSWORD
+
+        # Creating mount point to the shared folder
+        $ sudoapt-getinstallcifs-utils
+        $ sudo mount -t cifs -o username=USERNAME,password=PASSWORD //IP/ShareName /home/USERNAME/..../MonutDest
+        ```
+
+<br>
+
+```note
+Firewall rules on desktop systems can be centrally managed when joined to a Windows Domain environment through the use of `Group Policy`. 
+```
