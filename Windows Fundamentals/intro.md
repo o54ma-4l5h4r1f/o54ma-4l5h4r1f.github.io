@@ -162,8 +162,9 @@ File/Folder Right Click > Properties > Security > Advanced > Disable inheiritanc
 Anytime we see a gray checkmark next to a permission, it was inherited from a parent directory.
 ```
 
-![Permissons](../assets/images/Permissions.png)
-
+<p align="center" style="width:50%"> 
+  <img src='../assets/images/Permissions.png'> 
+</p>
 
 
 ### Integrity Control Access Control List (icacls)
@@ -195,9 +196,6 @@ Basic access permissions are as follows:
 - RX: read and execute access
 - R : read-only access
 - W : write-only access
-
-
-
 
 
 
