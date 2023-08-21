@@ -142,7 +142,7 @@ There is 5 types :
 |     Take ownership    |     Users are   permitted or denied permission to take ownership of a file or folder. The   owner of a file has full permissions to change any permissions    |
 
 
-## Managing Permissions
+### Managing Permissions
 
 ```powershell
 PS> Exploere.exe 
@@ -221,13 +221,13 @@ PS> icacls.exe C:\Folder\ /remove USER
 
 >>>> Audit
 
-# Server Message Block (SMB) 
+## Server Message Block (SMB) 
 
 The `SMB` protocol: is used in Windows to connect shared resources like files and printers.
 
 Many variants of malware written for Windows can spread over the network via network shares with lenient permissions applied.
 
-## NTFS vs. Share Permissions
+### NTFS vs. Share Permissions
 
 NTFS permissions and share permissions are not the same ---->  but often apply to the same shared resource.
 Which means both the SMB and NTFS permissions lists apply to every resource that gets shared in Windows. 
@@ -237,7 +237,7 @@ NTFS permissions apply to the system where the folder and files are hosted
 The share permissions apply when the folder is being accessed through SMB, typically from a different system over the network. 
 This means someone logged in locally to the machine or via RDP can access the shared folder and files by simply navigating to the location on the file system and only need to consider NTFS permissions
 
-### Share Permissions
+#### Share Permissions
 
 |     Permission    |     Description    |
 |---|---|
@@ -260,9 +260,9 @@ Notice the default access control entry and default permissions settings.
 </p>
 
 
-## Creating Shared Folder
+### Creating Shared Folder
 
-### On Windows Machine
+#### On Windows Machine
 
 1. Search > Manage advanced sharing settings > Enable File and printer sharing
 
@@ -277,7 +277,7 @@ Firewall rules on desktop systems can be centrally managed when joined to a Wind
 
 3. Create a Folder > Right Click > Properties > Sharing > Advanced Sharing > Enable "Share this folder" > Permissions > Select the needed permissions & Assing the related Groups. 
 
-> To list the exsisting shared folders on your system 
+4. To list the exsisting shared folders on your system 
 
    - File Explorer > Search > \\\\IP
 
@@ -295,9 +295,9 @@ Firewall rules on desktop systems can be centrally managed when joined to a Wind
         ``` 
 
 
-> to access the shared folder
+5. to access the shared folder
 
-   - make sure the folder assigned the right groups
+   - make sure the folder assigned the right ACEs
 
    - File Explorer > Search > \\\\IP\ShareName
 
@@ -307,13 +307,10 @@ Firewall rules on desktop systems can be centrally managed when joined to a Wind
         PS> cd "\\IP\ShareName\"
         ```
 
-
-
-
 <br>
 <br>
 
-### On Linux Machine
+#### On Linux Machine
 
 
 1. create temp smb-server
@@ -321,16 +318,16 @@ Firewall rules on desktop systems can be centrally managed when joined to a Wind
     $ impacket-smbserver ShareName FolderToShare -smb2support
     ```
 
-> To list the exsisting shared folders on your system 
+2. To list the exsisting shared folders on your system 
 
    - using smbclient
         ```bash
         $ smbclient -L \\\\IP -U USERNAME --password=PASSWORD
         ```
 
-> to access the shared folder
+3. to access the shared folder
 
-   - make sure the folder assigned the right groups
+   - make sure the folder assigned the right ACEs
 
    - using smbclient
         ```bash
@@ -341,4 +338,52 @@ Firewall rules on desktop systems can be centrally managed when joined to a Wind
         $ sudo mount -t cifs -o username=USERNAME,password=PASSWORD //IP/ShareName /home/USERNAME/..../MonutDest
         ```
 
+
+
 <br>
+<br>
+<br>
+
+
+
+## Windows Services
+
+Windows services are managed via the `Service Control Manager (SCM)` system, accessible via the `services.msc`  `Microsoft Management Console (MMC)` add-in.
+
+`Microsoft Saved Console Files (msc)`
+
+It is also possible to query and manage services via the command line using `sc.exe` using PowerShell cmdlets such as `Get-Service`.
+
+Service statuses can appear as **Running**, **Stopped**, or **Paused**, and they can be set to start **manually**, **automatically**, or on a **delay at system boot**.
+
+Windows has three categories of services: 
+- Local Services
+- Network Services
+- System Services.
+ 
+```note
+**Misconfigurations** around service permissions are a common privilege escalation vector on Windows systems.
+```
+
+In Windows, we have some critical system services that cannot be stopped and restarted without a *system restart*. If we update any file or resource in use by one of these services, we must restart the system.
+
+| Service | Description |
+|---|---|
+| smss.exe | Session Manager SubSystem. Responsible for handling sessions on the system. |
+| csrss.exe | Client Server Runtime Process. The user-mode portion of the Windows subsystem. |
+| wininit.exe | Starts the Wininit file .ini file that lists all of the changes to be made to Windows when  the computer is restarted after installing a program. |
+| logonui.exe | Used for facilitating user login into a PC |
+| lsass.exe | The Local Security Authentication Server verifies the validity of  user logons to a PC or server.  It generates the process responsible for  authenticating users for the Winlogon service. |
+| services.exe | Manages the operation of starting and stopping services. |
+| winlogon.exe | Responsible for handling the secure attention sequence, loading a  user profile on logon,  and locking the computer when a screensaver is  running. |
+| System | A background system process that runs the Windows kernel. |
+| svchost.exe with RPCSS | **Manages system services that run from dynamic-link libraries** (files  with the extension .dll) such as  "Automatic Updates," "Windows  Firewall," and "Plug and Play." Uses the Remote Procedure Call (RPC)  Service (RPCSS). |
+| svchost.exe with Dcom/PnP |	Manages system services that run from dynamic-link libraries (files with the extension .dll) such as "Automatic Updates," "Windows Firewall," and "Plug and Play." Uses the Distributed Component Object Model (DCOM) and Plug and Play (PnP) services.|
+
+
+[For more](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_components#Services)
+
+
+## Windows Processes
+
+Processes **run in the background** on Windows systems. They either *run automatically* as part of the Windows operating system or are *started by other installed applications.*
