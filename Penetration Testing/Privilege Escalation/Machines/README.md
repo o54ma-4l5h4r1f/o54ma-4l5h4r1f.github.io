@@ -1,8 +1,8 @@
 ---
-sort: 1
+sort: 3
 ---
 
-# Linux Priv-Esc
+# Machines
 {% include list.liquid all=true %}
 
 
