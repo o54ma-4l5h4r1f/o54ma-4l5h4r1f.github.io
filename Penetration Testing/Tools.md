@@ -14,13 +14,13 @@ nmap scans victims for vulnerabilities that can be used during targeting. Vulner
 
 ```bash
 $ nmap -A -sV -sS -vvv -Pn -p- [IP]/24 
-
 $ sudo nmap -A -sV -sS -v --script default -Pn [IP]
-
 $ nmap -T4 -sC -sV -Pn -p- --min-rate=1000 -oN nmap.log [IP]
 ```
 
-
+```bash
+$ zenmap # awesome tool 
+```
 
 > Nmap Automator 
 
