@@ -52,7 +52,24 @@ PS> sc.exe query sshd
 #     SERVICE_EXIT_CODE  : 0  (0x0)
 #     CHECKPOINT         : 0x0
 #     WAIT_HINT          : 0x0
+
+PS> sc.exe qc SERVICE_NAME
+
+# query a service over the network.
+PS> sc.exe //HOSTNAME SERVICE_NAME 
+
+# to stop a service
+PS> sc.exe stop SERVICE_NAME
+
+PS> sc.exe config SERVICE_NAME CONFIGURATION
+
 ```
+
+>  services.msc
+
+
+
+
 
 # Importing Modules
 

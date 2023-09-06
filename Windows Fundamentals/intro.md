@@ -363,6 +363,9 @@ Windows has three categories of services:
  
 ```note
 **Misconfigurations** around service permissions are a common privilege escalation vector on Windows systems.
+
+services allow for the management of long-running processes and are a critical part of Windows operating systems. Sysadmins often overlook them as potential threat vectors that can be used to **load malicious DLLs**, **execute applications** without access to an admin account, **escalate privileges** and even **maintain persistence**. 
+
 ```
 
 In Windows, we have some critical system services that cannot be stopped and restarted without a *system restart*. If we update any file or resource in use by one of these services, we must restart the system.
@@ -386,6 +389,45 @@ In Windows, we have some critical system services that cannot be stopped and res
 
 
 
+
+### Service Permissions
+
+```warning
+If the NTFS permissions of the destination directory are configured with weak permissions, an attacker could replace the original executable with one created for malicious purposes.
+```
+
+> Some built-in service accounts in Windows:
+
+- LocalService
+- NetworkService
+- LocalSystem
+
+for example abusing the restart on failur feature  
+
+![Alt text](image.png)
+
+```powershell
+PS> sc config SERVICE_NAME binPath=C:\Winbows\Perfectlylegitprogram.exe
+
+# [SC] QueryServiceConfig SUCCESS
+
+# SERVICE_NAME: wuauserv
+#         TYPE               : 20  WIN32_SHARE_PROCESS
+#         START_TYPE         : 3   DEMAND_START
+#         ERROR_CONTROL      : 1   NORMAL
+#         BINARY_PATH_NAME   : C:\Winbows\Perfectlylegitprogram.exe
+#         LOAD_ORDER_GROUP   :
+#         TAG                : 0
+#         DISPLAY_NAME       : Windows Update
+#         DEPENDENCIES       : rpcss
+#         SERVICE_START_NAME : LocalSystem
+```
+
+A helpful way to examine service permissions using sc is through the sdshow command.
+
+```powershell
+PS> sc sdshow SERVICE_NAME
+```
 
 
 
@@ -432,5 +474,7 @@ The suite includes tools such as **Process Explorer**, an *enhanced version* of 
 Process Explorer is a part of the Sysinternals tool suite. 
 This tool can show which **handles** and **DLL processes** are loaded when a program runs.
 ```
+
+
 
 
