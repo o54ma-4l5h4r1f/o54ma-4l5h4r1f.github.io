@@ -21,6 +21,8 @@ The idea for this blog came from my desire to document what I have learned, as w
 
 So, whether you're here to learn something new, or just to see what I have to say, I hope that you find this blog to be a valuable resource. Thank you for stopping by and I look forward to connecting with you!
 
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="osama-alsharif-21153716a" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://jo.linkedin.com/in/osama-alsharif-21153716a?trk=profile-badge">Osama Alsharif</a></div>
+              
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
