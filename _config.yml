@@ -1,12 +1,9 @@
 title: RemindMe.txt
-description: Just another documentation theme compatible with GitHub Pages
+description: A cybersecurity blog covering binary exploitation, cryptography, web exploitation, and more.
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
+debug: true
 
 readme_index:
   with_frontmatter: true
